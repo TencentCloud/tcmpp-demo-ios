@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  TCMPPDemo
+
+  Created by 石磊 on 2023/4/20.
+  
+*/
+
+
+"Recently used" = "最近使用";
+"MiniApp demo" = "小程序体验Demo";
+"Develop" = "开发版";
+"Reviewed" = "审核版";
+"Preview" = "预览版";
+"Please enter the payment password" = "请输入支付密码";
+"Payment" = "支付";
+"Default password:666666" = "默认密码:666666";
+"Scan the QR code of the miniapp" = "扫描小程序二维码";
+"No recently used miniapps" = "暂无最近使用小程序";
+"Please scan the QR code of the miniapp to experience" = "请扫描小程序二维码进行体验";
