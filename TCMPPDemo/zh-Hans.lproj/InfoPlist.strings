@@ -11,6 +11,7 @@
 "NSBluetoothAlwaysUsageDescription" = "TCMPP需要您的允许才能允许蓝牙与设备通信";
 "NSBluetoothPeripheralUsageDescription" ="TCMPP需要您的允许才能允许蓝牙与设备通信";
 "NSCalendarsUsageDescription" ="TCMPP需要您的允许才能访问日历";
+"NSRemindersUsageDescription" = "TCMPP需要您的允许才能访问提醒事项";
 "NSCameraUsageDescription" ="TCMPP需要您的允许才能使用照相机功能";
 "NSContactsUsageDescription" ="TCMPP需要您的允许才能访问您的通讯簿";
 "NSLocationAlwaysUsageDescription" ="TCMPP需要您的允许才能始终启用位置功能 ";

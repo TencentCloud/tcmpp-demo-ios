@@ -23,4 +23,6 @@
        [bundle localizedStringForKey:(key) value:(val) table:(tbl)]
 
 
+#define UIFontMake(size) [UIFont systemFontOfSize:size]
+
 #endif /* PrefixHeader_pch */

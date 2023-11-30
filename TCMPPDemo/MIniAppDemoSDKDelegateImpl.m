@@ -118,4 +118,8 @@
     NSLog(@"%@", path);
 }
 
+- (BOOL)inspectableEnabled {
+    return YES;
+}
+
 @end

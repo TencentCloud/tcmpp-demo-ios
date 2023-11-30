@@ -12,6 +12,7 @@
 #import "DemoTableCell.h"
 #import "MiniAppTableCell.h"
 #import "DebugInfoController.h"
+#import "SearchResultViewController.h"
 
 #import "TCMPPPayView.h"
 
@@ -22,7 +23,7 @@
 
 NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcmpp.apps.change.notification";
 
-@interface ViewController () <TMFCodeScannerControllerDelegate, UITableViewDelegate, UITableViewDataSource, DemoTableCellDelegate>
+@interface ViewController () <TMFCodeScannerControllerDelegate, UITableViewDelegate, UITableViewDataSource, DemoTableCellDelegate,UISearchResultsUpdating,UISearchBarDelegate>
 // list of preset applet demos
 @property (nonatomic, strong) NSMutableArray<TMFMiniAppInfo *> *demoList;
 // List of recently used applets
@@ -34,6 +35,8 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
 
 // scan code button
 @property (nonatomic, strong) UIButton *scanButton;
+
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
@@ -91,7 +94,7 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
                                                                 action:@selector(openDebugInfoController)];
     [self.navigationItem setLeftBarButtonItem:leftItem animated:YES];
 
-    self.navigationItem.title = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    self.navigationItem.title = NSLocalizedString(@"MiniApp Assistant", nil);
 
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width - 20, self.view.frame.size.height - 80)
                                                   style:UITableViewStylePlain];
@@ -102,11 +105,17 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
+    
     [self createScanButton];
 
     [self initDataSource];
-
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:[[SearchResultViewController alloc] init]];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.obscuresBackgroundDuringPresentation = NO;
+    self.navigationItem.searchController = self.searchController;
+    self.definesPresentationContext = YES;
+        
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appletListChange) name:TMF_APPLET_LIST_CHANGE_NOTIFICATION object:nil];
 }
 
@@ -229,6 +238,35 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [alert dismissViewControllerAnimated:YES completion:nil];
     });
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    // 更新搜索结果的显示
+    
+    NSString *inputStr = searchController.searchBar.text ;
+
+    if(inputStr.length>=2) {
+        [[TMFMiniAppSDKManager sharedInstance] searchAppletsWithName:inputStr completion:^(NSArray<TMFAppletSearchInfo *> * _Nonnull result, NSError * _Nonnull aError) {
+            if(aError) {
+                [self showErrorInfo:aError];
+                return;
+            }
+            
+            SearchResultViewController *resultVC = (SearchResultViewController*)self.searchController.searchResultsController;
+            
+            [resultVC.searchResults removeAllObjects];
+            if(result && result.count>0) {
+                [resultVC.searchResults addObjectsFromArray:result];
+            }
+            [resultVC.tableView reloadData];
+        }];
+    }
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController {
+    // 处理搜索框的取消操作
+    
+    
 }
 
 #pragma TMFCodeScannerControllerDelegate
@@ -367,7 +405,7 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
                                                              firstPage:nil
                                                              paramsStr:nil
                                                               parentVC:self completion:^(NSError *_Nullable error) {
-                                                                  NSLog(@"open applet error:%@", error);
+            [self showErrorInfo:error];
                                                               }];
     }
 
@@ -386,7 +424,7 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
     [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithAppID:content verType:TMAVersionOnline scene:TMAEntrySceneAIOEntry firstPage:nil
                                                          paramsStr:nil
                                                           parentVC:self completion:^(NSError *_Nullable error) {
-                                                              NSLog(@"open applet error:%@", error);
+        [self showErrorInfo:error];
                                                           }];
 }
 

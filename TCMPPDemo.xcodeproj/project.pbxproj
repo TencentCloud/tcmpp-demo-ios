@@ -25,6 +25,12 @@
 		0711239C2A052B5F00ED2244 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0711239B2A052B5F00ED2244 /* avatar.png */; };
 		0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61629F6554D00444C1E /* TCMPPPayView.m */; };
 		0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61929F665E200444C1E /* PayRequestJsApi.m */; };
+		074210A42B023287008AE672 /* TMFAppletConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210A22B023287008AE672 /* TMFAppletConfigManager.m */; };
+		074210A92B0232C0008AE672 /* TMFAppletConfigListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210A62B0232C0008AE672 /* TMFAppletConfigListViewController.m */; };
+		074210AA2B0232C0008AE672 /* TMFAppletConfigInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210A72B0232C0008AE672 /* TMFAppletConfigInputViewController.m */; };
+		074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */; };
+		074210B12B0DE329008AE672 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210B02B0DE329008AE672 /* SearchResultViewController.m */; };
+		074210B42B0DE748008AE672 /* SearchResultTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210B32B0DE748008AE672 /* SearchResultTableCell.m */; };
 		07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */; };
 		EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,17 @@
 		0720E61629F6554D00444C1E /* TCMPPPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayView.m; sourceTree = "<group>"; };
 		0720E61829F665E200444C1E /* PayRequestJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRequestJsApi.h; sourceTree = "<group>"; };
 		0720E61929F665E200444C1E /* PayRequestJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRequestJsApi.m; sourceTree = "<group>"; };
+		074210A22B023287008AE672 /* TMFAppletConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFAppletConfigManager.m; sourceTree = "<group>"; };
+		074210A32B023287008AE672 /* TMFAppletConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigManager.h; sourceTree = "<group>"; };
+		074210A52B0232C0008AE672 /* TMFAppletConfigInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigInputViewController.h; sourceTree = "<group>"; };
+		074210A62B0232C0008AE672 /* TMFAppletConfigListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFAppletConfigListViewController.m; sourceTree = "<group>"; };
+		074210A72B0232C0008AE672 /* TMFAppletConfigInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFAppletConfigInputViewController.m; sourceTree = "<group>"; };
+		074210A82B0232C0008AE672 /* TMFAppletConfigListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigListViewController.h; sourceTree = "<group>"; };
+		074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-custom-config.json"; sourceTree = "<group>"; };
+		074210AF2B0DE329008AE672 /* SearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		074210B02B0DE329008AE672 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		074210B22B0DE748008AE672 /* SearchResultTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableCell.h; sourceTree = "<group>"; };
+		074210B32B0DE748008AE672 /* SearchResultTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableCell.m; sourceTree = "<group>"; };
 		07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-ios-configurations.json"; sourceTree = "<group>"; };
 		6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +120,13 @@
 		070204FE29EFC93000917E77 /* TCMPPDemo */ = {
 			isa = PBXGroup;
 			children = (
+				074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */,
+				074210A52B0232C0008AE672 /* TMFAppletConfigInputViewController.h */,
+				074210A72B0232C0008AE672 /* TMFAppletConfigInputViewController.m */,
+				074210A82B0232C0008AE672 /* TMFAppletConfigListViewController.h */,
+				074210A62B0232C0008AE672 /* TMFAppletConfigListViewController.m */,
+				074210A32B023287008AE672 /* TMFAppletConfigManager.h */,
+				074210A22B023287008AE672 /* TMFAppletConfigManager.m */,
 				07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */,
 				0711239B2A052B5F00ED2244 /* avatar.png */,
 				0702052D29F12A6C00917E77 /* InfoPlist.strings */,
@@ -134,6 +158,10 @@
 				0701642629FBA085006FD73B /* DebugInfoController.m */,
 				071123982A05230200ED2244 /* DemoUserInfo.h */,
 				071123992A05230200ED2244 /* DemoUserInfo.m */,
+				074210AF2B0DE329008AE672 /* SearchResultViewController.h */,
+				074210B02B0DE329008AE672 /* SearchResultViewController.m */,
+				074210B22B0DE748008AE672 /* SearchResultTableCell.h */,
+				074210B32B0DE748008AE672 /* SearchResultTableCell.m */,
 			);
 			path = TCMPPDemo;
 			sourceTree = "<group>";
@@ -222,6 +250,7 @@
 				0702050C29EFC93200917E77 /* Assets.xcassets in Resources */,
 				0711239C2A052B5F00ED2244 /* avatar.png in Resources */,
 				0702050A29EFC93000917E77 /* Main.storyboard in Resources */,
+				074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */,
 				0702052F29F12A6C00917E77 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,15 +306,20 @@
 			files = (
 				0702052329F0E75900917E77 /* DemoCollectionCell.m in Sources */,
 				0702050729EFC93000917E77 /* ViewController.m in Sources */,
+				074210B12B0DE329008AE672 /* SearchResultViewController.m in Sources */,
 				0701642729FBA085006FD73B /* DebugInfoController.m in Sources */,
 				0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */,
+				074210A92B0232C0008AE672 /* TMFAppletConfigListViewController.m in Sources */,
+				074210AA2B0232C0008AE672 /* TMFAppletConfigInputViewController.m in Sources */,
 				0702052429F0E75900917E77 /* DemoTableCell.m in Sources */,
 				0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */,
 				0702051C29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m in Sources */,
 				0702050129EFC93000917E77 /* AppDelegate.m in Sources */,
 				0702052529F0E75900917E77 /* MiniAppTableCell.m in Sources */,
+				074210A42B023287008AE672 /* TMFAppletConfigManager.m in Sources */,
 				0702051229EFC93200917E77 /* main.m in Sources */,
 				0711239A2A05230200ED2244 /* DemoUserInfo.m in Sources */,
+				074210B42B0DE748008AE672 /* SearchResultTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,22 +484,39 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TCMPPDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "TCMPP needs your permission to access calendar";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TCMPP needs your permission to use camera function";
+				INFOPLIST_KEY_NSContactsUsageDescription = "TCMPP needs your permission to access your address book";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TCMPP Authentication with TouchId or FaceID";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TCMPP requires your consent to record";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TCMPP needs your permission to save photos to album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TCMPP needs your permission to access the album";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "TCMPP needs your permission to allow Reminder";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "TCMPP needs your consent to use speech recognition";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.5.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -483,22 +534,39 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TCMPPDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "TCMPP needs your permission to access calendar";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TCMPP needs your permission to use camera function";
+				INFOPLIST_KEY_NSContactsUsageDescription = "TCMPP needs your permission to access your address book";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TCMPP Authentication with TouchId or FaceID";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TCMPP requires your consent to record";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TCMPP needs your permission to save photos to album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TCMPP needs your permission to access the album";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "TCMPP needs your permission to allow Reminder";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "TCMPP needs your consent to use speech recognition";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.5.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

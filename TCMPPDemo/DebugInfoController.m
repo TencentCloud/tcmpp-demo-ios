@@ -7,7 +7,7 @@
 //
 
 #import "DebugInfoController.h"
-
+#import "TMFAppletConfigListViewController.h"
 #import "TMFMiniAppSDKManager.h"
 
 #import <sys/sysctl.h>
@@ -19,21 +19,61 @@
 
 @implementation DebugInfoController
 
+-(NSString *)convertToJsonData:(NSDictionary *)dict
+{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString;
+    if (!jsonData) {
+        NSLog(@"%@",error);
+    }else{
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+
+    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+    NSRange range = {0,jsonString.length};
+    
+    //去掉字符串中的空格
+    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+    NSRange range2 = {0,mutStr.length};
+    //去掉字符串中的换行符
+    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+    
+    NSRange range3 = {0,mutStr.length};
+    //去掉字符串中的换行符
+    [mutStr replaceOccurrencesOfString:@"\\/\\/" withString:@"//" options:NSLiteralSearch range:range3];
+    
+    return mutStr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNavigationItems];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     [self initDataSource];
+    [self.tableView reloadData];
 }
 
 - (void)initDataSource {
     NSMutableDictionary<NSString *, NSString *> *dataSourceWithDetailText = [[NSMutableDictionary alloc] init];
     
+    [dataSourceWithDetailText setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:@"BundleID"];
+    
     NSDictionary *debugInfo = [[TMFMiniAppSDKManager sharedInstance] getDebugInfo];
+    
     for (NSString *key in debugInfo)
     {
-        [dataSourceWithDetailText setObject:debugInfo[key] forKey:key];
+        if([key isEqualToString:@"domains"] || [key isEqualToString:@"privacy_apis"]) {
+            [dataSourceWithDetailText setObject:[self convertToJsonData:debugInfo[key]] forKey:key];
+        } else {
+            [dataSourceWithDetailText setObject:debugInfo[key] forKey:key];
+        }
     }
     
     [dataSourceWithDetailText setObject:[self _UIDevice_mqqIdentifier] forKey:@"DeviceModel"];
@@ -82,8 +122,13 @@
     }
 }
 
+- (void)openServerConfigList {
+    TMFAppletConfigListViewController *viewController = [[TMFAppletConfigListViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 - (void)setupNavigationItems {
-//    [super setupNavigationItems];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(openServerConfigList)];
     self.title = @"DebugInfo";
 }
 

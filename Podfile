@@ -5,8 +5,16 @@ target 'TCMPPDemo' do
 
 
   # Pods for TCMPPDemo
-  pod "TCMPPSDK"
+  pod 'TCMPPSDK'
   pod 'TCMPPExtScanCode'
   pod 'TCMPPExtMedia'
   pod 'TCMPPExtQMap'
+  pod 'TCMPPExtLBS'
+  pod 'TCMPPExtBLE'
+  pod 'TCMPPExtContact'
+  pod 'TCMPPExtClipBoard'
+  pod 'TCMPPExtCalendar'
+  pod 'TCMPPExtAuthentication'
+  pod 'TCMPPExtNetwork'
+  pod 'TCMPPExtMDNS'
 end

@@ -6,7 +6,7 @@
   
 */
 
-
+"MiniApp Assistant" = "MiniApp Assistant";
 "Recently used" = "Recently used";
 "MiniApp demo" = "MiniApp demo";
 "Develop" = "Develop";
@@ -18,3 +18,15 @@
 "Scan the QR code of the miniapp" = "Scan the QR code of the miniapp";
 "No recently used miniapps" = "No recently used miniapps";
 "Please scan the QR code of the miniapp to experience" = "Please scan the QR code of the miniapp to experience";
+"Configuration information name" = "Configuration information name";
+"Configuration information content can be pasted here by long pressing" = "Configuration information content can be pasted here by long pressing";
+"Please enter a profile name:" = "Please enter a profile name:";
+"Cancel" = "Cancel";
+"Save" = "Save";
+"configure server" = "configure server";
+"Please select from the list below or add through the upper right corner" = "Please select from the list below or add through the upper right corner";
+"There is no configuration information at present, please add it in the upper right corner" = "There is no configuration information at present, please add it in the upper right corner";
+"The input content is empty, unable to add!" = "The input content is empty, unable to add!";
+"Server name already exists!" = "Server name already exists!";
+"Configuration file information error!" = "Configuration file information error!";
+"Please enter 2~10 characters for the server name!" = "Please enter 2~10 characters for the server name!";
