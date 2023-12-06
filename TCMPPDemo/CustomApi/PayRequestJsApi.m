@@ -23,7 +23,7 @@ TMAExternalJSAPI_IMP(requestPayment) {
 
     //    UINavigationController *navigationController = context.miniAppNavController;
     dispatch_async(dispatch_get_main_queue(), ^{
-        int money = [data[@"money"] intValue];
+        float money = [data[@"money"] floatValue];
         if (money <= 0) {
             TMAExternalJSPluginResult *pluginResult = [TMAExternalJSPluginResult new];
             NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"parameter error" forKey:NSLocalizedDescriptionKey];

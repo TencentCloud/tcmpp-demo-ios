@@ -1,0 +1,16 @@
+{
+    "extApi":[{
+            "name": "requestPayment",
+            "sync": false,
+            "params": {
+                "data": {}
+            }
+    },{
+        "name": "testState",
+        "sync": false,
+        "params": {
+            "stateEvent": ""
+        }
+    }
+    ]
+}

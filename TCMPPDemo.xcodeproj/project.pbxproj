@@ -31,6 +31,10 @@
 		074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */; };
 		074210B12B0DE329008AE672 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210B02B0DE329008AE672 /* SearchResultViewController.m */; };
 		074210B42B0DE748008AE672 /* SearchResultTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074210B32B0DE748008AE672 /* SearchResultTableCell.m */; };
+		076F0DC02B20247400470C46 /* TMATestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DBF2B20247400470C46 /* TMATestView.m */; };
+		076F0DC32B20296E00470C46 /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC22B20296E00470C46 /* DemoUtils.m */; };
+		076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC52B202C1600470C46 /* TestStateJsApi.m */; };
+		076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC82B202C6B00470C46 /* StateEventTest.m */; };
 		07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */; };
 		EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */; };
 /* End PBXBuildFile section */
@@ -81,6 +85,14 @@
 		074210B02B0DE329008AE672 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		074210B22B0DE748008AE672 /* SearchResultTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultTableCell.h; sourceTree = "<group>"; };
 		074210B32B0DE748008AE672 /* SearchResultTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableCell.m; sourceTree = "<group>"; };
+		076F0DBE2B20247400470C46 /* TMATestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMATestView.h; sourceTree = "<group>"; };
+		076F0DBF2B20247400470C46 /* TMATestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMATestView.m; sourceTree = "<group>"; };
+		076F0DC12B20296E00470C46 /* DemoUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUtils.h; sourceTree = "<group>"; };
+		076F0DC22B20296E00470C46 /* DemoUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
+		076F0DC42B202C1600470C46 /* TestStateJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestStateJsApi.h; sourceTree = "<group>"; };
+		076F0DC52B202C1600470C46 /* TestStateJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestStateJsApi.m; sourceTree = "<group>"; };
+		076F0DC72B202C6B00470C46 /* StateEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateEventTest.h; sourceTree = "<group>"; };
+		076F0DC82B202C6B00470C46 /* StateEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateEventTest.m; sourceTree = "<group>"; };
 		07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-ios-configurations.json"; sourceTree = "<group>"; };
 		6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,15 +132,16 @@
 		070204FE29EFC93000917E77 /* TCMPPDemo */ = {
 			isa = PBXGroup;
 			children = (
-				074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */,
+				07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */,
+				0701642329FB7B39006FD73B /* default_mini_apps.json */,
+				076F0DCC2B202EB400470C46 /* CustomApi */,
+				076F0DCA2B202E5000470C46 /* Resources */,
 				074210A52B0232C0008AE672 /* TMFAppletConfigInputViewController.h */,
 				074210A72B0232C0008AE672 /* TMFAppletConfigInputViewController.m */,
 				074210A82B0232C0008AE672 /* TMFAppletConfigListViewController.h */,
 				074210A62B0232C0008AE672 /* TMFAppletConfigListViewController.m */,
 				074210A32B023287008AE672 /* TMFAppletConfigManager.h */,
 				074210A22B023287008AE672 /* TMFAppletConfigManager.m */,
-				07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */,
-				0711239B2A052B5F00ED2244 /* avatar.png */,
 				0702052D29F12A6C00917E77 /* InfoPlist.strings */,
 				0702051E29F0E75800917E77 /* MiniAppTableCell.h */,
 				0702052129F0E75900917E77 /* MiniAppTableCell.m */,
@@ -149,11 +162,6 @@
 				0702051129EFC93200917E77 /* main.m */,
 				0702053429F12B3400917E77 /* Localizable.strings */,
 				0702053629F12D8300917E77 /* PrefixHeader.pch */,
-				0720E61529F6554D00444C1E /* TCMPPPayView.h */,
-				0720E61629F6554D00444C1E /* TCMPPPayView.m */,
-				0720E61829F665E200444C1E /* PayRequestJsApi.h */,
-				0720E61929F665E200444C1E /* PayRequestJsApi.m */,
-				0701642329FB7B39006FD73B /* default_mini_apps.json */,
 				0701642529FBA085006FD73B /* DebugInfoController.h */,
 				0701642629FBA085006FD73B /* DebugInfoController.m */,
 				071123982A05230200ED2244 /* DemoUserInfo.h */,
@@ -162,8 +170,36 @@
 				074210B02B0DE329008AE672 /* SearchResultViewController.m */,
 				074210B22B0DE748008AE672 /* SearchResultTableCell.h */,
 				074210B32B0DE748008AE672 /* SearchResultTableCell.m */,
+				076F0DC12B20296E00470C46 /* DemoUtils.h */,
+				076F0DC22B20296E00470C46 /* DemoUtils.m */,
 			);
 			path = TCMPPDemo;
+			sourceTree = "<group>";
+		};
+		076F0DCA2B202E5000470C46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0711239B2A052B5F00ED2244 /* avatar.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		076F0DCC2B202EB400470C46 /* CustomApi */ = {
+			isa = PBXGroup;
+			children = (
+				076F0DC72B202C6B00470C46 /* StateEventTest.h */,
+				076F0DC82B202C6B00470C46 /* StateEventTest.m */,
+				076F0DBE2B20247400470C46 /* TMATestView.h */,
+				076F0DBF2B20247400470C46 /* TMATestView.m */,
+				0720E61529F6554D00444C1E /* TCMPPPayView.h */,
+				0720E61629F6554D00444C1E /* TCMPPPayView.m */,
+				0720E61829F665E200444C1E /* PayRequestJsApi.h */,
+				074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */,
+				0720E61929F665E200444C1E /* PayRequestJsApi.m */,
+				076F0DC42B202C1600470C46 /* TestStateJsApi.h */,
+				076F0DC52B202C1600470C46 /* TestStateJsApi.m */,
+			);
+			path = CustomApi;
 			sourceTree = "<group>";
 		};
 		C7FB980E53686773FC157288 /* Frameworks */ = {
@@ -313,10 +349,14 @@
 				074210AA2B0232C0008AE672 /* TMFAppletConfigInputViewController.m in Sources */,
 				0702052429F0E75900917E77 /* DemoTableCell.m in Sources */,
 				0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */,
+				076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */,
 				0702051C29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m in Sources */,
 				0702050129EFC93000917E77 /* AppDelegate.m in Sources */,
+				076F0DC02B20247400470C46 /* TMATestView.m in Sources */,
 				0702052529F0E75900917E77 /* MiniAppTableCell.m in Sources */,
+				076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */,
 				074210A42B023287008AE672 /* TMFAppletConfigManager.m in Sources */,
+				076F0DC32B20296E00470C46 /* DemoUtils.m in Sources */,
 				0702051229EFC93200917E77 /* main.m in Sources */,
 				0711239A2A05230200ED2244 /* DemoUserInfo.m in Sources */,
 				074210B42B0DE748008AE672 /* SearchResultTableCell.m in Sources */,
@@ -482,9 +522,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -516,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.6;
+				MARKETING_VERSION = 1.5.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -532,9 +573,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -566,7 +608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.6;
+				MARKETING_VERSION = 1.5.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

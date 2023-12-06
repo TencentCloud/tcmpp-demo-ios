@@ -9,6 +9,7 @@
 #import "DebugInfoController.h"
 #import "TMFAppletConfigListViewController.h"
 #import "TMFMiniAppSDKManager.h"
+#import "DemoUtils.h"
 
 #import <sys/sysctl.h>
 
@@ -18,33 +19,6 @@
 @end
 
 @implementation DebugInfoController
-
--(NSString *)convertToJsonData:(NSDictionary *)dict
-{
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
-    NSString *jsonString;
-    if (!jsonData) {
-        NSLog(@"%@",error);
-    }else{
-        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-
-    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
-    NSRange range = {0,jsonString.length};
-    
-    //去掉字符串中的空格
-    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
-    NSRange range2 = {0,mutStr.length};
-    //去掉字符串中的换行符
-    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
-    
-    NSRange range3 = {0,mutStr.length};
-    //去掉字符串中的换行符
-    [mutStr replaceOccurrencesOfString:@"\\/\\/" withString:@"//" options:NSLiteralSearch range:range3];
-    
-    return mutStr;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,7 +44,7 @@
     for (NSString *key in debugInfo)
     {
         if([key isEqualToString:@"domains"] || [key isEqualToString:@"privacy_apis"]) {
-            [dataSourceWithDetailText setObject:[self convertToJsonData:debugInfo[key]] forKey:key];
+            [dataSourceWithDetailText setObject:[DemoUtils convertToJsonData:debugInfo[key]] forKey:key];
         } else {
             [dataSourceWithDetailText setObject:debugInfo[key] forKey:key];
         }
