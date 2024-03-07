@@ -2,7 +2,7 @@
 //  PayRequestJsApi.h
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/4/24.
+//  Created by stonelshi on 2023/4/24.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 

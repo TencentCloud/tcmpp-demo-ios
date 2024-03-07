@@ -2,7 +2,7 @@
 //  DemoUserInfo.h
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/5/5.
+//  Created by stonelshi on 2023/5/5.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 

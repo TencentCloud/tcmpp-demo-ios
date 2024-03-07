@@ -1,4 +1,4 @@
-source 'https://e.coding.net/tmf-work/tmf/tmf-repo.git'
+source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
 
 target 'TCMPPDemo' do
   platform :ios, "11.0"

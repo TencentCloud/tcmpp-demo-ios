@@ -2,7 +2,7 @@
 //  DemoUtils.m
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/12/6.
+//  Created by stonelshi on 2023/12/6.
 //
 
 #import "DemoUtils.h"
@@ -24,14 +24,11 @@
     NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
     NSRange range = {0,jsonString.length};
     
-    //去掉字符串中的空格
     [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
     NSRange range2 = {0,mutStr.length};
-    //去掉字符串中的换行符
     [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
     
     NSRange range3 = {0,mutStr.length};
-    //去掉字符串中的换行符
     [mutStr replaceOccurrencesOfString:@"\\/\\/" withString:@"//" options:NSLiteralSearch range:range3];
     
     return mutStr;

@@ -2,7 +2,7 @@
 //  TMFAppletConfigListViewController.m
 //  TMFDemo
 //
-//  Created by 石磊 on 2022/4/18.
+//  Created by stonelshi on 2022/4/18.
 //  Copyright © 2022 Tencent. All rights reserved.
 //
 
@@ -87,6 +87,7 @@
     [_configList[row] changeCheckmark:YES];
     
     // 刷新除了被点击的那个 cell 外的其他单选 cell
+    // Refresh other radio-selected cells except the clicked cell
     NSMutableArray<NSIndexPath *> *indexPathsAnimated = [[NSMutableArray alloc] init];
     for (NSInteger i = 0, l = [self.tableView numberOfRowsInSection:0]; i < l; i++) {
         if (i != row) {
@@ -98,6 +99,7 @@
     [self.tableView reloadRowsAtIndexPaths:indexPathsAnimated withRowAnimation:UITableViewRowAnimationNone];
 
     // 直接拿到 cell 去修改 accessoryType，保证动画不受 reload 的影响
+    // Get the cell directly to modify the accessoryType to ensure that the animation is not affected by reload
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
@@ -105,16 +107,19 @@
 }
 
 //先要设Cell可编辑
+//First make the Cell editable
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return !_configList[indexPath.row].checkmark;
 }
 //定义编辑样式
+//Define editing styles
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellEditingStyleDelete;
 }
 //进入编辑模式，按下出现的编辑按钮后,进行删除操作
+//Enter the edit mode and press the edit button that appears to perform the delete operation.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -123,6 +128,7 @@
     }
 }
 //修改编辑按钮文字
+//Modify edit button text
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"delete";
@@ -130,6 +136,7 @@
 
 - (NSString *)getUDID {
     //获取NSUserDefaults的单例模式
+    //Get the singleton mode of NSUserDefaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *udid = [userDefaults objectForKey:@"udid"];
     if(udid)

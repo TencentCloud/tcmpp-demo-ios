@@ -2,7 +2,7 @@
 //  DebugInfoController.m
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/4/28.
+//  Created by stonelshi on 2023/4/28.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
@@ -92,7 +92,6 @@
     NSString *info = self.dataSourceWithDetailText[title];
     if (info) {
         [[UIPasteboard generalPasteboard] setString:info];
-//        [QMUITips showSucceed:[NSString stringWithFormat:@"%@ Copied to clipboard",title] inView:self.view hideAfterDelay:2.0];
     }
 }
 
@@ -106,7 +105,6 @@
     self.title = @"DebugInfo";
 }
 
-// 从 `UIDevice (MQQExtension)` 迁移
 - (NSString *)_UIDevice_mqqIdentifier
 {
     size_t size;

@@ -2,7 +2,7 @@
 //  ViewController.m
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/4/19.
+//  Created by stonelshi on 2023/4/19.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
@@ -44,28 +44,6 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
     UIButton *navButton;
 }
 
-+ (void)setNavBackgroundColor:(UINavigationBar *)navigationBar color:(UIColor *)color {
-    if (@available(iOS 15.0, *)) {
-        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
-        [appearance configureWithTransparentBackground];
-        appearance.backgroundImage = nil;
-        appearance.backgroundColor = color;
-        appearance.titleTextAttributes = @{ NSForegroundColorAttributeName: [UIColor blackColor] };
-
-        navigationBar.standardAppearance = appearance;
-        navigationBar.scrollEdgeAppearance = appearance;
-    } else {
-        UIImage *image = [navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
-        if (image) {
-            [navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-        }
-        [navigationBar setShadowImage:[UIImage new]];
-        [navigationBar setBarTintColor:color];
-        NSDictionary *dict = @{ NSForegroundColorAttributeName: [UIColor blackColor] };
-        [navigationBar setTitleTextAttributes:dict];
-    }
-}
-
 - (UIImage *)createImageWithColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius {
     CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
@@ -84,7 +62,10 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
     // Do any additional setup after loading the view.
 
     self.view.backgroundColor = UIColorFromHex(0xE3EDFD);
-    [ViewController setNavBackgroundColor:self.navigationController.navigationBar color:[UIColor clearColor]];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
 
     // for debug,show the debug info
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[self createImageWithColor:[UIColor clearColor] size:CGSizeMake(48, 48)

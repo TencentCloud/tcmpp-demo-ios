@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/4/19.
+//  Created by stonelshi on 2023/4/19.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
@@ -43,6 +43,7 @@
         [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];
     } else {
         //配置使用环境
+        //Configure usage environment
        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
        if(filePath) {
            TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];

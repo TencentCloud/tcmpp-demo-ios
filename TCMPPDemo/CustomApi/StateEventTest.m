@@ -2,7 +2,7 @@
 //  StateEventTest.m
 //  MiniAppDemo
 //
-//  Created by 石磊 on 2023/10/30.
+//  Created by stonelshi on 2023/10/30.
 //  Copyright © 2023 tencent. All rights reserved.
 //
 

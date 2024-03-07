@@ -2,7 +2,7 @@
 //  MIniAppDemoSDKDelegateImpl.m
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/4/19.
+//  Created by stonelshi on 2023/4/19.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
@@ -49,13 +49,13 @@
 }
 
 - (void)handleStartUpSuccessWithApp:(TMFMiniAppInfo *)app {
-    NSLog(@"启动成功 %@", app);
+    NSLog(@"start sucess %@", app);
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"com.tencent.tcmpp.apps.change.notification" object:nil];
 }
 
 - (void)handleStartUpError:(NSError *)error app:(NSString *)app parentVC:(id)parentVC {
-    NSLog(@"启动失败 %@ %@", app, error);
+    NSLog(@"start fail %@ %@", app, error);
 }
 
 - (nonnull NSString *)appName {
@@ -75,6 +75,7 @@
 }
 
 - (void)getUserInfo:(TMFMiniAppInfo *)app params:(NSDictionary *)params completionHandler:(MACommonCallback)completionHandler {
+    //example code
     if (completionHandler) {
         completionHandler(@{
             @"nickName": [DemoUserInfo sharedInstance].nickName,
@@ -90,6 +91,7 @@
 }
 
 - (void)getUserProfile:(TMFMiniAppInfo *)app params:(NSDictionary *)params completionHandler:(MACommonCallback)completionHandler {
+    //example code
     if (completionHandler) {
         completionHandler(@{
             @"nickName": [DemoUserInfo sharedInstance].nickName,

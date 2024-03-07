@@ -2,7 +2,7 @@
 //  DemoUserInfo.m
 //  TCMPPDemo
 //
-//  Created by 石磊 on 2023/5/5.
+//  Created by stonelshi on 2023/5/5.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
@@ -38,6 +38,7 @@
         [self writeInfoFile:self.nickName];
     }
     
+    //example code
     self.avatarUrl = @"https://upload.shejihz.com/2019/04/25704c14def5257a157f2d0f4b7ae581.jpg";
     self.country = @"中国";
     self.province = @"北京市";

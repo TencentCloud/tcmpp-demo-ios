@@ -114,6 +114,7 @@
 
 - (BOOL)shouldHideKeyboardWhenTouchInView:(UIView *)view {
     // 表示点击空白区域都会降下键盘
+    // Indicates that clicking on a blank area will lower the keyboard
     return YES;
 }
 

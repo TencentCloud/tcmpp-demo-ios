@@ -1,9 +1,11 @@
-### 操作步骤
+English | [简体中文](./README_ZH.md)
 
-#### 1 在您项目中的 `Podfile` 文件里添加源及小程序依赖模块：
+### Steps
+
+#### 1 Add source and mini program dependency modules to the `Podfile` file in your project:
 
 - ```objective-c
-  source 'https://e.coding.net/tmf-work/tmf/tmf-repo.git'
+  source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
   
   target 'YourTarget' do
        pod 'TCMPPSDK'
@@ -11,41 +13,40 @@
   end
   ```
 
-  其中：
+  In：
 
-  - `YourTarget` 为您的项目需要引入 `TCMPPSDK` 的 target 的名字。
+  - `YourTarget` is the name of the target that needs to introduce `TCMPPSDK` into your project.
 
-- Terminal `cd` 到 Podfile 文件所在目录，并执行 `pod install` 进行组件安装。
+- Terminal `cd` to the directory where the Podfile file is located, and execute `pod install` to install the component.
 
   ```shell
   $ pod install
-  #注意：如果报 `Couldn't determine repo type for URL: 'https: //e.coding.net/tmf-work/tmf/tmf-repo.git':`错误，则需要在执行`pod install`前执行 `pod repo add specs https://e.coding.net/tmf-work/tmf/tmf-repo.git`
-  
+  #Note: If an error of `Couldn't determine repo type for URL: 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git':` is reported, you need to execute `pod install` Before executing `pod repo add specs https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git`
   
   ```
 
-#### 2 SDK初始化
+#### 2 SDK initialization
 
-##### 2.1 配置文件获取
+##### 2.1 Configuration file acquisition
 
-开发人员从管理平台获取对应App的配置文件，该配置文件是一个json文件，包含该App使用小程序平台的所有信息，将配置文件引入到项目中，并且做为资源设置在打包内容。
+The developer obtains the configuration file of the corresponding App from the management platform. The configuration file is a json file that contains all the information about the app's use of the mini program platform. The configuration file is introduced into the project and is set as a resource in the packaged content.
 
-##### 2.2 配置信息设置
+##### 2.2 Configuration information settings
 
-在工程的 `AppDelegate` 中的以下方法中，根据配置文件初始化一下TMFAppletConfig对象，并使用TMFAppletConfig初始化TCMPP小程序引擎。
+In the following method in the project's `AppDelegate`, initialize the TMFAppletConfig object according to the configuration file, and use TMFAppletConfig to initialize the TCMPP applet engine.
 
-参考代码：
+Reference Code:
 
 ```objective-c
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
-	// 需要添加至App中的代码--start
+	// Code that needs to be added to the App--start
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
     if(filePath) {
        TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];
        [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];
     }    
-    // 需要添加至App中的代码--end
+    // Code that needs to be added to the App--end
     
     return YES;
 }    
@@ -54,15 +55,15 @@
 
 
 
-#### 3 打开小程序
+#### 3 Open the mini program
 
-打开小程序时，会先判断本地是否有缓存的小程序，如果没有，则会自动从远程服务器上下载小程序，然后打开。如果有缓存的小程序，则会先打开本地小程序，然后在后台校验服务器端是否有新版本。
+When opening a mini program, it will first determine whether there is a cached mini program locally. If not, it will automatically download the mini program from the remote server and then open it. If there is a cached applet, the local applet will be opened first, and then it will be checked in the background whether there is a new version on the server side.
 
-如果有新版本，则下载新版小程序，下次打开时，就会使用新版小程序；如果没有新版本，则什么也不做。
+If there is a new version, download the new version of the mini program, and the new version of the mini program will be used the next time you open it; if there is no new version, do nothing.
 
 ```objective-c
-NSString *appId = @"小程序id";
-// 打开小程序   
+NSString *appId = @"mini program id";
+// open the mini program   
 [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithAppID:appId parentVC:self completion:^(NSError *_Nullable error) {
  		NSLog(@"open applet error:%@", error);
       }];

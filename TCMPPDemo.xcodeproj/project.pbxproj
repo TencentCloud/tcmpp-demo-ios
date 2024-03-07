@@ -74,6 +74,8 @@
 		0720E61629F6554D00444C1E /* TCMPPPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayView.m; sourceTree = "<group>"; };
 		0720E61829F665E200444C1E /* PayRequestJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRequestJsApi.h; sourceTree = "<group>"; };
 		0720E61929F665E200444C1E /* PayRequestJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRequestJsApi.m; sourceTree = "<group>"; };
+		072159042B849DFC002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		072159052B84A053002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		074210A22B023287008AE672 /* TMFAppletConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFAppletConfigManager.m; sourceTree = "<group>"; };
 		074210A32B023287008AE672 /* TMFAppletConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigManager.h; sourceTree = "<group>"; };
 		074210A52B0232C0008AE672 /* TMFAppletConfigInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigInputViewController.h; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-HK",
 			);
 			mainGroup = 070204F329EFC93000917E77;
 			productRefGroup = 070204FD29EFC93000917E77 /* Products */;
@@ -388,6 +391,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0702052E29F12A6C00917E77 /* zh-Hans */,
+				072159052B84A053002BBA97 /* zh-HK */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -397,6 +401,7 @@
 			children = (
 				0702053329F12B3400917E77 /* zh-Hans */,
 				0702053529F12B3800917E77 /* en */,
+				072159042B849DFC002BBA97 /* zh-HK */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
