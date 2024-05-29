@@ -8,7 +8,6 @@ target 'TCMPPDemo' do
   pod 'TCMPPSDK'
   pod 'TCMPPExtScanCode'
   pod 'TCMPPExtMedia'
-  pod 'TCMPPExtQMap'
   pod 'TCMPPExtLBS'
   pod 'TCMPPExtBLE'
   pod 'TCMPPExtContact'
