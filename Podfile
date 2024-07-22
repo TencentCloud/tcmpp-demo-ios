@@ -5,7 +5,7 @@ target 'TCMPPDemo' do
 
 
   # Pods for TCMPPDemo
-  pod 'TCMPPSDK'
+  pod 'TCMPPSDK','2.0.3'
   pod 'TCMPPExtScanCode'
   pod 'TCMPPExtMedia'
   pod 'TCMPPExtLBS'

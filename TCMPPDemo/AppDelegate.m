@@ -7,11 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "TMFMiniAppSDKManager.h"
-#import "MIniAppDemoSDKDelegateImpl.h"
+#import <TCMPPSDK/TCMPPSDK.h>
+
 #import "ViewController.h"
 #import "DemoUserInfo.h"
 #import "TMFAppletConfigManager.h"
+#import "MiniAppDemoSDKDelegateImpl.h"
 
 @interface AppDelegate ()
 
@@ -35,7 +36,7 @@
 }
 
 - (void)prepareApplet {
-    [TMFMiniAppSDKManager sharedInstance].miniAppSdkDelegate = [MIniAppDemoSDKDelegateImpl sharedInstance];
+    [TMFMiniAppSDKManager sharedInstance].miniAppSdkDelegate = [MiniAppDemoSDKDelegateImpl sharedInstance];
 
     TMFAppletConfigItem *item  = [[TMFAppletConfigManager sharedInstance] getCurrentConfigItem];
     if(item) {

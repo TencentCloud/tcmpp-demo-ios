@@ -1,5 +1,5 @@
 //
-//  MIniAppDemoSDKDelegateImpl.h
+//  MiniAppDemoSDKDelegateImpl.h
 //  TCMPPDemo
 //
 //  Created by stonelshi on 2023/4/19.
@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TMFMiniAppSDKDelegate.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface MIniAppDemoSDKDelegateImpl : NSObject <TMFMiniAppSDKDelegate>
+@interface MiniAppDemoSDKDelegateImpl : NSObject <TMFMiniAppSDKDelegate>
 
 + (instancetype)sharedInstance;
 

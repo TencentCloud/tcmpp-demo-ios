@@ -15,7 +15,7 @@
 		0702050C29EFC93200917E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0702050B29EFC93200917E77 /* Assets.xcassets */; };
 		0702050F29EFC93200917E77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702050D29EFC93200917E77 /* LaunchScreen.storyboard */; };
 		0702051229EFC93200917E77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051129EFC93200917E77 /* main.m */; };
-		0702051C29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051B29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m */; };
+		0702051C29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */; };
 		0702052329F0E75900917E77 /* DemoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051F29F0E75800917E77 /* DemoCollectionCell.m */; };
 		0702052429F0E75900917E77 /* DemoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702052029F0E75800917E77 /* DemoTableCell.m */; };
 		0702052529F0E75900917E77 /* MiniAppTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702052129F0E75900917E77 /* MiniAppTableCell.m */; };
@@ -53,8 +53,8 @@
 		0702050E29EFC93200917E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0702051029EFC93200917E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0702051129EFC93200917E77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0702051A29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIniAppDemoSDKDelegateImpl.h; sourceTree = "<group>"; };
-		0702051B29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIniAppDemoSDKDelegateImpl.m; sourceTree = "<group>"; };
+		0702051A29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniAppDemoSDKDelegateImpl.h; sourceTree = "<group>"; };
+		0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniAppDemoSDKDelegateImpl.m; sourceTree = "<group>"; };
 		0702051D29F0E75800917E77 /* DemoTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableCell.h; sourceTree = "<group>"; };
 		0702051E29F0E75800917E77 /* MiniAppTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniAppTableCell.h; sourceTree = "<group>"; };
 		0702051F29F0E75800917E77 /* DemoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionCell.m; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 				0702051F29F0E75800917E77 /* DemoCollectionCell.m */,
 				0702051D29F0E75800917E77 /* DemoTableCell.h */,
 				0702052029F0E75800917E77 /* DemoTableCell.m */,
-				0702051A29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.h */,
-				0702051B29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m */,
+				0702051A29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.h */,
+				0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */,
 				070204FF29EFC93000917E77 /* AppDelegate.h */,
 				0702050029EFC93000917E77 /* AppDelegate.m */,
 				0702050529EFC93000917E77 /* ViewController.h */,
@@ -353,7 +353,7 @@
 				0702052429F0E75900917E77 /* DemoTableCell.m in Sources */,
 				0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */,
 				076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */,
-				0702051C29EFD6CE00917E77 /* MIniAppDemoSDKDelegateImpl.m in Sources */,
+				0702051C29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m in Sources */,
 				0702050129EFC93000917E77 /* AppDelegate.m in Sources */,
 				076F0DC02B20247400470C46 /* TMATestView.m in Sources */,
 				0702052529F0E75900917E77 /* MiniAppTableCell.m in Sources */,

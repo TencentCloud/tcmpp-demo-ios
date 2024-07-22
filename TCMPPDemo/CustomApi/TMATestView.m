@@ -7,7 +7,7 @@
 //
 
 #import "TMATestView.h"
-#import "TMAExternalJSPlugin.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 #import "DemoUtils.h"
 
 @interface TMATestView () <TMAExternalElementView>

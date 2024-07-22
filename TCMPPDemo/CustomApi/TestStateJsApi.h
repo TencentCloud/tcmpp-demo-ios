@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TMAExternalJSPlugin.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

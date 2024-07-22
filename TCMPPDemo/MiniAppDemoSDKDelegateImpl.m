@@ -1,23 +1,23 @@
 //
-//  MIniAppDemoSDKDelegateImpl.m
+//  MiniAppDemoSDKDelegateImpl.m
 //  TCMPPDemo
 //
 //  Created by stonelshi on 2023/4/19.
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
-#import "MIniAppDemoSDKDelegateImpl.h"
-#import "TMFMiniAppSDKManager.h"
-#import "TMAConfigDefine.h"
+#import "MiniAppDemoSDKDelegateImpl.h"
+#import <TCMPPSDK/TCMPPSDK.h>
+
 #import "DemoUserInfo.h"
 
-@implementation MIniAppDemoSDKDelegateImpl
+@implementation MiniAppDemoSDKDelegateImpl
 
 + (instancetype)sharedInstance {
-    static MIniAppDemoSDKDelegateImpl *_imp;
+    static MiniAppDemoSDKDelegateImpl *_imp;
     static dispatch_once_t _token;
     dispatch_once(&_token, ^{
-        _imp = [MIniAppDemoSDKDelegateImpl new];
+        _imp = [MiniAppDemoSDKDelegateImpl new];
     });
     return _imp;
 }

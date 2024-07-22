@@ -8,8 +8,9 @@
 
 #import "DebugInfoController.h"
 #import "TMFAppletConfigListViewController.h"
-#import "TMFMiniAppSDKManager.h"
 #import "DemoUtils.h"
+
+#import <TCMPPSDK/TCMPPSDK.h>
 
 #import <sys/sysctl.h>
 

@@ -7,12 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "TMFCodeScannerController.h"
-#import "TMFMiniAppSDKManager.h"
 #import "DemoTableCell.h"
 #import "MiniAppTableCell.h"
 #import "DebugInfoController.h"
 #import "SearchResultViewController.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 
 #import "TCMPPPayView.h"
 
@@ -23,7 +22,7 @@
 
 NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcmpp.apps.change.notification";
 
-@interface ViewController () <TMFCodeScannerControllerDelegate, UITableViewDelegate, UITableViewDataSource, DemoTableCellDelegate,UISearchResultsUpdating,UISearchBarDelegate>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, DemoTableCellDelegate,UISearchResultsUpdating,UISearchBarDelegate>
 // list of preset applet demos
 @property (nonatomic, strong) NSMutableArray<TMFMiniAppInfo *> *demoList;
 // List of recently used applets
@@ -194,9 +193,11 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
 }
 
 - (void)openQRCodeController {
-    TMFCodeScannerController *viewController = [[TMFCodeScannerController alloc] init];
-    viewController.delegate = self;
-    [self.navigationController pushViewController:viewController animated:YES];
+    [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithQRCodeWithParentVC:self completion:^(NSError * _Nullable err) {
+        if(err) {
+            [self showErrorInfo:err];
+        }
+    }];
 }
 
 - (void)openDebugInfoController {
@@ -248,35 +249,6 @@ NSNotificationName const TMF_APPLET_LIST_CHANGE_NOTIFICATION = @"com.tencent.tcm
     // 处理搜索框的取消操作
     
     
-}
-
-#pragma TMFCodeScannerControllerDelegate
-
-- (void)codeScannerControllerDidCancel {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)codeScannerController:(TMFCodeScannerResource)type didScanResult:(NSArray<TMFCodeDetectorResult *> *)result {
-    if (result.count <= 0) {
-        return;
-    }
-
-    NSString *qrData = result[0].data;
-
-    NSMutableArray *tempVCA = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
-    for (UIViewController *tempVC in tempVCA) {
-        if ([tempVC isKindOfClass:[TMFCodeScannerController class]]) {
-            [tempVCA removeObject:tempVC];
-            break;
-        }
-    }
-    self.navigationController.viewControllers = tempVCA;
-
-    [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithQrData:qrData parentVC:self completion:^(NSError *_Nonnull error) {
-        if(error) {
-            [self showErrorInfo:error];
-        }
-    }];
 }
 
 #pragma mark ====== UITableViewDelegate ======

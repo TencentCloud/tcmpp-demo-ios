@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TMFMiniAppSDKManager.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 
 @interface MiniAppTableCell : UITableViewCell
 @property (nonatomic, strong) TMFMiniAppInfo *appInfo;

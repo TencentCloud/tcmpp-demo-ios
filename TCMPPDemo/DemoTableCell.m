@@ -8,7 +8,7 @@
 
 #import "DemoTableCell.h"
 #import "DemoCollectionCell.h"
-#import "TMFMiniAppSDKManager.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 
 #define K_CELL @"cell"
 @interface DemoTableCell ()<UICollectionViewDelegate, UICollectionViewDataSource>

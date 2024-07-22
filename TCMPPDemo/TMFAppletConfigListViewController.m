@@ -9,7 +9,7 @@
 #import "TMFAppletConfigListViewController.h"
 #import "TMFAppletConfigInputViewController.h"
 #import "TMFAppletConfigManager.h"
-#import "TMFMiniAppSDKManager.h"
+#import <TCMPPSDK/TCMPPSDK.h>
 
 @interface TMFAppletConfigListViewController() <UITableViewDelegate,UITableViewDataSource>
 

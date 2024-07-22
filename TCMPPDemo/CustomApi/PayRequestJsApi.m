@@ -7,8 +7,8 @@
 //
 
 #import "PayRequestJsApi.h"
-#import "TMAExternalJSPlugin.h"
-#import "TMFMiniAppInfo.h"
+#import <TCMPPSDK/TCMPPSDK.h>
+
 #import "TCMPPPayView.h"
 
 @implementation PayRequestJsApi
