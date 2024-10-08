@@ -1,0 +1,25 @@
+/* 
+  InfoPlist.strings
+  TMF
+
+  Created by stonelshi on 2023/3/20.
+  Copyright © 2023 Tencent. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Asisten TCMPP";
+
+"NSBluetoothAlwaysUsageDescription" = "TCMPP memerlukan izin Anda agar komunikasi perangkat melalui Bluetooth dimungkinkan.";
+"NSBluetoothPeripheralUsageDescription" ="TCMPP memerlukan izin Anda agar komunikasi perangkat melalui Bluetooth dimungkinkan.";
+"NSCalendarsUsageDescription" ="TCMPP memerlukan izin Anda agar dapat mengakses kalender Anda.";
+"NSRemindersUsageDescription" = "TCMPP memerlukan izin Anda agar dapat mengakses pengingat Anda.";
+"NSCameraUsageDescription" ="TCMPP memerlukan izin Anda agar dapat mengakses kamera Anda.";
+"NSContactsUsageDescription" ="TCMPP memerlukan izin Anda agar dapat mengakses kontak Anda.";
+"NSLocationAlwaysUsageDescription" ="TCMPP memerlukan izin Anda agar dapat mengaktifkan layanan lokasi.";
+"NSLocationWhenInUseUsageDescription" ="TCMPP memerlukan izin Anda agar dapat mengaktifkan layanan lokasi.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "TCMPP memerlukan izin Anda agar dapat mengaktifkan layanan lokasi.";
+"NSMicrophoneUsageDescription" ="TCMPP memerlukan izin Anda agar dapat merekam audio.";
+"NSPhotoLibraryAddUsageDescription" ="TCMPP memerlukan izin Anda agar dapat menyimpan foto ke album.";
+"NSPhotoLibraryUsageDescription" ="TCMPP memerlukan izin Anda agar dapat mengakses album Anda.";
+"NSSpeechRecognitionUsageDescription" ="TCMPP memerlukan izin Anda agar dapat menggunakan pengenalan suara.";
+"NSAppleMusicUsageDescription" = "TCMPP memerlukan izin Anda agar dapat mengakses multimedia.";
+"NSFaceIDUsageDescription" = "TCMPP perlu menggunakan sidik jari atau FaceID untuk autentikasi.";

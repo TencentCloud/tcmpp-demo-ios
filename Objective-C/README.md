@@ -1,7 +1,5 @@
 English | [简体中文](./README_ZH.md)
 
-Objective-C | [Swift](./Swift/README.md)
-
 ### Steps
 
 #### 1 Add source and mini program dependency modules to the `Podfile` file in your project:

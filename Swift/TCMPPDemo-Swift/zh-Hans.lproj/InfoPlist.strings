@@ -1,0 +1,25 @@
+/* 
+  InfoPlist.strings
+  TCMPPDemo-Swift
+
+  Created by v_zwtzzhou on 2023/9/1.
+  
+*/
+
+"CFBundleDisplayName" = "TCMPP助手";
+
+"NSBluetoothAlwaysUsageDescription" = "TCMPP需要您的允许才能允许蓝牙与设备通信";
+"NSBluetoothPeripheralUsageDescription" ="TCMPP需要您的允许才能允许蓝牙与设备通信";
+"NSCalendarsUsageDescription" ="TCMPP需要您的允许才能访问日历";
+"NSRemindersUsageDescription" = "TCMPP需要您的允许才能访问提醒事项";
+"NSCameraUsageDescription" ="TCMPP需要您的允许才能使用照相机功能";
+"NSContactsUsageDescription" ="TCMPP需要您的允许才能访问您的通讯簿";
+"NSLocationAlwaysUsageDescription" ="TCMPP需要您的允许才能始终启用位置功能 ";
+"NSLocationWhenInUseUsageDescription" ="TCMPP需要您的允许才能始终启用位置功能 ";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "TCMPP需要您的允许才能始终启用位置功能 ";
+"NSMicrophoneUsageDescription" ="TCMPP需要您的允许才能录制";
+"NSPhotoLibraryAddUsageDescription" ="TCMPP需要您的允许才能将照片保存到相册 ";
+"NSPhotoLibraryUsageDescription" ="TCMPP需要您的允许才能访问相册";
+"NSSpeechRecognitionUsageDescription" ="TCMPP需要您的允许才能使用语音识别";
+"NSAppleMusicUsageDescription" = "TCMPP需要你的允许才能访问多媒体";
+"NSFaceIDUsageDescription" = "TCMPP需要使用指纹或者FaceID鉴权";

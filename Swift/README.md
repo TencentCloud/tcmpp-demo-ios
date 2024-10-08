@@ -1,7 +1,5 @@
 English | [简体中文](./README_ZH.md)
 
-Objective-C | [Swift](./Swift/README.md)
-
 ### Steps
 
 #### 1 Add source and mini program dependency modules to the `Podfile` file in your project:
@@ -39,19 +37,16 @@ In the following method in the project's `AppDelegate`, initialize the TMFApplet
 
 Reference Code:
 
-```objective-c
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	
-	// Code that needs to be added to the App--start
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
-    if(filePath) {
-       TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];
-       [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];
-    }    
-    // Code that needs to be added to the App--end
-    
-    return YES;
-}    
+```swift
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let configItem = TMFAppletConfigManager.shared.getCurrentConfigItem();
+        let filePath = Bundle.main.path(forResource: "tcmpp-ios-configurations", ofType: "json");
+        if ((filePath) != nil){
+            let config = TMAServerConfig(file: filePath!);
+            TMFMiniAppSDKManager.sharedInstance().setConfiguration(config);
+        }
+        return true;
+    }  
 
 ```
 
@@ -63,11 +58,10 @@ When opening a mini program, it will first determine whether there is a cached m
 
 If there is a new version, download the new version of the mini program, and the new version of the mini program will be used the next time you open it; if there is no new version, do nothing.
 
-```objective-c
-NSString *appId = @"mini program id";
-// open the mini program   
-[[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithAppID:appId parentVC:self completion:^(NSError *_Nullable error) {
- 		NSLog(@"open applet error:%@", error);
-      }];
+```swift
+let appId = "mini program id"
+TMFMiniAppSDKManager.sharedInstance().startUpMiniApp(withAppID: info.appId, parentVC: self) { (error) in
+	self.showErrorInfo(error)
+}
 ```
 

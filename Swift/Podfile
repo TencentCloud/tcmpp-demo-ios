@@ -1,0 +1,19 @@
+source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
+
+target 'TCMPPDemo-Swift' do
+  platform :ios, "11.0"
+
+  # Pods for TCMPPDemo-Swift
+  pod "TCMPPSDK"
+  pod 'TCMPPExtScanCode'
+  pod 'TCMPPExtMedia'
+  pod 'TCMPPExtLBS'
+  pod 'TCMPPExtBLE'
+  pod 'TCMPPExtContact'
+  pod 'TCMPPExtClipBoard'
+  pod 'TCMPPExtCalendar'
+  pod 'TCMPPExtAuthentication'
+  pod 'TCMPPExtMDNS'
+  pod 'TCMPPExtNetwork'
+  
+end

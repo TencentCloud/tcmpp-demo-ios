@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0701642429FB7B39006FD73B /* default_mini_apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 0701642329FB7B39006FD73B /* default_mini_apps.json */; };
+		0702050129EFC93000917E77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702050029EFC93000917E77 /* AppDelegate.m */; };
+		0702050A29EFC93000917E77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702050829EFC93000917E77 /* Main.storyboard */; };
+		0702050C29EFC93200917E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0702050B29EFC93200917E77 /* Assets.xcassets */; };
+		0702050F29EFC93200917E77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702050D29EFC93200917E77 /* LaunchScreen.storyboard */; };
+		0702051229EFC93200917E77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051129EFC93200917E77 /* main.m */; };
+		0702051C29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */; };
+		0702052F29F12A6C00917E77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702052D29F12A6C00917E77 /* InfoPlist.strings */; };
+		0702053229F12B3400917E77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702053429F12B3400917E77 /* Localizable.strings */; };
+		0711239A2A05230200ED2244 /* DemoUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 071123992A05230200ED2244 /* DemoUserInfo.m */; };
+		0711239C2A052B5F00ED2244 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0711239B2A052B5F00ED2244 /* avatar.png */; };
+		0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61629F6554D00444C1E /* TCMPPPayView.m */; };
+		0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61929F665E200444C1E /* PayRequestJsApi.m */; };
+		074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */; };
+		076F0DC02B20247400470C46 /* TMATestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DBF2B20247400470C46 /* TMATestView.m */; };
+		076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC52B202C1600470C46 /* TestStateJsApi.m */; };
+		076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC82B202C6B00470C46 /* StateEventTest.m */; };
+		07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */; };
+		EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */; };
+		F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12B2C61F923000F46B6 /* CustomBundle.m */; };
+		F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12D2C61F923000F46B6 /* TCMPPCommonTools.m */; };
+		F02FF1352C61F923000F46B6 /* UIColor+TCMPP.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12F2C61F923000F46B6 /* UIColor+TCMPP.m */; };
+		F02FF1362C61F923000F46B6 /* UIView+TCMPP.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1312C61F923000F46B6 /* UIView+TCMPP.m */; };
+		F02FF1452C61F98C000F46B6 /* TCMPPMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1372C61F98A000F46B6 /* TCMPPMenuView.m */; };
+		F02FF1462C61F98C000F46B6 /* TCMPPAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1382C61F98A000F46B6 /* TCMPPAppCell.m */; };
+		F02FF1472C61F98C000F46B6 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1392C61F98B000F46B6 /* ToastView.m */; };
+		F02FF1482C61F98C000F46B6 /* TCMPPLanguageSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF13E2C61F98B000F46B6 /* TCMPPLanguageSettingVC.m */; };
+		F02FF1492C61F98C000F46B6 /* TCMPPLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF13F2C61F98B000F46B6 /* TCMPPLoginManager.m */; };
+		F02FF14A2C61F98C000F46B6 /* TCMPPLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */; };
+		F02FF14B2C61F98C000F46B6 /* TCMPPMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1442C61F98C000F46B6 /* TCMPPMainVC.m */; };
+		F02FF14E2C61FA6D000F46B6 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF14D2C61FA6D000F46B6 /* LanguageManager.m */; };
+		F02FF1512C6200B3000F46B6 /* PaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1502C6200B3000F46B6 /* PaymentManager.m */; };
+		F0B291352C69AA6A00047AC6 /* TMFAppletConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B291332C69AA6A00047AC6 /* TMFAppletConfigManager.m */; };
+		F0B291382C69AACF00047AC6 /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B291372C69AACF00047AC6 /* DemoUtils.m */; };
+		F0B2913B2C69E6E000047AC6 /* TCMPPPaySucessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2913A2C69E6E000047AC6 /* TCMPPPaySucessVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0701642329FB7B39006FD73B /* default_mini_apps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = default_mini_apps.json; sourceTree = "<group>"; };
+		070204FC29EFC93000917E77 /* TCMPPDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCMPPDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		070204FF29EFC93000917E77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0702050029EFC93000917E77 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0702050929EFC93000917E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0702050B29EFC93200917E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0702050E29EFC93200917E77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0702051029EFC93200917E77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0702051129EFC93200917E77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0702051A29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniAppDemoSDKDelegateImpl.h; sourceTree = "<group>"; };
+		0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniAppDemoSDKDelegateImpl.m; sourceTree = "<group>"; };
+		0702052629F1293F00917E77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0702052729F1294000917E77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0702052E29F12A6C00917E77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0702053329F12B3400917E77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0702053529F12B3800917E77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0702053629F12D8300917E77 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		071123982A05230200ED2244 /* DemoUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUserInfo.h; sourceTree = "<group>"; };
+		071123992A05230200ED2244 /* DemoUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUserInfo.m; sourceTree = "<group>"; };
+		0711239B2A052B5F00ED2244 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		0720E61529F6554D00444C1E /* TCMPPPayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPayView.h; sourceTree = "<group>"; };
+		0720E61629F6554D00444C1E /* TCMPPPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayView.m; sourceTree = "<group>"; };
+		0720E61829F665E200444C1E /* PayRequestJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRequestJsApi.h; sourceTree = "<group>"; };
+		0720E61929F665E200444C1E /* PayRequestJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRequestJsApi.m; sourceTree = "<group>"; };
+		072159042B849DFC002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		072159052B84A053002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-custom-config.json"; sourceTree = "<group>"; };
+		076F0DBE2B20247400470C46 /* TMATestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMATestView.h; sourceTree = "<group>"; };
+		076F0DBF2B20247400470C46 /* TMATestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMATestView.m; sourceTree = "<group>"; };
+		076F0DC42B202C1600470C46 /* TestStateJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestStateJsApi.h; sourceTree = "<group>"; };
+		076F0DC52B202C1600470C46 /* TestStateJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestStateJsApi.m; sourceTree = "<group>"; };
+		076F0DC72B202C6B00470C46 /* StateEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateEventTest.h; sourceTree = "<group>"; };
+		076F0DC82B202C6B00470C46 /* StateEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateEventTest.m; sourceTree = "<group>"; };
+		07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-ios-configurations.json"; sourceTree = "<group>"; };
+		6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F02FF12A2C61F923000F46B6 /* CustomBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBundle.h; sourceTree = "<group>"; };
+		F02FF12B2C61F923000F46B6 /* CustomBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBundle.m; sourceTree = "<group>"; };
+		F02FF12C2C61F923000F46B6 /* TCMPPCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPCommonTools.h; sourceTree = "<group>"; };
+		F02FF12D2C61F923000F46B6 /* TCMPPCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPCommonTools.m; sourceTree = "<group>"; };
+		F02FF12E2C61F923000F46B6 /* UIColor+TCMPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TCMPP.h"; sourceTree = "<group>"; };
+		F02FF12F2C61F923000F46B6 /* UIColor+TCMPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TCMPP.m"; sourceTree = "<group>"; };
+		F02FF1302C61F923000F46B6 /* UIView+TCMPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TCMPP.h"; sourceTree = "<group>"; };
+		F02FF1312C61F923000F46B6 /* UIView+TCMPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TCMPP.m"; sourceTree = "<group>"; };
+		F02FF1372C61F98A000F46B6 /* TCMPPMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPMenuView.m; sourceTree = "<group>"; };
+		F02FF1382C61F98A000F46B6 /* TCMPPAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPAppCell.m; sourceTree = "<group>"; };
+		F02FF1392C61F98B000F46B6 /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
+		F02FF13A2C61F98B000F46B6 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
+		F02FF13B2C61F98B000F46B6 /* TCMPPLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPLoginVC.h; sourceTree = "<group>"; };
+		F02FF13C2C61F98B000F46B6 /* TCMPPAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPAppCell.h; sourceTree = "<group>"; };
+		F02FF13D2C61F98B000F46B6 /* TCMPPMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPMenuView.h; sourceTree = "<group>"; };
+		F02FF13E2C61F98B000F46B6 /* TCMPPLanguageSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPLanguageSettingVC.m; sourceTree = "<group>"; };
+		F02FF13F2C61F98B000F46B6 /* TCMPPLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPLoginManager.m; sourceTree = "<group>"; };
+		F02FF1402C61F98B000F46B6 /* TCMPPLanguageSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPLanguageSettingVC.h; sourceTree = "<group>"; };
+		F02FF1412C61F98B000F46B6 /* TCMPPMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPMainVC.h; sourceTree = "<group>"; };
+		F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPLoginVC.m; sourceTree = "<group>"; };
+		F02FF1432C61F98C000F46B6 /* TCMPPLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPLoginManager.h; sourceTree = "<group>"; };
+		F02FF1442C61F98C000F46B6 /* TCMPPMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPMainVC.m; sourceTree = "<group>"; };
+		F02FF14C2C61FA6C000F46B6 /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
+		F02FF14D2C61FA6D000F46B6 /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
+		F02FF14F2C6200B3000F46B6 /* PaymentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentManager.h; sourceTree = "<group>"; };
+		F02FF1502C6200B3000F46B6 /* PaymentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentManager.m; sourceTree = "<group>"; };
+		F0B291322C64642C00047AC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B291332C69AA6A00047AC6 /* TMFAppletConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFAppletConfigManager.m; sourceTree = "<group>"; };
+		F0B291342C69AA6A00047AC6 /* TMFAppletConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigManager.h; sourceTree = "<group>"; };
+		F0B291362C69AACF00047AC6 /* DemoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtils.h; sourceTree = "<group>"; };
+		F0B291372C69AACF00047AC6 /* DemoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
+		F0B291392C69E6E000047AC6 /* TCMPPPaySucessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPaySucessVC.h; sourceTree = "<group>"; };
+		F0B2913A2C69E6E000047AC6 /* TCMPPPaySucessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPaySucessVC.m; sourceTree = "<group>"; };
+		F0B2917B2C6DA07C00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		F0B2917C2C6DA07C00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F0B2917D2C6DA07D00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B2917E2C6DA07D00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F0B2917F2C6DA5E600047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Main.strings; sourceTree = "<group>"; };
+		F0B291802C6DA5E600047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F0B291812C6DA5E600047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B291822C6DA5E600047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCMPPDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		070204F929EFC93000917E77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		070204F329EFC93000917E77 = {
+			isa = PBXGroup;
+			children = (
+				070204FE29EFC93000917E77 /* TCMPPDemo */,
+				070204FD29EFC93000917E77 /* Products */,
+				D4E505277146F5C07204D94A /* Pods */,
+				C7FB980E53686773FC157288 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		070204FD29EFC93000917E77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				070204FC29EFC93000917E77 /* TCMPPDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		070204FE29EFC93000917E77 /* TCMPPDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF1322C61F923000F46B6 /* Utils */,
+				07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */,
+				0701642329FB7B39006FD73B /* default_mini_apps.json */,
+				076F0DCC2B202EB400470C46 /* CustomApi */,
+				076F0DCA2B202E5000470C46 /* Resources */,
+				0702052D29F12A6C00917E77 /* InfoPlist.strings */,
+				F02FF14C2C61FA6C000F46B6 /* LanguageManager.h */,
+				F02FF14D2C61FA6D000F46B6 /* LanguageManager.m */,
+				0702051A29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.h */,
+				0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */,
+				F0B291342C69AA6A00047AC6 /* TMFAppletConfigManager.h */,
+				F0B291332C69AA6A00047AC6 /* TMFAppletConfigManager.m */,
+				070204FF29EFC93000917E77 /* AppDelegate.h */,
+				0702050029EFC93000917E77 /* AppDelegate.m */,
+				F02FF13C2C61F98B000F46B6 /* TCMPPAppCell.h */,
+				F02FF1382C61F98A000F46B6 /* TCMPPAppCell.m */,
+				F02FF1402C61F98B000F46B6 /* TCMPPLanguageSettingVC.h */,
+				F02FF13E2C61F98B000F46B6 /* TCMPPLanguageSettingVC.m */,
+				F02FF1432C61F98C000F46B6 /* TCMPPLoginManager.h */,
+				F02FF13F2C61F98B000F46B6 /* TCMPPLoginManager.m */,
+				F02FF13B2C61F98B000F46B6 /* TCMPPLoginVC.h */,
+				F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */,
+				F02FF1412C61F98B000F46B6 /* TCMPPMainVC.h */,
+				F02FF1442C61F98C000F46B6 /* TCMPPMainVC.m */,
+				F02FF13D2C61F98B000F46B6 /* TCMPPMenuView.h */,
+				F02FF1372C61F98A000F46B6 /* TCMPPMenuView.m */,
+				F02FF13A2C61F98B000F46B6 /* ToastView.h */,
+				F02FF1392C61F98B000F46B6 /* ToastView.m */,
+				0702050829EFC93000917E77 /* Main.storyboard */,
+				0702050B29EFC93200917E77 /* Assets.xcassets */,
+				0702050D29EFC93200917E77 /* LaunchScreen.storyboard */,
+				0702051029EFC93200917E77 /* Info.plist */,
+				0702051129EFC93200917E77 /* main.m */,
+				0702053429F12B3400917E77 /* Localizable.strings */,
+				0702053629F12D8300917E77 /* PrefixHeader.pch */,
+				071123982A05230200ED2244 /* DemoUserInfo.h */,
+				071123992A05230200ED2244 /* DemoUserInfo.m */,
+				F02FF14F2C6200B3000F46B6 /* PaymentManager.h */,
+				F02FF1502C6200B3000F46B6 /* PaymentManager.m */,
+			);
+			path = TCMPPDemo;
+			sourceTree = "<group>";
+		};
+		076F0DCA2B202E5000470C46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0711239B2A052B5F00ED2244 /* avatar.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		076F0DCC2B202EB400470C46 /* CustomApi */ = {
+			isa = PBXGroup;
+			children = (
+				076F0DC72B202C6B00470C46 /* StateEventTest.h */,
+				076F0DC82B202C6B00470C46 /* StateEventTest.m */,
+				076F0DBE2B20247400470C46 /* TMATestView.h */,
+				076F0DBF2B20247400470C46 /* TMATestView.m */,
+				0720E61529F6554D00444C1E /* TCMPPPayView.h */,
+				0720E61629F6554D00444C1E /* TCMPPPayView.m */,
+				0720E61829F665E200444C1E /* PayRequestJsApi.h */,
+				074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */,
+				0720E61929F665E200444C1E /* PayRequestJsApi.m */,
+				076F0DC42B202C1600470C46 /* TestStateJsApi.h */,
+				076F0DC52B202C1600470C46 /* TestStateJsApi.m */,
+				F0B291392C69E6E000047AC6 /* TCMPPPaySucessVC.h */,
+				F0B2913A2C69E6E000047AC6 /* TCMPPPaySucessVC.m */,
+			);
+			path = CustomApi;
+			sourceTree = "<group>";
+		};
+		C7FB980E53686773FC157288 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4E505277146F5C07204D94A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */,
+				E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F02FF1322C61F923000F46B6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F02FF12A2C61F923000F46B6 /* CustomBundle.h */,
+				F02FF12B2C61F923000F46B6 /* CustomBundle.m */,
+				F0B291362C69AACF00047AC6 /* DemoUtils.h */,
+				F0B291372C69AACF00047AC6 /* DemoUtils.m */,
+				F02FF12C2C61F923000F46B6 /* TCMPPCommonTools.h */,
+				F02FF12D2C61F923000F46B6 /* TCMPPCommonTools.m */,
+				F02FF12E2C61F923000F46B6 /* UIColor+TCMPP.h */,
+				F02FF12F2C61F923000F46B6 /* UIColor+TCMPP.m */,
+				F02FF1302C61F923000F46B6 /* UIView+TCMPP.h */,
+				F02FF1312C61F923000F46B6 /* UIView+TCMPP.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		070204FB29EFC93000917E77 /* TCMPPDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0702051529EFC93200917E77 /* Build configuration list for PBXNativeTarget "TCMPPDemo" */;
+			buildPhases = (
+				879B3BBBB2270F861A0AC327 /* [CP] Check Pods Manifest.lock */,
+				070204F829EFC93000917E77 /* Sources */,
+				070204F929EFC93000917E77 /* Frameworks */,
+				070204FA29EFC93000917E77 /* Resources */,
+				EE6EAF85C6F9945B5C1D51B4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TCMPPDemo;
+			productName = TCMPPDemo;
+			productReference = 070204FC29EFC93000917E77 /* TCMPPDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		070204F429EFC93000917E77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					070204FB29EFC93000917E77 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 070204F729EFC93000917E77 /* Build configuration list for PBXProject "TCMPPDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+				"zh-HK",
+				fr,
+				id,
+			);
+			mainGroup = 070204F329EFC93000917E77;
+			productRefGroup = 070204FD29EFC93000917E77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				070204FB29EFC93000917E77 /* TCMPPDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		070204FA29EFC93000917E77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0701642429FB7B39006FD73B /* default_mini_apps.json in Resources */,
+				07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */,
+				0702050F29EFC93200917E77 /* LaunchScreen.storyboard in Resources */,
+				0702053229F12B3400917E77 /* Localizable.strings in Resources */,
+				0702050C29EFC93200917E77 /* Assets.xcassets in Resources */,
+				0711239C2A052B5F00ED2244 /* avatar.png in Resources */,
+				0702050A29EFC93000917E77 /* Main.storyboard in Resources */,
+				074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */,
+				0702052F29F12A6C00917E77 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		879B3BBBB2270F861A0AC327 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TCMPPDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE6EAF85C6F9945B5C1D51B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		070204F829EFC93000917E77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F02FF1362C61F923000F46B6 /* UIView+TCMPP.m in Sources */,
+				F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */,
+				F02FF1352C61F923000F46B6 /* UIColor+TCMPP.m in Sources */,
+				F02FF1472C61F98C000F46B6 /* ToastView.m in Sources */,
+				F02FF1492C61F98C000F46B6 /* TCMPPLoginManager.m in Sources */,
+				0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */,
+				F02FF14E2C61FA6D000F46B6 /* LanguageManager.m in Sources */,
+				F02FF14B2C61F98C000F46B6 /* TCMPPMainVC.m in Sources */,
+				0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */,
+				F02FF1462C61F98C000F46B6 /* TCMPPAppCell.m in Sources */,
+				076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */,
+				0702051C29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m in Sources */,
+				0702050129EFC93000917E77 /* AppDelegate.m in Sources */,
+				076F0DC02B20247400470C46 /* TMATestView.m in Sources */,
+				F02FF1512C6200B3000F46B6 /* PaymentManager.m in Sources */,
+				F02FF1452C61F98C000F46B6 /* TCMPPMenuView.m in Sources */,
+				076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */,
+				F02FF14A2C61F98C000F46B6 /* TCMPPLoginVC.m in Sources */,
+				F0B2913B2C69E6E000047AC6 /* TCMPPPaySucessVC.m in Sources */,
+				F02FF1482C61F98C000F46B6 /* TCMPPLanguageSettingVC.m in Sources */,
+				0702051229EFC93200917E77 /* main.m in Sources */,
+				F0B291382C69AACF00047AC6 /* DemoUtils.m in Sources */,
+				F0B291352C69AA6A00047AC6 /* TMFAppletConfigManager.m in Sources */,
+				F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */,
+				0711239A2A05230200ED2244 /* DemoUserInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0702050829EFC93000917E77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0702050929EFC93000917E77 /* Base */,
+				0702052629F1293F00917E77 /* zh-Hans */,
+				F0B2917B2C6DA07C00047AC6 /* fr */,
+				F0B2917F2C6DA5E600047AC6 /* id */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0702050D29EFC93200917E77 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0702050E29EFC93200917E77 /* Base */,
+				0702052729F1294000917E77 /* zh-Hans */,
+				F0B2917C2C6DA07C00047AC6 /* fr */,
+				F0B291802C6DA5E600047AC6 /* id */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0702052D29F12A6C00917E77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0702052E29F12A6C00917E77 /* zh-Hans */,
+				072159052B84A053002BBA97 /* zh-HK */,
+				F0B291322C64642C00047AC6 /* en */,
+				F0B2917D2C6DA07D00047AC6 /* fr */,
+				F0B291812C6DA5E600047AC6 /* id */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0702053429F12B3400917E77 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0702053329F12B3400917E77 /* zh-Hans */,
+				0702053529F12B3800917E77 /* en */,
+				072159042B849DFC002BBA97 /* zh-HK */,
+				F0B2917E2C6DA07D00047AC6 /* fr */,
+				F0B291822C6DA5E600047AC6 /* id */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0702051329EFC93200917E77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0702051429EFC93200917E77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0702051629EFC93200917E77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TCMPPDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "TCMPP needs your permission to access calendar";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TCMPP needs your permission to use camera function";
+				INFOPLIST_KEY_NSContactsUsageDescription = "TCMPP needs your permission to access your address book";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TCMPP Authentication with TouchId or FaceID";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TCMPP requires your consent to record";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TCMPP needs your permission to save photos to album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TCMPP needs your permission to access the album";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "TCMPP needs your permission to allow Reminder";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "TCMPP needs your consent to use speech recognition";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tcmpp_demo;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0702051729EFC93200917E77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TCMPPDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "TCMPP needs your permission to access calendar";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TCMPP needs your permission to use camera function";
+				INFOPLIST_KEY_NSContactsUsageDescription = "TCMPP needs your permission to access your address book";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TCMPP Authentication with TouchId or FaceID";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TCMPP requires your consent to record";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TCMPP needs your permission to save photos to album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TCMPP needs your permission to access the album";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "TCMPP needs your permission to allow Reminder";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "TCMPP needs your consent to use speech recognition";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tcmpp_demo;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		070204F729EFC93000917E77 /* Build configuration list for PBXProject "TCMPPDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0702051329EFC93200917E77 /* Debug */,
+				0702051429EFC93200917E77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0702051529EFC93200917E77 /* Build configuration list for PBXNativeTarget "TCMPPDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0702051629EFC93200917E77 /* Debug */,
+				0702051729EFC93200917E77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 070204F429EFC93000917E77 /* Project object */;
+}

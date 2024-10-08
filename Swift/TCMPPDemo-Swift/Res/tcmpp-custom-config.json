@@ -1,0 +1,10 @@
+{
+    "extApi":[{
+            "name": "requestPayment",
+            "sync": false,
+            "params": {
+                "data": ""
+            }
+        }
+    ]
+}

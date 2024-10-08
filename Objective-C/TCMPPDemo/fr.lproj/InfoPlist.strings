@@ -1,0 +1,25 @@
+/* 
+  InfoPlist.strings
+  TMF
+
+  Created by stonelshi on 2023/3/20.
+  Copyright © 2023 Tencent. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Assistant TCMPP";
+
+"NSBluetoothAlwaysUsageDescription" = "TCMPP a besoin de votre autorisation pour permettre la communication des appareils via Bluetooth.";
+"NSBluetoothPeripheralUsageDescription" ="TCMPP a besoin de votre autorisation pour permettre la communication des appareils via Bluetooth.";
+"NSCalendarsUsageDescription" ="TCMPP a besoin de votre autorisation pour accéder à votre calendrier.";
+"NSRemindersUsageDescription" = "TCMPP a besoin de votre autorisation pour accéder à vos rappels.";
+"NSCameraUsageDescription" ="TCMPP a besoin de votre autorisation pour accéder à votre caméra.";
+"NSContactsUsageDescription" ="TCMPP a besoin de votre autorisation pour accéder à vos contacts.";
+"NSLocationAlwaysUsageDescription" ="TCMPP a besoin de votre autorisation pour accéder à vos services de localisation.";
+"NSLocationWhenInUseUsageDescription" ="TCMPP a besoin de votre autorisation pour accéder à vos services de localisation.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "TCMPP a besoin de votre autorisation pour accéder à vos services de localisation.";
+"NSMicrophoneUsageDescription" ="TCMPP a besoin de votre autorisation pour enregistrer du son.";
+"NSPhotoLibraryAddUsageDescription" ="TCMPP a besoin de votre autorisation pour enregistrer des photos dans l'album.";
+"NSPhotoLibraryUsageDescription" ="TCMPP a besoin de votre autorisation pour accéder à votre album.";
+"NSSpeechRecognitionUsageDescription" ="TCMPP a besoin de votre autorisation pour utiliser la reconnaissance vocale.";
+"NSAppleMusicUsageDescription" = "TCMPP a besoin de votre autorisation pour accéder au multimédia.";
+"NSFaceIDUsageDescription" = "TCMPP doit utiliser l'empreinte digitale ou FaceID pour l'authentification.";

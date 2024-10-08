@@ -1,7 +1,5 @@
 [English](./README.md) | 简体中文
 
-Objective-C | [Swift](./Swift/README.md)
-
 ### 操作步骤
 
 #### 1 在您项目中的 `Podfile` 文件里添加源及小程序依赖模块：

@@ -1,7 +1,5 @@
 [English](./README.md) | 简体中文
 
-Objective-C | [Swift](./Swift/README.md)
-
 ### 操作步骤
 
 #### 1 在您项目中的 `Podfile` 文件里添加源及小程序依赖模块：
@@ -40,19 +38,16 @@ Objective-C | [Swift](./Swift/README.md)
 
 参考代码：
 
-```objective-c
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	
-	// 需要添加至App中的代码--start
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
-    if(filePath) {
-       TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];
-       [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];
-    }    
-    // 需要添加至App中的代码--end
-    
-    return YES;
-}    
+```swift
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let configItem = TMFAppletConfigManager.shared.getCurrentConfigItem();
+        let filePath = Bundle.main.path(forResource: "tcmpp-ios-configurations", ofType: "json");
+        if ((filePath) != nil){
+            let config = TMAServerConfig(file: filePath!);
+            TMFMiniAppSDKManager.sharedInstance().setConfiguration(config);
+        }
+        return true;
+    }  
 
 ```
 
@@ -64,11 +59,10 @@ Objective-C | [Swift](./Swift/README.md)
 
 如果有新版本，则下载新版小程序，下次打开时，就会使用新版小程序；如果没有新版本，则什么也不做。
 
-```objective-c
-NSString *appId = @"小程序id";
-// 打开小程序   
-[[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithAppID:appId parentVC:self completion:^(NSError *_Nullable error) {
- 		NSLog(@"open applet error:%@", error);
-      }];
+```swift
+let appId = "mini program id"
+TMFMiniAppSDKManager.sharedInstance().startUpMiniApp(withAppID: info.appId, parentVC: self) { (error) in
+	self.showErrorInfo(error)
+}
 ```
 

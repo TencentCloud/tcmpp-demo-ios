@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68122B9E2AA5D85F00513013 /* PayRequestJSApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68122B9D2AA5D85F00513013 /* PayRequestJSApi.swift */; };
+		685F286B2A9EDCE6009BC524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F286A2A9EDCE6009BC524 /* AppDelegate.swift */; };
+		685F28722A9EDCE6009BC524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685F28702A9EDCE6009BC524 /* Main.storyboard */; };
+		685F28742A9EDCE7009BC524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685F28732A9EDCE7009BC524 /* Assets.xcassets */; };
+		685F28772A9EDCE7009BC524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685F28752A9EDCE7009BC524 /* LaunchScreen.storyboard */; };
+		685F289F2A9EFC56009BC524 /* MIniAppDemoSDKDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F289E2A9EFC56009BC524 /* MIniAppDemoSDKDelegateImpl.swift */; };
+		685F28A12A9F15B4009BC524 /* DemoUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F28A02A9F15B4009BC524 /* DemoUserInfo.swift */; };
+		685F28A42A9F23FA009BC524 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 685F28A32A9F23FA009BC524 /* avatar.png */; };
+		685F28B02AA03C37009BC524 /* TCMPPPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F28AF2AA03C37009BC524 /* TCMPPPayView.swift */; };
+		685F28B62AA184F5009BC524 /* default_mini_apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 685F28B52AA184F5009BC524 /* default_mini_apps.json */; };
+		685F28CC2AA1EAAC009BC524 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685F28CE2AA1EAAC009BC524 /* Localizable.strings */; };
+		685F28D22AA1ED22009BC524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D42AA1ED22009BC524 /* InfoPlist.strings */; };
+		685F28D62AA1ED4F009BC524 /* tcmpp-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D52AA1ED4F009BC524 /* tcmpp-ios-configurations.json */; };
+		68891EE62B18C67D005A9A95 /* tcmpp-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 68891EE52B18C67D005A9A95 /* tcmpp-custom-config.json */; };
+		F0B291602C6AF77600047AC6 /* TCMPPCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */; };
+		F0B291622C6AF87E00047AC6 /* TCMPPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */; };
+		F0B291642C6AFC2100047AC6 /* DemoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291632C6AFC2100047AC6 /* DemoUtils.swift */; };
+		F0B291662C6AFC8700047AC6 /* CustomBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291652C6AFC8700047AC6 /* CustomBundle.swift */; };
+		F0B291682C6AFD0700047AC6 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291672C6AFD0700047AC6 /* LanguageManager.swift */; };
+		F0B2916A2C6AFE2000047AC6 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291692C6AFE2000047AC6 /* ToastView.swift */; };
+		F0B2916C2C6AFF4300047AC6 /* TCMPPLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916B2C6AFF4300047AC6 /* TCMPPLoginManager.swift */; };
+		F0B2916E2C6B062900047AC6 /* TCMPPLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916D2C6B062900047AC6 /* TCMPPLoginVC.swift */; };
+		F0B291702C6B082400047AC6 /* TCMPPAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916F2C6B082400047AC6 /* TCMPPAppCell.swift */; };
+		F0B291722C6C551D00047AC6 /* TCMPPMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291712C6C551D00047AC6 /* TCMPPMainVC.swift */; };
+		F0B291742C6C55D200047AC6 /* TCMPPMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291732C6C55D200047AC6 /* TCMPPMenuView.swift */; };
+		F0B291762C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291752C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift */; };
+		F0B291782C6C95F100047AC6 /* PaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291772C6C95F100047AC6 /* PaymentManager.swift */; };
+		F0B2917A2C6C9B7800047AC6 /* TCMPPPaySucessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291792C6C9B7800047AC6 /* TCMPPPaySucessVC.swift */; };
+		F0B2918D2C6F28EE00047AC6 /* TMFAppletConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2918C2C6F28EE00047AC6 /* TMFAppletConfigManager.swift */; };
+		F3A1F00F59FBBD5C394D1F72 /* libPods-TCMPPDemo-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55D5096CEFBAA8474E182D33 /* Pods-TCMPPDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo-Swift.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		68122B9D2AA5D85F00513013 /* PayRequestJSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRequestJSApi.swift; sourceTree = "<group>"; };
+		685F28672A9EDCE6009BC524 /* TCMPPDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCMPPDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		685F286A2A9EDCE6009BC524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		685F28712A9EDCE6009BC524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		685F28732A9EDCE7009BC524 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		685F28762A9EDCE7009BC524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		685F28782A9EDCE7009BC524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685F289B2A9EFA79009BC524 /* TCMPPDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TCMPPDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		685F289E2A9EFC56009BC524 /* MIniAppDemoSDKDelegateImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIniAppDemoSDKDelegateImpl.swift; sourceTree = "<group>"; };
+		685F28A02A9F15B4009BC524 /* DemoUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUserInfo.swift; sourceTree = "<group>"; };
+		685F28A32A9F23FA009BC524 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		685F28AF2AA03C37009BC524 /* TCMPPPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPPayView.swift; sourceTree = "<group>"; };
+		685F28B52AA184F5009BC524 /* default_mini_apps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_mini_apps.json; sourceTree = "<group>"; };
+		685F28CD2AA1EAAC009BC524 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		685F28CF2AA1EBED009BC524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		685F28D32AA1ED22009BC524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		685F28D52AA1ED4F009BC524 /* tcmpp-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-ios-configurations.json"; sourceTree = "<group>"; };
+		68891EE52B18C67D005A9A95 /* tcmpp-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-custom-config.json"; sourceTree = "<group>"; };
+		ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCMPPDemo-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo-Swift.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPCommonTools.swift; sourceTree = "<group>"; };
+		F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPExtension.swift; sourceTree = "<group>"; };
+		F0B291632C6AFC2100047AC6 /* DemoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUtils.swift; sourceTree = "<group>"; };
+		F0B291652C6AFC8700047AC6 /* CustomBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBundle.swift; sourceTree = "<group>"; };
+		F0B291672C6AFD0700047AC6 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		F0B291692C6AFE2000047AC6 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		F0B2916B2C6AFF4300047AC6 /* TCMPPLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPLoginManager.swift; sourceTree = "<group>"; };
+		F0B2916D2C6B062900047AC6 /* TCMPPLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPLoginVC.swift; sourceTree = "<group>"; };
+		F0B2916F2C6B082400047AC6 /* TCMPPAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPAppCell.swift; sourceTree = "<group>"; };
+		F0B291712C6C551D00047AC6 /* TCMPPMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPMainVC.swift; sourceTree = "<group>"; };
+		F0B291732C6C55D200047AC6 /* TCMPPMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPMenuView.swift; sourceTree = "<group>"; };
+		F0B291752C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPLanguageSettingVC.swift; sourceTree = "<group>"; };
+		F0B291772C6C95F100047AC6 /* PaymentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentManager.swift; sourceTree = "<group>"; };
+		F0B291792C6C9B7800047AC6 /* TCMPPPaySucessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPPaySucessVC.swift; sourceTree = "<group>"; };
+		F0B291832C6DDA2400047AC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B291842C6DDA3900047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		F0B291852C6DDA3900047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F0B291862C6DDA3900047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B291872C6DDA3900047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F0B291882C6DDA4B00047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Main.strings; sourceTree = "<group>"; };
+		F0B291892C6DDA4C00047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F0B2918A2C6DDA4C00047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B2918B2C6DDA4C00047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F0B2918C2C6F28EE00047AC6 /* TMFAppletConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMFAppletConfigManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		685F28642A9EDCE6009BC524 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A1F00F59FBBD5C394D1F72 /* libPods-TCMPPDemo-Swift.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		685F285E2A9EDCE6009BC524 = {
+			isa = PBXGroup;
+			children = (
+				685F28692A9EDCE6009BC524 /* TCMPPDemo-Swift */,
+				685F28682A9EDCE6009BC524 /* Products */,
+				7EFD5AAC412573067A0D3F34 /* Pods */,
+				AB82080513266B3B85BDFC58 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		685F28682A9EDCE6009BC524 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				685F28672A9EDCE6009BC524 /* TCMPPDemo-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		685F28692A9EDCE6009BC524 /* TCMPPDemo-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				685F28A52A9F240D009BC524 /* Res */,
+				685F28A22A9F23D4009BC524 /* Class */,
+				685F28A62A9F2419009BC524 /* Supports */,
+			);
+			path = "TCMPPDemo-Swift";
+			sourceTree = "<group>";
+		};
+		685F28A22A9F23D4009BC524 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2915E2C6AF76300047AC6 /* Utils */,
+				685F28A02A9F15B4009BC524 /* DemoUserInfo.swift */,
+				685F289E2A9EFC56009BC524 /* MIniAppDemoSDKDelegateImpl.swift */,
+				685F28AF2AA03C37009BC524 /* TCMPPPayView.swift */,
+				F0B2918C2C6F28EE00047AC6 /* TMFAppletConfigManager.swift */,
+				68122B9D2AA5D85F00513013 /* PayRequestJSApi.swift */,
+				F0B291672C6AFD0700047AC6 /* LanguageManager.swift */,
+				F0B291692C6AFE2000047AC6 /* ToastView.swift */,
+				F0B2916B2C6AFF4300047AC6 /* TCMPPLoginManager.swift */,
+				F0B2916D2C6B062900047AC6 /* TCMPPLoginVC.swift */,
+				F0B2916F2C6B082400047AC6 /* TCMPPAppCell.swift */,
+				F0B291712C6C551D00047AC6 /* TCMPPMainVC.swift */,
+				F0B291732C6C55D200047AC6 /* TCMPPMenuView.swift */,
+				F0B291752C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift */,
+				F0B291772C6C95F100047AC6 /* PaymentManager.swift */,
+				F0B291792C6C9B7800047AC6 /* TCMPPPaySucessVC.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		685F28A52A9F240D009BC524 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				68891EE52B18C67D005A9A95 /* tcmpp-custom-config.json */,
+				685F28D52AA1ED4F009BC524 /* tcmpp-ios-configurations.json */,
+				685F28B52AA184F5009BC524 /* default_mini_apps.json */,
+				685F28A32A9F23FA009BC524 /* avatar.png */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		685F28A62A9F2419009BC524 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				685F28D42AA1ED22009BC524 /* InfoPlist.strings */,
+				685F28CE2AA1EAAC009BC524 /* Localizable.strings */,
+				685F286A2A9EDCE6009BC524 /* AppDelegate.swift */,
+				685F28702A9EDCE6009BC524 /* Main.storyboard */,
+				685F28732A9EDCE7009BC524 /* Assets.xcassets */,
+				685F28752A9EDCE7009BC524 /* LaunchScreen.storyboard */,
+				685F28782A9EDCE7009BC524 /* Info.plist */,
+				685F289B2A9EFA79009BC524 /* TCMPPDemo-Swift-Bridging-Header.h */,
+			);
+			name = Supports;
+			sourceTree = "<group>";
+		};
+		7EFD5AAC412573067A0D3F34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */,
+				55D5096CEFBAA8474E182D33 /* Pods-TCMPPDemo-Swift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB82080513266B3B85BDFC58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0B2915E2C6AF76300047AC6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */,
+				F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */,
+				F0B291632C6AFC2100047AC6 /* DemoUtils.swift */,
+				F0B291652C6AFC8700047AC6 /* CustomBundle.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		685F28662A9EDCE6009BC524 /* TCMPPDemo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685F28912A9EDCE7009BC524 /* Build configuration list for PBXNativeTarget "TCMPPDemo-Swift" */;
+			buildPhases = (
+				9F5CF1696544DAB1BF7D7C9A /* [CP] Check Pods Manifest.lock */,
+				685F28632A9EDCE6009BC524 /* Sources */,
+				685F28642A9EDCE6009BC524 /* Frameworks */,
+				685F28652A9EDCE6009BC524 /* Resources */,
+				BAA5717F2C6717A5C2D7D7A7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TCMPPDemo-Swift";
+			productName = "TCMPPDemo-Swift";
+			productReference = 685F28672A9EDCE6009BC524 /* TCMPPDemo-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		685F285F2A9EDCE6009BC524 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					685F28662A9EDCE6009BC524 = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+					};
+				};
+			};
+			buildConfigurationList = 685F28622A9EDCE6009BC524 /* Build configuration list for PBXProject "TCMPPDemo-Swift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+				fr,
+				id,
+			);
+			mainGroup = 685F285E2A9EDCE6009BC524;
+			productRefGroup = 685F28682A9EDCE6009BC524 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				685F28662A9EDCE6009BC524 /* TCMPPDemo-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		685F28652A9EDCE6009BC524 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685F28B62AA184F5009BC524 /* default_mini_apps.json in Resources */,
+				685F28D62AA1ED4F009BC524 /* tcmpp-ios-configurations.json in Resources */,
+				685F28D22AA1ED22009BC524 /* InfoPlist.strings in Resources */,
+				685F28CC2AA1EAAC009BC524 /* Localizable.strings in Resources */,
+				685F28A42A9F23FA009BC524 /* avatar.png in Resources */,
+				685F28772A9EDCE7009BC524 /* LaunchScreen.storyboard in Resources */,
+				685F28742A9EDCE7009BC524 /* Assets.xcassets in Resources */,
+				68891EE62B18C67D005A9A95 /* tcmpp-custom-config.json in Resources */,
+				685F28722A9EDCE6009BC524 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F5CF1696544DAB1BF7D7C9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TCMPPDemo-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAA5717F2C6717A5C2D7D7A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		685F28632A9EDCE6009BC524 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B291642C6AFC2100047AC6 /* DemoUtils.swift in Sources */,
+				F0B2916A2C6AFE2000047AC6 /* ToastView.swift in Sources */,
+				685F289F2A9EFC56009BC524 /* MIniAppDemoSDKDelegateImpl.swift in Sources */,
+				F0B2916E2C6B062900047AC6 /* TCMPPLoginVC.swift in Sources */,
+				F0B2917A2C6C9B7800047AC6 /* TCMPPPaySucessVC.swift in Sources */,
+				F0B2918D2C6F28EE00047AC6 /* TMFAppletConfigManager.swift in Sources */,
+				F0B291742C6C55D200047AC6 /* TCMPPMenuView.swift in Sources */,
+				F0B291722C6C551D00047AC6 /* TCMPPMainVC.swift in Sources */,
+				F0B291662C6AFC8700047AC6 /* CustomBundle.swift in Sources */,
+				685F28A12A9F15B4009BC524 /* DemoUserInfo.swift in Sources */,
+				F0B291762C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift in Sources */,
+				F0B291622C6AF87E00047AC6 /* TCMPPExtension.swift in Sources */,
+				F0B291602C6AF77600047AC6 /* TCMPPCommonTools.swift in Sources */,
+				F0B2916C2C6AFF4300047AC6 /* TCMPPLoginManager.swift in Sources */,
+				F0B291782C6C95F100047AC6 /* PaymentManager.swift in Sources */,
+				685F286B2A9EDCE6009BC524 /* AppDelegate.swift in Sources */,
+				F0B291702C6B082400047AC6 /* TCMPPAppCell.swift in Sources */,
+				685F28B02AA03C37009BC524 /* TCMPPPayView.swift in Sources */,
+				68122B9E2AA5D85F00513013 /* PayRequestJSApi.swift in Sources */,
+				F0B291682C6AFD0700047AC6 /* LanguageManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		685F28702A9EDCE6009BC524 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685F28712A9EDCE6009BC524 /* Base */,
+				F0B291842C6DDA3900047AC6 /* fr */,
+				F0B291882C6DDA4B00047AC6 /* id */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		685F28752A9EDCE7009BC524 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685F28762A9EDCE7009BC524 /* Base */,
+				F0B291852C6DDA3900047AC6 /* fr */,
+				F0B291892C6DDA4C00047AC6 /* id */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		685F28CE2AA1EAAC009BC524 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685F28CD2AA1EAAC009BC524 /* en */,
+				685F28CF2AA1EBED009BC524 /* zh-Hans */,
+				F0B291872C6DDA3900047AC6 /* fr */,
+				F0B2918B2C6DDA4C00047AC6 /* id */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		685F28D42AA1ED22009BC524 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				685F28D32AA1ED22009BC524 /* zh-Hans */,
+				F0B291832C6DDA2400047AC6 /* en */,
+				F0B291862C6DDA3900047AC6 /* fr */,
+				F0B2918A2C6DDA4C00047AC6 /* id */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		685F288F2A9EDCE7009BC524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		685F28902A9EDCE7009BC524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		685F28922A9EDCE7009BC524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TCMPPDemo-Swift/Info.plist";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "TCMPP needs your permission to access calendar";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TCMPP needs your permission to use camera function";
+				INFOPLIST_KEY_NSContactsUsageDescription = "TCMPP needs your permission to access your address book";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TCMPP Authentication with TouchId or FaceID";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TCMPP requires your consent to record";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TCMPP needs your permission to save photos to album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TCMPP needs your permission to access the album";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "TCMPP needs your consent to use speech recognition";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tcmpp_demo;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TCMPPDemo-Swift/TCMPPDemo-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		685F28932A9EDCE7009BC524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D5096CEFBAA8474E182D33 /* Pods-TCMPPDemo-Swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TCMPPDemo-Swift/Info.plist";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "TCMPP needs your permission to access calendar";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TCMPP needs your permission to use camera function";
+				INFOPLIST_KEY_NSContactsUsageDescription = "TCMPP needs your permission to access your address book";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "TCMPP Authentication with TouchId or FaceID";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "TCMPP needs your consent to enable location function all the time";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TCMPP requires your consent to record";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TCMPP needs your permission to save photos to album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TCMPP needs your permission to access the album";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "TCMPP needs your consent to use speech recognition";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tcmpp_demo;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TCMPPDemo-Swift/TCMPPDemo-Swift-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		685F28622A9EDCE6009BC524 /* Build configuration list for PBXProject "TCMPPDemo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685F288F2A9EDCE7009BC524 /* Debug */,
+				685F28902A9EDCE7009BC524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		685F28912A9EDCE7009BC524 /* Build configuration list for PBXNativeTarget "TCMPPDemo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685F28922A9EDCE7009BC524 /* Debug */,
+				685F28932A9EDCE7009BC524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 685F285F2A9EDCE6009BC524 /* Project object */;
+}

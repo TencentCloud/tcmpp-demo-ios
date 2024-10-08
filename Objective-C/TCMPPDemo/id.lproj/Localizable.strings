@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  TCMPPDemo
+
+  Created by stonelshi on 2023/4/20.
+  
+*/
+
+"MiniApp Assistant" = "Asisten TCMPP";
+"Recently used" = "Baru-baru ini digunakan";
+"Payment" = "Pembayaran";
+
+"Cancel" = "Batal";
+
+
+"Please enter the username" = "Harap masukkan nama pengguna";
+"Log in" = "Masuk";
+"Logged in successfully" = "Berhasil masuk";
+"My mini programs" = "Program mini";
+"Preload" = "Pramuat";
+"Clear cache" = "Bersihkan cache";
+"Reset" = "Atur ulang";
+"Preloaded successfully" = "Pramuat berhasil";
+"Cache cleared successfully" = "Cache berhasil dihapus";
+"Reset successfully" = "Pengaturan ulang berhasil";
+"Scan" = "Pindai";
+"Language" = "Bahasa";
+"Log out" = "Keluar";
+"Done" = "Selesai";
+"Pay Successfully" = "Pembayaran berhasil";

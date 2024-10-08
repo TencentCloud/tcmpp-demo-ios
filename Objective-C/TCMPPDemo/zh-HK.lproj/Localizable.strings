@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  TCMPPDemo
+
+  Created by stonelshi on 2023/4/20.
+  
+*/
+
+"MiniApp Assistant" = "小程序助手";
+"Recently used" = "最近使用";
+"MiniApp demo" = "小程序体验Demo";
+"Develop" = "開發版";
+"Reviewed" = "審核版";
+"Preview" = "預覽版";
+"Please enter the payment password" = "請輸入支付密碼";
+"Payment" = "支付";
+"Default password:666666" = "預設密碼:666666";
+"Scan the QR code of the miniapp" = "掃描小程序二維碼";
+"No recently used miniapps" = "暂无最近使用小程序";
+"Please scan the QR code of the miniapp to experience" = "請掃描小程序二維碼進行體驗";
+"Configuration information name" = "配置名稱";
+"Configuration information content can be pasted here by long pressing" = "長按可以貼上複製的配置信息";
+"Please enter a profile name:" = "請輸入一個配置檔名稱:";
+"Cancel" = "取消";
+"Save" = "儲存";
+"configure server" = "服務配置";
+"Please select from the list below or add through the upper right corner" = "請從下面的列表中選擇或點擊右上角添加新的配置";
+"There is no configuration information at present, please add it in the upper right corner" = "當前無可配置信息，請點擊右上角添加";
+"The input content is empty, unable to add!" = "輸入內容為空，無法添加！";
+"Server name already exists!" = "該配置名稱已存在!";
+"Configuration file information error!" = "配置檔信息錯誤!";
+"Please enter 2~10 characters for the server name!" = "請輸入2-10個字元作為配置名稱!";
+
+"Please enter the username" = "请输入用户名称";
+"Log in" = "登录";
+"Logged in successfully" = "登录成功";
+"My mini programs" = "我的小程序";
+"Preload" = "预加载";
+"Clear cache" = "删除缓存";
+"Reset" = "重置";
+"Preloaded successfully" = "预加载成功";
+"Cache cleared successfully" = "删除缓存成功";
+"Reset successfully" = "重置成功";
+"Scan" = "扫一扫";
+"Language" = "语言";
+"Log out" = "退出登录";
