@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0701642429FB7B39006FD73B /* default_mini_apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 0701642329FB7B39006FD73B /* default_mini_apps.json */; };
 		0702050129EFC93000917E77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702050029EFC93000917E77 /* AppDelegate.m */; };
 		0702050A29EFC93000917E77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702050829EFC93000917E77 /* Main.storyboard */; };
 		0702050C29EFC93200917E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0702050B29EFC93200917E77 /* Assets.xcassets */; };
@@ -45,7 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0701642329FB7B39006FD73B /* default_mini_apps.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = default_mini_apps.json; sourceTree = "<group>"; };
 		070204FC29EFC93000917E77 /* TCMPPDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCMPPDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		070204FF29EFC93000917E77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0702050029EFC93000917E77 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 			children = (
 				F02FF1322C61F923000F46B6 /* Utils */,
 				07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */,
-				0701642329FB7B39006FD73B /* default_mini_apps.json */,
 				076F0DCC2B202EB400470C46 /* CustomApi */,
 				076F0DCA2B202E5000470C46 /* Resources */,
 				0702052D29F12A6C00917E77 /* InfoPlist.strings */,
@@ -326,7 +323,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0701642429FB7B39006FD73B /* default_mini_apps.json in Resources */,
 				07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */,
 				0702050F29EFC93200917E77 /* LaunchScreen.storyboard in Resources */,
 				0702053229F12B3400917E77 /* Localizable.strings in Resources */,

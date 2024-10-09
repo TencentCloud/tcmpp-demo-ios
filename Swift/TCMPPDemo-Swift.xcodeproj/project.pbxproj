@@ -16,7 +16,6 @@
 		685F28A12A9F15B4009BC524 /* DemoUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F28A02A9F15B4009BC524 /* DemoUserInfo.swift */; };
 		685F28A42A9F23FA009BC524 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 685F28A32A9F23FA009BC524 /* avatar.png */; };
 		685F28B02AA03C37009BC524 /* TCMPPPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F28AF2AA03C37009BC524 /* TCMPPPayView.swift */; };
-		685F28B62AA184F5009BC524 /* default_mini_apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 685F28B52AA184F5009BC524 /* default_mini_apps.json */; };
 		685F28CC2AA1EAAC009BC524 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685F28CE2AA1EAAC009BC524 /* Localizable.strings */; };
 		685F28D22AA1ED22009BC524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D42AA1ED22009BC524 /* InfoPlist.strings */; };
 		685F28D62AA1ED4F009BC524 /* tcmpp-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D52AA1ED4F009BC524 /* tcmpp-ios-configurations.json */; };
@@ -53,7 +52,6 @@
 		685F28A02A9F15B4009BC524 /* DemoUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUserInfo.swift; sourceTree = "<group>"; };
 		685F28A32A9F23FA009BC524 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		685F28AF2AA03C37009BC524 /* TCMPPPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPPayView.swift; sourceTree = "<group>"; };
-		685F28B52AA184F5009BC524 /* default_mini_apps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_mini_apps.json; sourceTree = "<group>"; };
 		685F28CD2AA1EAAC009BC524 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		685F28CF2AA1EBED009BC524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		685F28D32AA1ED22009BC524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				68891EE52B18C67D005A9A95 /* tcmpp-custom-config.json */,
 				685F28D52AA1ED4F009BC524 /* tcmpp-ios-configurations.json */,
-				685F28B52AA184F5009BC524 /* default_mini_apps.json */,
 				685F28A32A9F23FA009BC524 /* avatar.png */,
 			);
 			path = Res;
@@ -268,7 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				685F28B62AA184F5009BC524 /* default_mini_apps.json in Resources */,
 				685F28D62AA1ED4F009BC524 /* tcmpp-ios-configurations.json in Resources */,
 				685F28D22AA1ED22009BC524 /* InfoPlist.strings in Resources */,
 				685F28CC2AA1EAAC009BC524 /* Localizable.strings in Resources */,

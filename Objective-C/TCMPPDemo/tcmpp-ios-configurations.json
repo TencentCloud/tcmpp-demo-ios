@@ -1,17 +1,17 @@
 {
   "customId": "T09667ZL9351718GAEX",
-  "productId": "100683333",
+  "productId": "100125915",
   "packageName": "",
-  "bundleId": "com.tencent.tcmpp.demo",
-  "material": "01Jsjoz4GbWuGgvD/b/iywca+PdPzdSSyImFIE2QDTzWBKbyE4c0cRchJmHZvDqosNgYVrlhTP735AjbPUfzbDng5TDPdgrUVyfB1oSlpSG7UJ0b33jy+cAqQBA40WorKGKyUTrklL1SwO1+Z1yM8YjRneRR7kklFLmQHjUwGAUm89OA2J0vKLlgimtHrSIqepect7pDMTvEt8pvu79+ucb4jTPXxrq0wLckPshelRzmfQ2z7MSAKw/KXshRs46yCJLljr8ReopP/60YDLXpbg/5s/ZzxLtsP6stQpdOZCnx54AAphUKauASnjWLz5vlBqxPxM3AZjz42jKwruLDiZconC6fv4L4X3GLXN5arPNvuNw8KGLKxsb0YplNZJyTlM7S5Fet/1p5NZX04vNsLmmmKcL09PYwydd/jP7eij7YTbh/MZpL824g5yYVZFTbAev2eL7tMPsIQFGzY2QNNyvB0YTarWPzFPOip0za40BKP7CY+hCGW/WsODUwvOxHgstSeFxdijAs57DRnO3KTuSva3AaiV6hmrQGO3tvP5vkaJbvAV2G9mc3YY9tJkPf0QwNkcLEgoubHELgmUQYtqUg==93c10b89b54e410b",
+  "bundleId": "com.tcmpp.demo",
+  "material": "01VljDTy9v5jhtaMXM8LIHS5/M/lLec4j2QOnnvjRQFcdhEMFQ3+l49BerWmeySMxEIi3cXRqW0heoriAf+/8obEYABg0niPH2t3m5gpRf2QeP6Ctde0utPPazkOkMCxAnU8hHNhX+kKRzs4WAiOH57XCG2ZUk4XOvAB87NQYNp2nbc9ruSdCLY01sRr6IVESL6eIaG5QBpQTKPpydQuvNwtajd3Wjv7Xk0mS0nmLhWEflE3zrj8QoKQX0YlnkNDKfJTqen4TWNeLbVZbbjImIiKz/U4lNVKClkja+Lnk/8nYj4A/wAJRkxivxaqGWIbM/PkFSDmYDMdMjJvbtyseFuNNcQFPZqe3CbJI8+Het0W2LVSDcNUifiZwZPsz6ASOda95ZCySXMVE+cMEnQOoNIgHAEqbiRlbTzo0DxDQc6FQRpHyj40d5/EvEameg5jHoIqzaYdbdp+Zlb97Ew/QoPVXeSU6AwhjAqkGHRxukcrVIEvQ2HMy6Q7Y5prLkuxwv27CgV0XQIXXd813TlBBjPuIfMORV43i953snuCmMSwU9a+nMZ2L0HcR2g5cMKHeT2DO8vEkt+V8T+DxIzOJdfQ==faa762b95f184e10",
   "shark": {
     "httpUrl": "https://api-sg.tcmpp.com/",
     "tcpHost": "MAZUTCPDOMAN",
     "tcpPort": 0,
-    "appKey": "app-ei3tm319mz",
+    "appKey": "app-83ye8rtj5j",
     "symEnc": 1,
     "asymEnc": 0
   },
-  "feedback": "https://feedback-sg.tcmpp.com",
+  "feedback": "https://feedback-sg.tcmpp.com?region=ap-singapore&env=prod",
   "qapmUrl": "https://qapm-app-sg.tcmpp.com"
 }
