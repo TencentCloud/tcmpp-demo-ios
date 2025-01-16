@@ -1,5 +1,5 @@
 //
-//  TCMPPLoginManager.swift
+//  TCMPPDemoLoginManager.swift
 //  TCMPPDemo-Swift
 //
 //  Created by gavinjwxu on 2024/8/13.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-class TCMPPLoginManager {
-    static let shared = TCMPPLoginManager()
+class TCMPPDemoLoginManager {
+    static let shared = TCMPPDemoLoginManager()
     
     private var token: String?
     private var urlSession: URLSession?

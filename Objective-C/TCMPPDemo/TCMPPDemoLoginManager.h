@@ -1,5 +1,5 @@
 //
-//  TCMPPLoginManager.h
+//  TCMPPDemoLoginManager.h
 //  TUIKitDemo
 //
 //  Created by 石磊 on 2024/5/8.
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^tcmppLoginRequestHandler)(NSError* _Nullable err,NSString* _Nullable value);
 
 
-@interface TCMPPLoginManager : NSObject
+@interface TCMPPDemoLoginManager : NSObject
 + (instancetype)sharedInstance;
 
 - (NSString *_Nullable)getToken;

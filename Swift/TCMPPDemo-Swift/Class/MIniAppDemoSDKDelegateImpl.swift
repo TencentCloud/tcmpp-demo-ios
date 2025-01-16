@@ -74,7 +74,7 @@ class MIniAppDemoSDKDelegateImpl : NSObject, TMFMiniAppSDKDelegate {
     // After the App receives the login request from the mini program, it first determines whether the App is logged in based on whether the token exists.
     // If it is not logged in, log in first; if it is logged in, it calls the getToken interface to obtain the code and sends it back to the mini program.
     func login(_ app: TMFMiniAppInfo, params: [AnyHashable : Any], completionHandler: @escaping MACommonCallback) {
-        TCMPPLoginManager.shared.wxLogin(miniAppId: app.appId) { error, value in
+        TCMPPDemoLoginManager.shared.wxLogin(miniAppId: app.appId) { error, value in
             guard error == nil else {
                 completionHandler(nil,error)
                 return

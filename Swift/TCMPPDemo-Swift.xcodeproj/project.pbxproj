@@ -26,7 +26,7 @@
 		F0B291662C6AFC8700047AC6 /* CustomBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291652C6AFC8700047AC6 /* CustomBundle.swift */; };
 		F0B291682C6AFD0700047AC6 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291672C6AFD0700047AC6 /* LanguageManager.swift */; };
 		F0B2916A2C6AFE2000047AC6 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291692C6AFE2000047AC6 /* ToastView.swift */; };
-		F0B2916C2C6AFF4300047AC6 /* TCMPPLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916B2C6AFF4300047AC6 /* TCMPPLoginManager.swift */; };
+		F0B2916C2C6AFF4300047AC6 /* TCMPPDemoLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916B2C6AFF4300047AC6 /* TCMPPDemoLoginManager.swift */; };
 		F0B2916E2C6B062900047AC6 /* TCMPPLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916D2C6B062900047AC6 /* TCMPPLoginVC.swift */; };
 		F0B291702C6B082400047AC6 /* TCMPPAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2916F2C6B082400047AC6 /* TCMPPAppCell.swift */; };
 		F0B291722C6C551D00047AC6 /* TCMPPMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291712C6C551D00047AC6 /* TCMPPMainVC.swift */; };
@@ -65,7 +65,7 @@
 		F0B291652C6AFC8700047AC6 /* CustomBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBundle.swift; sourceTree = "<group>"; };
 		F0B291672C6AFD0700047AC6 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		F0B291692C6AFE2000047AC6 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		F0B2916B2C6AFF4300047AC6 /* TCMPPLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPLoginManager.swift; sourceTree = "<group>"; };
+		F0B2916B2C6AFF4300047AC6 /* TCMPPDemoLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPDemoLoginManager.swift; sourceTree = "<group>"; };
 		F0B2916D2C6B062900047AC6 /* TCMPPLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPLoginVC.swift; sourceTree = "<group>"; };
 		F0B2916F2C6B082400047AC6 /* TCMPPAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPAppCell.swift; sourceTree = "<group>"; };
 		F0B291712C6C551D00047AC6 /* TCMPPMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPMainVC.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				68122B9D2AA5D85F00513013 /* PayRequestJSApi.swift */,
 				F0B291672C6AFD0700047AC6 /* LanguageManager.swift */,
 				F0B291692C6AFE2000047AC6 /* ToastView.swift */,
-				F0B2916B2C6AFF4300047AC6 /* TCMPPLoginManager.swift */,
+				F0B2916B2C6AFF4300047AC6 /* TCMPPDemoLoginManager.swift */,
 				F0B2916D2C6B062900047AC6 /* TCMPPLoginVC.swift */,
 				F0B2916F2C6B082400047AC6 /* TCMPPAppCell.swift */,
 				F0B291712C6C551D00047AC6 /* TCMPPMainVC.swift */,
@@ -338,7 +338,7 @@
 				F0B291762C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift in Sources */,
 				F0B291622C6AF87E00047AC6 /* TCMPPExtension.swift in Sources */,
 				F0B291602C6AF77600047AC6 /* TCMPPCommonTools.swift in Sources */,
-				F0B2916C2C6AFF4300047AC6 /* TCMPPLoginManager.swift in Sources */,
+				F0B2916C2C6AFF4300047AC6 /* TCMPPDemoLoginManager.swift in Sources */,
 				F0B291782C6C95F100047AC6 /* PaymentManager.swift in Sources */,
 				685F286B2A9EDCE6009BC524 /* AppDelegate.swift in Sources */,
 				F0B291702C6B082400047AC6 /* TCMPPAppCell.swift in Sources */,

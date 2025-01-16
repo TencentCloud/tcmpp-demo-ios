@@ -62,7 +62,7 @@ class TCMPPLoginVC: UIViewController {
         tf.resignFirstResponder()
         guard let text = tf.text, !text.isEmpty else { return }
         
-        TCMPPLoginManager.shared.loginUser(userId: text) { err, value in
+        TCMPPDemoLoginManager.shared.loginUser(userId: text) { err, value in
             if err == nil {
                 DispatchQueue.main.async {
                     DemoUserInfo.shared.nickName = self.tf.text

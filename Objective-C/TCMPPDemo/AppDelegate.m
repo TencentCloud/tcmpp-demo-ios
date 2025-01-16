@@ -13,7 +13,7 @@
 #import "MiniAppDemoSDKDelegateImpl.h"
 #import "TCMPPLoginVC.h"
 #import "TCMPPMainVC.h"
-#import "TCMPPLoginManager.h"
+#import "TCMPPDemoLoginManager.h"
 #import "ToastView.h"
 
 @interface AppDelegate ()
@@ -50,7 +50,7 @@
             navGationController.navigationBar.barTintColor = UIColor.whiteColor;
             [navGationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor blackColor]}];
         }
-        [[TCMPPLoginManager sharedInstance] loginUser:currentUser completeion:^(NSError * _Nullable err, NSString * _Nullable value) {
+        [[TCMPPDemoLoginManager sharedInstance] loginUser:currentUser completeion:^(NSError * _Nullable err, NSString * _Nullable value) {
             if (!err) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIImage *icon = [UIImage imageNamed:@"success"];

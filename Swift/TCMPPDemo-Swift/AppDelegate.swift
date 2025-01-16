@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 navigationController.navigationBar.barTintColor = .white
                 navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
             }
-            TCMPPLoginManager.shared.loginUser(userId: currentUser!) { (err, value) in
+            TCMPPDemoLoginManager.shared.loginUser(userId: currentUser!) { (err, value) in
                 if err == nil {
                     DispatchQueue.main.async {
                         let icon = UIImage(named: "success")

@@ -33,7 +33,7 @@
 		F02FF1462C61F98C000F46B6 /* TCMPPAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1382C61F98A000F46B6 /* TCMPPAppCell.m */; };
 		F02FF1472C61F98C000F46B6 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1392C61F98B000F46B6 /* ToastView.m */; };
 		F02FF1482C61F98C000F46B6 /* TCMPPLanguageSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF13E2C61F98B000F46B6 /* TCMPPLanguageSettingVC.m */; };
-		F02FF1492C61F98C000F46B6 /* TCMPPLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF13F2C61F98B000F46B6 /* TCMPPLoginManager.m */; };
+		F02FF1492C61F98C000F46B6 /* TCMPPDemoLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF13F2C61F98B000F46B6 /* TCMPPDemoLoginManager.m */; };
 		F02FF14A2C61F98C000F46B6 /* TCMPPLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */; };
 		F02FF14B2C61F98C000F46B6 /* TCMPPMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1442C61F98C000F46B6 /* TCMPPMainVC.m */; };
 		F02FF14E2C61FA6D000F46B6 /* LanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF14D2C61FA6D000F46B6 /* LanguageManager.m */; };
@@ -95,11 +95,11 @@
 		F02FF13C2C61F98B000F46B6 /* TCMPPAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPAppCell.h; sourceTree = "<group>"; };
 		F02FF13D2C61F98B000F46B6 /* TCMPPMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPMenuView.h; sourceTree = "<group>"; };
 		F02FF13E2C61F98B000F46B6 /* TCMPPLanguageSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPLanguageSettingVC.m; sourceTree = "<group>"; };
-		F02FF13F2C61F98B000F46B6 /* TCMPPLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPLoginManager.m; sourceTree = "<group>"; };
+		F02FF13F2C61F98B000F46B6 /* TCMPPDemoLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPDemoLoginManager.m; sourceTree = "<group>"; };
 		F02FF1402C61F98B000F46B6 /* TCMPPLanguageSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPLanguageSettingVC.h; sourceTree = "<group>"; };
 		F02FF1412C61F98B000F46B6 /* TCMPPMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPMainVC.h; sourceTree = "<group>"; };
 		F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPLoginVC.m; sourceTree = "<group>"; };
-		F02FF1432C61F98C000F46B6 /* TCMPPLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPLoginManager.h; sourceTree = "<group>"; };
+		F02FF1432C61F98C000F46B6 /* TCMPPDemoLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMPPDemoLoginManager.h; sourceTree = "<group>"; };
 		F02FF1442C61F98C000F46B6 /* TCMPPMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMPPMainVC.m; sourceTree = "<group>"; };
 		F02FF14C2C61FA6C000F46B6 /* LanguageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageManager.h; sourceTree = "<group>"; };
 		F02FF14D2C61FA6D000F46B6 /* LanguageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageManager.m; sourceTree = "<group>"; };
@@ -173,8 +173,8 @@
 				F02FF1382C61F98A000F46B6 /* TCMPPAppCell.m */,
 				F02FF1402C61F98B000F46B6 /* TCMPPLanguageSettingVC.h */,
 				F02FF13E2C61F98B000F46B6 /* TCMPPLanguageSettingVC.m */,
-				F02FF1432C61F98C000F46B6 /* TCMPPLoginManager.h */,
-				F02FF13F2C61F98B000F46B6 /* TCMPPLoginManager.m */,
+				F02FF1432C61F98C000F46B6 /* TCMPPDemoLoginManager.h */,
+				F02FF13F2C61F98B000F46B6 /* TCMPPDemoLoginManager.m */,
 				F02FF13B2C61F98B000F46B6 /* TCMPPLoginVC.h */,
 				F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */,
 				F02FF1412C61F98B000F46B6 /* TCMPPMainVC.h */,
@@ -387,7 +387,7 @@
 				F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */,
 				F02FF1352C61F923000F46B6 /* UIColor+TCMPP.m in Sources */,
 				F02FF1472C61F98C000F46B6 /* ToastView.m in Sources */,
-				F02FF1492C61F98C000F46B6 /* TCMPPLoginManager.m in Sources */,
+				F02FF1492C61F98C000F46B6 /* TCMPPDemoLoginManager.m in Sources */,
 				0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */,
 				F02FF14E2C61FA6D000F46B6 /* LanguageManager.m in Sources */,
 				F02FF14B2C61F98C000F46B6 /* TCMPPMainVC.m in Sources */,

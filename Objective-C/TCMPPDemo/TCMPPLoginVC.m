@@ -8,7 +8,7 @@
 #import "TCMPPLoginVC.h"
 #import "UIView+TZLayout.h"
 #import "UIColor+TCMPP.h"
-#import "TCMPPLoginManager.h"
+#import "TCMPPDemoLoginManager.h"
 #import "ToastView.h"
 #import "TCMPPMainVC.h"
 #import "DemoUserInfo.h"
@@ -78,7 +78,7 @@
         return;
     }
     // App calls the login interface, saves the token after the call is successful, and then jumps to the home page.
-    [[TCMPPLoginManager sharedInstance] loginUser:_tf.text completeion:^(NSError * _Nullable err, NSString * _Nullable value) {
+    [[TCMPPDemoLoginManager sharedInstance] loginUser:_tf.text completeion:^(NSError * _Nullable err, NSString * _Nullable value) {
         if (!err) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [DemoUserInfo sharedInstance].nickName = self.tf.text;

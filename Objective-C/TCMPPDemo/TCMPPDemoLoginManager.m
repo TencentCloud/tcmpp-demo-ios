@@ -1,12 +1,12 @@
 //
-//  TCMPPLoginManager.m
+//  TCMPPDemoLoginManager.m
 //  TUIKitDemo
 //
 //  Created by 石磊 on 2024/5/8.
 //  Copyright © 2024 Tencent. All rights reserved.
 //
 
-#import "TCMPPLoginManager.h"
+#import "TCMPPDemoLoginManager.h"
 #import <TCMPPSDK/TCMPPSDK.h>
 //#import "TUILogin.h"
 
@@ -15,7 +15,7 @@
 #define TCMPP_API_AUTH  @"login"
 #define TCMPP_API_MINIAPP_GETCODE  @"getMiniProgramAuthCode"
 
-@implementation TCMPPLoginManager{
+@implementation TCMPPDemoLoginManager{
     NSString *_token;
     NSURLSession *_urlSession;
     NSString *_appId;
@@ -24,10 +24,10 @@
 
 
 + (instancetype)sharedInstance {
-    static TCMPPLoginManager* manager;
+    static TCMPPDemoLoginManager* manager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[TCMPPLoginManager alloc] init];
+        manager = [[TCMPPDemoLoginManager alloc] init];
     });
     return manager;
 }

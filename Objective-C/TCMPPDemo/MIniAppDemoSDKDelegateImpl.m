@@ -11,7 +11,7 @@
 #import "TCMPPPayView.h"
 #import "DemoUserInfo.h"
 #import "PaymentManager.h"
-#import "TCMPPLoginManager.h"
+#import "TCMPPDemoLoginManager.h"
 #import "LanguageManager.h"
 #import "TCMPPPaySucessVC.h"
 
@@ -131,7 +131,7 @@ static BOOL noServer = YES;
     }
     
     
-    [[TCMPPLoginManager sharedInstance] wxLogin:app.appId completionHandler:^(NSError * _Nullable err, NSString * _Nullable value) {
+    [[TCMPPDemoLoginManager sharedInstance] wxLogin:app.appId completionHandler:^(NSError * _Nullable err, NSString * _Nullable value) {
         if(completionHandler) {
             if(err) {
                 completionHandler(nil,err);
