@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import TCMPPSDK
 
 class XMLParser: NSObject, XMLParserDelegate {
     var resultDict = [String: String]()

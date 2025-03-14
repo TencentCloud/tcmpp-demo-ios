@@ -19,11 +19,11 @@
 		0711239C2A052B5F00ED2244 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0711239B2A052B5F00ED2244 /* avatar.png */; };
 		0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61629F6554D00444C1E /* TCMPPPayView.m */; };
 		0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61929F665E200444C1E /* PayRequestJsApi.m */; };
-		074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */; };
+		074210AC2B0363AB008AE672 /* api-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 074210AB2B0363AA008AE672 /* api-custom-config.json */; };
 		076F0DC02B20247400470C46 /* TMATestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DBF2B20247400470C46 /* TMATestView.m */; };
 		076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC52B202C1600470C46 /* TestStateJsApi.m */; };
 		076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC82B202C6B00470C46 /* StateEventTest.m */; };
-		07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */; };
+		07857FE02A164A5D00EA62DB /* tcsas-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 07857FDF2A164A5D00EA62DB /* tcsas-ios-configurations.json */; };
 		EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */; };
 		F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12B2C61F923000F46B6 /* CustomBundle.m */; };
 		F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12D2C61F923000F46B6 /* TCMPPCommonTools.m */; };
@@ -69,14 +69,14 @@
 		0720E61929F665E200444C1E /* PayRequestJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRequestJsApi.m; sourceTree = "<group>"; };
 		072159042B849DFC002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		072159052B84A053002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-custom-config.json"; sourceTree = "<group>"; };
+		074210AB2B0363AA008AE672 /* api-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-custom-config.json"; sourceTree = "<group>"; };
 		076F0DBE2B20247400470C46 /* TMATestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMATestView.h; sourceTree = "<group>"; };
 		076F0DBF2B20247400470C46 /* TMATestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMATestView.m; sourceTree = "<group>"; };
 		076F0DC42B202C1600470C46 /* TestStateJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestStateJsApi.h; sourceTree = "<group>"; };
 		076F0DC52B202C1600470C46 /* TestStateJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestStateJsApi.m; sourceTree = "<group>"; };
 		076F0DC72B202C6B00470C46 /* StateEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateEventTest.h; sourceTree = "<group>"; };
 		076F0DC82B202C6B00470C46 /* StateEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateEventTest.m; sourceTree = "<group>"; };
-		07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcmpp-ios-configurations.json"; sourceTree = "<group>"; };
+		07857FDF2A164A5D00EA62DB /* tcsas-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcsas-ios-configurations.json"; sourceTree = "<group>"; };
 		6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F02FF12A2C61F923000F46B6 /* CustomBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBundle.h; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				F02FF1322C61F923000F46B6 /* Utils */,
-				07857FDF2A164A5D00EA62DB /* tcmpp-ios-configurations.json */,
+				07857FDF2A164A5D00EA62DB /* tcsas-ios-configurations.json */,
 				076F0DCC2B202EB400470C46 /* CustomApi */,
 				076F0DCA2B202E5000470C46 /* Resources */,
 				0702052D29F12A6C00917E77 /* InfoPlist.strings */,
@@ -216,7 +216,7 @@
 				0720E61529F6554D00444C1E /* TCMPPPayView.h */,
 				0720E61629F6554D00444C1E /* TCMPPPayView.m */,
 				0720E61829F665E200444C1E /* PayRequestJsApi.h */,
-				074210AB2B0363AA008AE672 /* tcmpp-custom-config.json */,
+				074210AB2B0363AA008AE672 /* api-custom-config.json */,
 				0720E61929F665E200444C1E /* PayRequestJsApi.m */,
 				076F0DC42B202C1600470C46 /* TestStateJsApi.h */,
 				076F0DC52B202C1600470C46 /* TestStateJsApi.m */,
@@ -323,13 +323,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07857FE02A164A5D00EA62DB /* tcmpp-ios-configurations.json in Resources */,
+				07857FE02A164A5D00EA62DB /* tcsas-ios-configurations.json in Resources */,
 				0702050F29EFC93200917E77 /* LaunchScreen.storyboard in Resources */,
 				0702053229F12B3400917E77 /* Localizable.strings in Resources */,
 				0702050C29EFC93200917E77 /* Assets.xcassets in Resources */,
 				0711239C2A052B5F00ED2244 /* avatar.png in Resources */,
 				0702050A29EFC93000917E77 /* Main.storyboard in Resources */,
-				074210AC2B0363AB008AE672 /* tcmpp-custom-config.json in Resources */,
+				074210AC2B0363AB008AE672 /* api-custom-config.json in Resources */,
 				0702052F29F12A6C00917E77 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

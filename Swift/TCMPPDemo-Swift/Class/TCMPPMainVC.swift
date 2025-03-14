@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TCMPPSDK
 
 class TCMPPMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, AppCellDelegate {
     

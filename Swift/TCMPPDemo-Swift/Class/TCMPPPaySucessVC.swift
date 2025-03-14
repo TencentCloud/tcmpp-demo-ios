@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TCMPPSDK
 
 class TCMPPPaySucessVC: UIViewController {
     var iconURL: String = ""

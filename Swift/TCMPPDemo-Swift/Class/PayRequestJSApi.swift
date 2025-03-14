@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import TCMPPSDK
 
 @objc class PayRequestJSApi : NSObject{
    

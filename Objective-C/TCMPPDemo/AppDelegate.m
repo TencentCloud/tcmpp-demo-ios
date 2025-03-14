@@ -82,11 +82,16 @@
     } else {
         //配置使用环境
         //Configure usage environment
-       NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
+       NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcsas-ios-configurations" ofType:@"json"];
        if(filePath) {
            TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];
            [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];
        }
+        
+        NSString *customApiFile = [[NSBundle mainBundle] pathForResource:@"api-custom-config" ofType:@"json"];
+        if(customApiFile) {
+            [[TMFMiniAppSDKManager sharedInstance] setCustomApiConfigFile:customApiFile];
+        }
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import TCMPPSDK
 
 class MIniAppDemoSDKDelegateImpl : NSObject, TMFMiniAppSDKDelegate {
     
@@ -171,5 +172,23 @@ class MIniAppDemoSDKDelegateImpl : NSObject, TMFMiniAppSDKDelegate {
     
     func inspectableEnabled() -> Bool {
         return true;
+    }
+    
+    func customizedConfig(forMoreButtonActions moreButtonTitleAndActions: NSMutableArray, withApp app: TMFMiniAppInfo) {
+        // change restart icon
+        for case let obj as TMASheetItemInfo in moreButtonTitleAndActions {
+            if obj.type == .typeHomePage {
+                obj.title = "Restart"
+                obj.icon = UIImage(named: "success")!
+            }
+        }
+        
+        // add whatsapp share
+        let whatsapp = TMASheetItemInfo(title: "WhatsApp",
+                                        type: .typeCustomizedShare,
+                                       shareTarget: 101,
+                                       shareKey: "WhatsApp")
+        whatsapp.icon = UIImage(named: "whatsapp")!
+        moreButtonTitleAndActions.insert(whatsapp, at: 0)
     }
 }

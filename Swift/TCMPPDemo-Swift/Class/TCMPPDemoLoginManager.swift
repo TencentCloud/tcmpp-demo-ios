@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import TCMPPSDK
 
 class TCMPPDemoLoginManager {
     static let shared = TCMPPDemoLoginManager()

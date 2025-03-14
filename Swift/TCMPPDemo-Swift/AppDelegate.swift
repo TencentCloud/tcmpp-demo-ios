@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import TCMPPSDK
+
+// Swift 文件
+@_silgen_name("_TMARegisterExternalJSPlugin")
+func TMARegisterExternalJSPlugin(_ pluginClass: AnyClass)
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -67,17 +72,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
         
         // 配置使用环境
-        let filePath = Bundle.main.path(forResource: "tcmpp-ios-configurations", ofType: "json");
+        let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json");
         if ((filePath) != nil){
             let config = TMAServerConfig(file: filePath!);
             TMFMiniAppSDKManager.sharedInstance().setConfiguration(config);
+        }
+        
+        let apiConfigPath = Bundle.main.path(forResource: "api-custom-config", ofType: "json");
+        if ((apiConfigPath) != nil){
+            TMFMiniAppSDKManager.sharedInstance().setCustomApiConfigFile(apiConfigPath!);
         }
         
         TMFMiniAppSDKManager.sharedInstance().miniAppSdkDelegate = MIniAppDemoSDKDelegateImpl.shared;
     }
     
     func registJSApis(){
-        _TMARegisterExternalJSPlugin(PayRequestJSApi.self);
+        TMARegisterExternalJSPlugin(PayRequestJSApi.self);
     }
 
 }

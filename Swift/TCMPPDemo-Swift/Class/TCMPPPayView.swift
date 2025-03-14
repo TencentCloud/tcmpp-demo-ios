@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TCMPPSDK
 
 private var PWD_COUNT: NSInteger { return 6 };
 

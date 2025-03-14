@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TCMPPSDK
 
 class TMFAppletConfigItem: NSObject, NSCoding, NSSecureCoding {
     static var supportsSecureCoding: Bool = false;

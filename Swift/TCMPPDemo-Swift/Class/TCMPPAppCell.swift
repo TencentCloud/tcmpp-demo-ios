@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TCMPPSDK
 
 protocol AppCellDelegate: AnyObject {
     func didClickMore(appId: String)
@@ -25,10 +26,8 @@ class TCMPPAppCell: UITableViewCell {
             if (searchInfo.appIntro.count > 0) {
                 self.detail.isHidden = false
                 self.detail.text = searchInfo.appIntro
-                self.category.tz_top = self.detail.tz_bottom + 5
             } else {
                 self.detail.isHidden = true
-                self.category.tz_top = self.name.tz_bottom + 5
             }
             self.category.textColor = UIColor.tcmpp_color(withHex: "#FA9C45")
             self.category.text = searchInfo.appCategory.components(separatedBy: ",").first?.components(separatedBy: "->").first
@@ -48,10 +47,8 @@ class TCMPPAppCell: UITableViewCell {
             if appInfo.appDescription.count > 0 {
                 self.detail.isHidden = false
                 self.detail.text = appInfo.appDescription
-                self.category.tz_top = self.detail.tz_bottom + 5
             } else {
                 self.detail.isHidden = true
-                self.category.tz_top = self.name.tz_bottom + 5
             }
             self.category.textColor = UIColor.tcmpp_color(withHex: "#FA9C45")
             switch appInfo.verType {
@@ -71,55 +68,115 @@ class TCMPPAppCell: UITableViewCell {
             }
         }
     }
-    var icon: UIImageView!
-    var name: UILabel!
-    var detail: UILabel!
-    var category: UILabel!
+    
+    private lazy var icon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 24
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "tmf_weapp_icon_default")
+        return imageView
+    }()
+    
+    private lazy var name: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 17)
+        return label
+    }()
+    
+    private lazy var detail: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
+    private lazy var category: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.tcmpp_color(withHex: "#FA9C45")
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+    
+    private lazy var moreButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "more_click"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        button.addTarget(self, action: #selector(clickMore), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var separatorLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.tcmpp_color(withHex: "#EEEEEE")
+        return view
+    }()
+    
     weak var delegate: AppCellDelegate?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initSubViews()
+        setupViews()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        initSubViews()
+        setupViews()
     }
 
-    private func initSubViews() {
+    private func setupViews() {
         selectionStyle = .none
-        let width = UIScreen.main.bounds.size.width
-
-        icon = UIImageView(frame: CGRect(x: 15, y: 15, width: 48, height: 48))
-        icon.roundingCorners(.allCorners, cornerRadius: 24)
-        icon.image = UIImage(named: "tmf_weapp_icon_default")
+        
         contentView.addSubview(icon)
-
-        name = UILabel(frame: CGRect(x: icon.tz_right + 15, y: icon.tz_top, width: 250, height: 22))
-        name.textColor = .black
-        name.font = UIFont.systemFont(ofSize: 17)
         contentView.addSubview(name)
-
-        detail = UILabel(frame: CGRect(x: icon.tz_right + 15, y: name.tz_bottom + 5, width: width - icon.tz_width - 15 * 3 - 45, height: 20))
-        detail.textColor = .lightGray
-        detail.font = UIFont.systemFont(ofSize: 14)
         contentView.addSubview(detail)
-
-        category = UILabel(frame: CGRect(x: icon.tz_right + 15, y: detail.tz_bottom + 5, width: detail.tz_width, height: 18))
-        category.textColor = UIColor.tcmpp_color(withHex: "#FA9C45")
-        category.font = UIFont.systemFont(ofSize: 12)
         contentView.addSubview(category)
-
-        let more = UIButton(frame: CGRect(x: width - 45, y: 0, width: 45, height: 100))
-        more.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        more.setImage(UIImage(named: "more_click"), for: .normal)
-        more.addTarget(self, action: #selector(clickMore), for: .touchUpInside)
-        contentView.addSubview(more)
-
-        let line = UIView(frame: CGRect(x: category.tz_left, y: 100 - 0.5, width: width - icon.tz_width - 15 * 3, height: 0.5))
-        line.backgroundColor = UIColor.tcmpp_color(withHex: "#EEEEEE")
-        contentView.addSubview(line)
+        contentView.addSubview(moreButton)
+        contentView.addSubview(separatorLine)
+        
+        NSLayoutConstraint.activate([
+            // Icon constraints
+            icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            icon.widthAnchor.constraint(equalToConstant: 48),
+            icon.heightAnchor.constraint(equalToConstant: 48),
+            
+            // Name constraints
+            name.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 15),
+            name.topAnchor.constraint(equalTo: icon.topAnchor),
+            name.trailingAnchor.constraint(lessThanOrEqualTo: moreButton.leadingAnchor, constant: -15),
+            name.heightAnchor.constraint(equalToConstant: 22),
+            
+            // Detail constraints
+            detail.leadingAnchor.constraint(equalTo: name.leadingAnchor),
+            detail.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 5),
+            detail.trailingAnchor.constraint(equalTo: name.trailingAnchor),
+            detail.heightAnchor.constraint(equalToConstant: 20),
+            
+            // Category constraints
+            category.leadingAnchor.constraint(equalTo: name.leadingAnchor),
+            category.topAnchor.constraint(equalTo: detail.bottomAnchor, constant: 5),
+            category.trailingAnchor.constraint(equalTo: name.trailingAnchor),
+            category.heightAnchor.constraint(equalToConstant: 18),
+            
+            // More button constraints
+            moreButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            moreButton.topAnchor.constraint(equalTo: contentView.topAnchor),
+            moreButton.widthAnchor.constraint(equalToConstant: 45),
+            moreButton.heightAnchor.constraint(equalToConstant: 100),
+            
+            // Separator line constraints
+            separatorLine.leadingAnchor.constraint(equalTo: name.leadingAnchor),
+            separatorLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            separatorLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            separatorLine.heightAnchor.constraint(equalToConstant: 0.5)
+        ])
     }
 
     @objc private func clickMore() {
