@@ -11,7 +11,7 @@ import TCMPPSDK
 class TCMPPPaySucessVC: UIViewController {
     var iconURL: String = ""
     var name: String = ""
-    var price: Int = 0
+    var price: Double = 0
     var dismissBlock: (() -> Void)?
 
     override func viewDidLoad() {

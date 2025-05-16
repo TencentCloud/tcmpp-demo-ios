@@ -14,6 +14,7 @@
 #import "TCMPPDemoLoginManager.h"
 #import "LanguageManager.h"
 #import "TCMPPPaySucessVC.h"
+#import <objc/runtime.h>
 
 static BOOL noServer = YES;
 
@@ -247,7 +248,89 @@ static BOOL noServer = YES;
         }
     }];
 }
+- (BOOL)whetherToUseCustomOpenApi:(TMFMiniAppInfo *)app{
+    return YES;
+}
+- (UIView *)createAuthorizeAlertViewWithFrame:(CGRect)frame scope:(NSString *)scope title:(NSString *)title desc:(NSString *)desc privacyApi:(NSString *)privacyApi appInfo:(TMFMiniAppInfo *)appInfo allowBlock:(void (^)(void))allowBlock denyBlock:(void (^)(void))denyBlock {
+    // Create the main view
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    
+    // Creating a Background View
+    CGFloat backgroundWidth = MIN(frame.size.width, frame.size.height) * 0.8;
+    CGFloat backgroundHeight = 300; // Adjust height according to content
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake((frame.size.width - backgroundWidth) / 2,
+                                                                     (frame.size.height - backgroundHeight) / 2,
+                                                                     backgroundWidth,
+                                                                     backgroundHeight)];
+    backgroundView.layer.cornerRadius = 12;
+    backgroundView.backgroundColor = [UIColor whiteColor];
+    [view addSubview:backgroundView];
+    
+    // Add a title
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, backgroundWidth - 40, 30)];
+    titleLabel.text = title;
+    titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor blackColor];
+    [backgroundView addSubview:titleLabel];
+    
+    // Add a description
+    UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 60, backgroundWidth - 40, 100)];
+    descLabel.text = desc;
+    descLabel.font = [UIFont systemFontOfSize:14];
+    descLabel.textAlignment = NSTextAlignmentLeft;
+    descLabel.textColor = [UIColor darkGrayColor];
+    descLabel.numberOfLines = 0;
+    [backgroundView addSubview:descLabel];
+    
+    // Add a button
+    CGFloat buttonWidth = (backgroundWidth - 60) / 2;
+    CGFloat buttonHeight = 44;
+    CGFloat buttonY = backgroundHeight - buttonHeight - 20;
+    
+    // Reject Button
+    UIButton *denyButton = [[UIButton alloc] initWithFrame:CGRectMake(20, buttonY, buttonWidth, buttonHeight)];
+    [denyButton setTitle:@"Reject" forState:UIControlStateNormal];
+    [denyButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    denyButton.layer.cornerRadius = 8;
+    denyButton.layer.borderWidth = 1;
+    denyButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [denyButton addTarget:self action:@selector(handleDenyButton:) forControlEvents:UIControlEventTouchUpInside];
+    objc_setAssociatedObject(denyButton, "denyBlock", denyBlock, OBJC_ASSOCIATION_COPY);
+    [backgroundView addSubview:denyButton];
+    
+    // 允许按钮
+    UIButton *allowButton = [[UIButton alloc] initWithFrame:CGRectMake(backgroundWidth - buttonWidth - 20, buttonY, buttonWidth, buttonHeight)];
+    [allowButton setTitle:@"Allow" forState:UIControlStateNormal];
+    [allowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    allowButton.backgroundColor = [UIColor colorWithRed:0.0 green:0.8 blue:1.0 alpha:1.0]; // 使用蓝色主题
+    allowButton.layer.cornerRadius = 8;
+    [allowButton addTarget:self action:@selector(handleAllowButton:) forControlEvents:UIControlEventTouchUpInside];
+    objc_setAssociatedObject(allowButton, "allowBlock", allowBlock, OBJC_ASSOCIATION_COPY);
+    [backgroundView addSubview:allowButton];
+    
+    
+    return view;
+}
 
+// Handling Allow Button Click
+- (void)handleAllowButton:(UIButton *)button {
+    void (^allowBlock)(void) = objc_getAssociatedObject(button, "allowBlock");
+    if (allowBlock) {
+        allowBlock();
+    }
+    [button.superview.superview removeFromSuperview];
+}
+
+// Handling the Reject Button Click
+- (void)handleDenyButton:(UIButton *)button {
+    void (^denyBlock)(void) = objc_getAssociatedObject(button, "denyBlock");
+    if (denyBlock) {
+        denyBlock();
+    }
+    [button.superview.superview removeFromSuperview];
+}
 - (void)shareMessageWithModel:(TMAShareModel *)shareModel
                       appInfo:(TMFMiniAppInfo *)appInfo
               completionBlock:(void (^)(NSError *_Nullable))completionBlock {

@@ -1,6 +1,6 @@
 {
     "extApi":[{
-            "name": "requestPayment",
+            "name": "myRequestPayment",
             "sync": false,
             "params": {
                 "data": {}

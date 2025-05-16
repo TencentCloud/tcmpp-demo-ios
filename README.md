@@ -43,7 +43,7 @@ Reference Code:
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	// Code that needs to be added to the App--start
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcsas-ios-configurations" ofType:@"json"];
     if(filePath) {
        TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];
        [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];

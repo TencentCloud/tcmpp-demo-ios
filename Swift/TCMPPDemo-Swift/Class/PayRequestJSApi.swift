@@ -10,14 +10,14 @@ import TCMPPSDK
 
 @objc class PayRequestJSApi : NSObject{
    
-    @objc func __tma_external_api__requestPayment(_ name: String, params: [String : Any]?, context: TMAExternalJSContextProtocol) -> TMAExternalJSPluginResult?{
+    @objc func __tma_external_api__myRequestPayment(_ name: String, params: [String : Any]?, context: TMAExternalJSContextProtocol) -> TMAExternalJSPluginResult?{
         let appInfo = context.tmfAppInfo;
         let data = params?["data"] as! [String : Any];
         
         NSLog("************ invokeNativePlugin test,appId:\(appInfo?.appId ?? ""),data is \(String(describing: data))");
         
         DispatchQueue.main.async {
-            let money = data["money"] as! String;
+            let money = data["amount"] as! Float;
             if (Double(money) ?? 0 <= 0){
                 let pluginResult = TMAExternalJSPluginResult();
                 let userInfo = [NSLocalizedDescriptionKey: "parameter error"];

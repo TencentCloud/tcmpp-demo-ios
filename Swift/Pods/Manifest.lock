@@ -1,0 +1,127 @@
+PODS:
+  - Brotli (1.1.0)
+  - CocoaAsyncSocket (7.6.3)
+  - MJRefresh (3.1.15)
+  - MQQComponents (2.0.0)
+  - PromiseObjC (0.0.7.1)
+  - SocketRocket (0.5.1)
+  - SSZipArchive (2.2.2)
+  - Tars (1.6.0):
+    - Tars/Core (= 1.6.0)
+  - Tars/Core (1.6.0)
+  - TCMPPExtAuthentication (2.0.0):
+    - TCMPPSDK
+  - TCMPPExtBLE (2.0.2):
+    - TCMPPSDK
+  - TCMPPExtCalendar (2.0.1):
+    - TCMPPSDK
+  - TCMPPExtClipBoard (2.0.0):
+    - TCMPPSDK
+  - TCMPPExtContact (2.0.0):
+    - TCMPPSDK
+  - TCMPPExtLBS (2.0.4):
+    - TCMPPSDK
+  - TCMPPExtMDNS (2.0.0):
+    - TCMPPSDK
+  - TCMPPExtMedia (2.0.1):
+    - TCMPPSDK
+    - TZImagePickerController
+  - TCMPPExtMiniGame (2.2.0):
+    - TCMPPSDK
+  - TCMPPExtNetwork (2.0.1):
+    - TCMPPSDK
+  - TCMPPExtScanCode (2.0.5):
+    - TCMPPSDK
+  - TCMPPSDK (2.2.6):
+    - Brotli
+    - MJRefresh
+    - MQQComponents (>= 2.0.0)
+    - PromiseObjC
+    - SocketRocket
+    - SSZipArchive
+    - Tars
+    - TMFProfile (>= 2.0.0)
+    - TMFShark (>= 4.0.0)
+    - TMFUploader (>= 2.0.0)
+  - TMFProfile (2.0.0):
+    - MQQComponents (>= 2.0.0)
+    - TMFShark (>= 4.0.0)
+  - TMFShark (4.0.0):
+    - CocoaAsyncSocket
+    - MQQComponents (>= 2.0.0)
+    - Tars
+  - TMFUploader (2.0.0):
+    - MQQComponents (>= 2.0.0)
+    - TMFShark (>= 4.0.0)
+  - TZImagePickerController (3.8.2.1)
+
+DEPENDENCIES:
+  - TCMPPExtAuthentication
+  - TCMPPExtBLE
+  - TCMPPExtCalendar
+  - TCMPPExtClipBoard
+  - TCMPPExtContact
+  - TCMPPExtLBS
+  - TCMPPExtMDNS
+  - TCMPPExtMedia
+  - TCMPPExtMiniGame
+  - TCMPPExtNetwork
+  - TCMPPExtScanCode
+  - TCMPPSDK
+
+SPEC REPOS:
+  https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git:
+    - Brotli
+    - CocoaAsyncSocket
+    - MJRefresh
+    - MQQComponents
+    - PromiseObjC
+    - SocketRocket
+    - SSZipArchive
+    - Tars
+    - TCMPPExtAuthentication
+    - TCMPPExtBLE
+    - TCMPPExtCalendar
+    - TCMPPExtClipBoard
+    - TCMPPExtContact
+    - TCMPPExtLBS
+    - TCMPPExtMDNS
+    - TCMPPExtMedia
+    - TCMPPExtMiniGame
+    - TCMPPExtNetwork
+    - TCMPPExtScanCode
+    - TCMPPSDK
+    - TMFProfile
+    - TMFShark
+    - TMFUploader
+    - TZImagePickerController
+
+SPEC CHECKSUMS:
+  Brotli: 9432ce457fb024b33c6a24e3991ad615b5f1f43f
+  CocoaAsyncSocket: d5b57776df1ae277db1aa2a975b8f8b6799bf32e
+  MJRefresh: 520f44a7a049fca2710a403f9c47d2dfcae367d1
+  MQQComponents: 30c21ed806e3d613bf107ade8bb6957a9ffadd5c
+  PromiseObjC: 51e0cb71693fe55aeef91d22d5b95b2bd4901273
+  SocketRocket: 8b0bf37da872b89749e38864e24619d285e7cc96
+  SSZipArchive: 489001da941c6a8c61edef261f59135d60d3094d
+  Tars: 85fb2b23bb1fb11f4f59b1a325c657259c2c2268
+  TCMPPExtAuthentication: ec6d6202f941c59b1b6b6d4515153cd52068d8e3
+  TCMPPExtBLE: e5438e212db75d3f9c914bd02850a017bdc318b7
+  TCMPPExtCalendar: fbbf84fdfb4b5b546828bb7e9e1fb4874fa7b978
+  TCMPPExtClipBoard: 98a1979da2b3f4f56f1f5aaaf38dabedb3b99b76
+  TCMPPExtContact: 60fa2d7ba4b72c592249abc7483572f6a23a2549
+  TCMPPExtLBS: 6ac8c88ecf842cae0f469f5d3df0ddf7ef057aef
+  TCMPPExtMDNS: 3a291b9c5bc37c30cd4ee16fab4715129a74e8f6
+  TCMPPExtMedia: cda563c2e6002284d626533543788a2ecc91149e
+  TCMPPExtMiniGame: 1f39c6bde260e773abe9eed6070b1bb0f3a1c009
+  TCMPPExtNetwork: ac60ed5bcb20e65a3e720d2d6b6a1a6bebccbf8d
+  TCMPPExtScanCode: a724fd62b9d71c96f11f1be0540b0b5907fe62df
+  TCMPPSDK: de6c4fe614bb0744a28789c126ac89d65c8158cf
+  TMFProfile: 9f2ba8872e4b256532eb1ce89ae716505fc69b8e
+  TMFShark: 53f61056982a7b353c77f5c829ef7b2c8c8afa1c
+  TMFUploader: 6fb7abc8c14ac7c12047980f3bc2f47713e4a28b
+  TZImagePickerController: 85c5a4c7410a2221e8926c786a1eff669c295f16
+
+PODFILE CHECKSUM: 76f98949f2b23a0926ff1bd47b6e86b202e52711
+
+COCOAPODS: 1.16.2

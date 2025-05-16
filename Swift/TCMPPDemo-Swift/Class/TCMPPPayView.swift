@@ -27,9 +27,9 @@ class TCMPPPayView : UIView, UITextFieldDelegate{
         }
     }
     
-    @objc var money: String?{
+    var money: Float?{
         didSet{
-            let count = Float(money ?? "") ?? 0
+            let count = Float(money ?? 0.0)
             self.moneyLabel?.text = String(format: "$%.2f", count/100);
         }
     }

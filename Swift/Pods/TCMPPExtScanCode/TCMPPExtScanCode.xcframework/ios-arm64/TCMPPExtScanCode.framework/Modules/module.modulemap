@@ -1,0 +1,6 @@
+framework module TCMPPExtScanCode {
+  umbrella header "TCMPPExtScanCode.h"
+  export *
+
+  module * { export * }
+}

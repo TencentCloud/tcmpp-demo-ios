@@ -1,0 +1,6 @@
+framework module TCMPPSDK {
+  umbrella header "TCMPPSDK.h"
+  export *
+
+  module * { export * }
+}

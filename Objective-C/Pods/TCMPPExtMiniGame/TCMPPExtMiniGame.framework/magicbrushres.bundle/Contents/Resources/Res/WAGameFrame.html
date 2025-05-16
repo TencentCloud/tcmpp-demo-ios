@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <title>wegame</title>
+  <style>
+    canvas {
+      z-index: 100;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    #debug {
+      z-index: 200;
+      color: red;
+      position: fixed;
+      top: 20px; left: 20px;
+    }
+    #fps {
+        margin-top: 30px;
+        display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="debug">
+<!--    <div id='time'>time</div>-->
+<div id='fps'>
+    <span id="fps_value">60 FPS</span>
+    (<span id="fps_start">60</span>-<span id="fps_end">60</span>)
+</div>
+<!--    <div id='data'>size</div>-->
+  </div>
+  <script>
+    Object.defineProperty(window, '__jitMode', {
+      value: true,
+      writable: false,
+      configurable: false
+    });
+  </script>
+  <!-- the line below will replaced with 'window.__wkrenderer_h5 = true/false' -->
+  <script>/* __wkrenderer */</script>
+  <!-- the line below will replaced with 'vConsole.min.js' -->
+  <script>/* vConsole */</script>
+  <script>/* 906e26fc918 */// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+var originXMLHttpRequest = XMLHttpRequest;
+parcelRequire = (function (modules, cache, entry, globalName) {
+  // Save the require from previous bundle to this closure if any
+  var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
+  var nodeRequire = typeof require === 'function' && require;
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire = typeof parcelRequire === 'function' && parcelRequire;
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error('Cannot find module \'' + name + '\'');
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = cache[name] = new newRequire.Module(name);
+
+      modules[name][0].call(module.exports, localRequire, module, module.exports, this);
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x){
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x){
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function (id, exports) {
+    modules[id] = [function (require, module) {
+      module.exports = exports;
+    }, {}];
+  };
+
+  var error;
+  for (var i = 0; i < entry.length; i++) {
+    try {
+      newRequire(entry[i]);
+    } catch (e) {
+      // Save first error but execute all entries
+      if (!error) {
+        error = e;
+      }
+    }
+  }
+
+  if (entry.length) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(entry[entry.length - 1]);
+
+    // CommonJS
+    if (typeof exports === "object" && typeof module !== "undefined") {
+      module.exports = mainExports;
+
+    // RequireJS
+    } else if (typeof define === "function" && define.amd) {
+     define(function () {
+       return mainExports;
+     });
+
+    // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+
+  // Override the current require with this new one
+  parcelRequire = newRequire;
+
+  if (error) {
+    // throw error from earlier, _after updating parcelRequire_
+    throw error;
+  }
+
+  return newRequire;
+})({"BHXf":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.BASE_URL = exports.global = exports.getDataType = exports.getUtf8Length = exports.weloge = exports.welog = void 0;
+
+var welog =
+/** @class */
+function () {
+  function welog() {}
+
+  welog.log = function (data) {
+    prompt('WELOG', data);
+  };
+
+  return welog;
+}();
+
+exports.welog = welog;
+
+function weloge(err) {
+  welog.log('[ERRO] ' + err);
+}
+
+exports.weloge = weloge;
+
+function getUtf8Length(str) {
+  var s = String(str),
+      len = 0;
+
+  for (var i = 0; i < s.length; i++) {
+    var code = s.charCodeAt(i);
+
+    if (code <= 0x7f) {
+      len += 1;
+    } else if (code <= 0x7ff) {
+      len += 2;
+    } else if (code >= 0xd800 && code <= 0xdfff) {
+      len += 4;
+      i++;
+    } else {
+      len += 3;
+    }
+  }
+
+  return len;
+}
+
+exports.getUtf8Length = getUtf8Length;
+
+function getDataType(data) {
+  return Object.prototype.toString.call(data).split(' ')[1].split(']')[0];
+}
+
+exports.getDataType = getDataType;
+exports.global = window;
+exports.BASE_URL = "weapp://wechat-game-runtime";
+},{}],"E9Lc":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.OnFrameBegin = void 0; // 每 n 帧，更新一次 profile 信息
+
+var PROFILE_UPDATE_COUNT_PER_FRAME = 60;
+var _frame_count = 0;
+
+var _fps_dom = document.getElementById("fps");
+
+var _data_dom = document.getElementById("data");
+
+var _fps_history = [];
+var _tick_at_frame_begin = 0;
+
+// 计算FPS开始
+var rAF = window.requestAnimationFrame;
+var cancelRAF = window.cancelAnimationFrame;
+  
+var frame = 0;
+var _fps_start = 60;
+var _fps_end = 60;
+var allFrameCount = 0;
+var lastTime = Date.now();
+var lastFameTime = Date.now();
+
+var fps_value_dom = document.getElementById("fps_value");
+var fps_start_dom = document.getElementById("fps_start");
+var fps_end_dom = document.getElementById("fps_end");
+
+var fps_request_id;
+
+var updateFpsDom = function(fps) {
+    // console.log('update fps', fps);
+    if(fps && fps < _fps_start) {
+        _fps_start = fps;
+    } else if(fps > _fps_end) {
+        _fps_end = fps;
+    }
+    
+    fps_value_dom.innerHTML = `${fps} FPS`;
+    fps_start_dom.innerHTML = `${_fps_start}`;
+    fps_end_dom.innerHTML = `${_fps_end}`;
+}
+  
+var calculateFPS = function () {
+    var now = Date.now();
+    var fs = (now - lastFameTime);
+    var fps = Math.round(1000 / fs);
+  
+    lastFameTime = now;
+    // 不置 0，在动画的开头及结尾记录此值的差值算出 FPS
+    allFrameCount++;
+    frame++;
+  
+    if (now > 1000 + lastTime) {
+        var fps = Math.round((frame * 1000) / (now - lastTime));
+        // console.log(`${new Date()} 1S内 FPS：`, fps);
+        updateFpsDom(fps);
+        frame = 0;
+        lastTime = now;
+    };
+  
+    fps_request_id = rAF(calculateFPS);
+}
+ 
+ var showFpsPannel = function () {
+     _fps_dom.style.display = 'block';
+     calculateFPS();
+ }
+ 
+ var hideFpsPannel = function () {
+     _fps_start = 60;
+     _fps_end = 60;
+     frame = 0;
+     allFrameCount = 0;
+     lastTime = Date.now();
+     lastFameTime = Date.now();
+     
+     cancelRAF(fps_request_id);
+     _fps_dom.style.display = 'none';
+ }
+
+// 计算FPS结束
+
+function CurrentTick() {
+  return new Date().getTime();
+}
+
+function UpdateFpsDom(fps, avg) {
+  _fps_dom.innerHTML = "fps: " + fps + " avg: " + avg;
+} // 取最近 10 个 fps 数据，进行平均
+
+
+function CalAverageFps(fps) {
+  _fps_history.push(fps);
+
+  if (_fps_history.length < 10) {
+    return 0;
+  }
+
+  if (_fps_history.length > 10) {
+    _fps_history.shift();
+  }
+
+  return _fps_history.reduce(function (a, v) {
+    return a + v;
+  }) / _fps_history.length;
+}
+
+function OnFrameBegin() {
+  if (_tick_at_frame_begin) {
+    // calculate and update
+    var frame_duration_ms = CurrentTick() - _tick_at_frame_begin;
+
+    var fps = Math.round(1000 / frame_duration_ms);
+    var avg_fps = CalAverageFps(fps);
+    UpdateFpsDom(fps, avg_fps);
+  }
+
+  _tick_at_frame_begin = 0;
+
+  if (++_frame_count % PROFILE_UPDATE_COUNT_PER_FRAME !== 0) {
+    return;
+  }
+
+  _tick_at_frame_begin = CurrentTick();
+}
+
+exports.OnFrameBegin = OnFrameBegin;
+exports.showFpsPannel = showFpsPannel;
+exports.hideFpsPannel = hideFpsPannel;
+},{}],"gWvZ":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.H5Canvas = void 0;
+var _first_time = true;
+
+function H5Canvas() {
+  var canvas = document.createElement('canvas');
+
+  if (_first_time) {
+    document.body.appendChild(canvas);
+    canvas.style.display = "block";
+    _first_time = false;
+  }
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  return canvas;
+}
+
+exports.H5Canvas = H5Canvas;
+},{}],"W5si":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.H5Image = void 0;
+
+var util_1 = require("./util");
+
+var descriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, "src");
+
+function sendUrlToService(image, url) {
+  if (!url || typeof url !== 'string') {
+    // invalid
+    descriptor.set.call(image, url);
+    return;
+  }
+
+  if (url.startsWith('data:') || url.startsWith('http://') || url.startsWith('https://')) {
+    descriptor.set.call(image, url);
+    return;
+  } // wxfs
+
+
+  descriptor.set.call(image, util_1.BASE_URL + "/wxfs/" + btoa(url));
+}
+
+var srcMap = new WeakMap();
+Object.defineProperty(HTMLImageElement.prototype, "src", {
+  configurable: descriptor.configurable,
+  enumerable: descriptor.enumerable,
+  get: function get() {
+    return srcMap.get(this);
+  },
+  set: function set(url) {
+    srcMap.set(this, url);
+    return sendUrlToService(this, url);
+  }
+});
+exports.H5Image = Image;
+},{"./util":"BHXf"}],"GEXs":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var util_1 = require("./util");
+
+var _128_K = 128 * 1024 * 1024;
+
+var WECHAT_IPC_PROFILE = true;
+
+var Profile =
+/** @class */
+function () {
+  function Profile() {
+    this._data_size = 0;
+    this._sync_count = 0;
+    this._async_count = 0;
+    this._128k_data_count = 0;
+    this._max_data_size = 0;
+  }
+
+  Object.defineProperty(Profile.prototype, "message", {
+    get: function get() {
+      return "count :" + (this._async_count + this._sync_count) + "(" + this._sync_count + ":" + this._async_count + ")" + (" other: 128k:" + this._128k_data_count + "; max:" + this._max_data_size);
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(Profile.prototype, "SyncCount", {
+    get: function get() {
+      return this._sync_count;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(Profile.prototype, "AsyncCount", {
+    get: function get() {
+      return this._async_count;
+    },
+    enumerable: false,
+    configurable: true
+  }); // 记录一次 Sync 调用
+
+  Profile.prototype._RecordSync = function (cmd, message) {
+    this._sync_count++;
+
+    this._RecordDataSize(message);
+  }; // 记录一次 Async 调用
+
+
+  Profile.prototype._RecordAsync = function (dataString) {
+    this._async_count++;
+
+    this._RecordDataSize(dataString);
+  };
+
+  Profile.prototype._RecordDataSize = function (dataString) {
+    var size = dataString.length * 2;
+    this._data_size += size;
+
+    if (size < _128_K) {
+      this._128k_data_count++;
+    }
+
+    if (size > this._max_data_size) {
+      this._max_data_size = size;
+    }
+  };
+
+  return Profile;
+}();
+
+var IPC =
+/** @class */
+function () {
+  function IPC() {
+    this.profile = new Profile();
+  } // 同步传输
+
+
+  IPC.prototype.sync = function (cmd, dataString) {
+    var result = prompt(cmd, dataString);
+
+    if (WECHAT_IPC_PROFILE) {
+      this.profile._RecordSync(cmd, dataString);
+    }
+
+    return result;
+  }; // 异步传输
+
+
+  IPC.prototype.async = function (dataString) {
+    var result = util_1.global.webkit.messageHandlers.WeixinWeAppMessage.postMessage(dataString);
+
+    if (WECHAT_IPC_PROFILE) {
+      this.profile._RecordAsync(dataString);
+    }
+
+    return result;
+  };
+
+  return IPC;
+}();
+
+exports.default = new IPC();
+},{"./util":"BHXf"}],"jGoF":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var ipc_1 = __importDefault(require("./ipc"));
+
+var util_1 = require("./util");
+
+var _unicodeEncoder = new TextDecoder('unicode');
+/* 对 Text 来说是 Decoder，对 Command 来说是 Encoder */
+
+
+var _UINT16_MAX_LENGTH = 65536;
+
+var _UINT32_MAX_LENGTH = 65536 * 65536;
+
+var _DATA_SEGMENT_HEADER_BYTE_LENGTH = 6; // id: 2bytes ; bytelength: 4bytes
+
+var CommandBuffer =
+/** @class */
+function () {
+  function CommandBuffer() {
+    this._dataSegment = new ArrayBuffer(1024 * 1024 * 2);
+    this._dataSegmentUint16 = new Uint16Array(this._dataSegment);
+    this._dataSegmentUint8 = new Uint8Array(this._dataSegment);
+    this._dataSegmentByteIndex = 2; // 用2个 byte 表示头部，标明共有多少段数据
+
+    this._dataSegmentId = 0;
+    this._dataSegmentExpandTimes = 0;
+    this._codeSegment = "";
+    this._count = 0;
+    this._begin = 0;
+    this._time_dom = null;
+  }
+
+  Object.defineProperty(CommandBuffer.prototype, "Logger", {
+    set: function set(v) {
+      this._logger = v;
+    },
+    enumerable: false,
+    configurable: true
+  }); // 如果当前数据段不足以容纳新数据，扩展数据段，并将旧数据拷贝到新数据段中
+  // 扩展方法是，当前数据段的 byteLength * 2^n，直到满足需求
+
+  CommandBuffer.prototype._ExpandDataSegmentIfNeeded = function (neededByteLength) {
+    if (this._dataSegment.byteLength - this._dataSegmentByteIndex >= neededByteLength) {
+      return;
+    }
+
+    var expectByteLength = this._dataSegment.byteLength * 2;
+    var comsumedByteLength = this._dataSegmentByteIndex;
+
+    while (expectByteLength - comsumedByteLength < neededByteLength) {
+      expectByteLength *= 2;
+    }
+
+    this._dataSegmentExpandTimes++;
+    var newDataSegment = new ArrayBuffer(expectByteLength);
+    var newDataSegmentUint8 = new Uint8Array(newDataSegment);
+    var newDataSegmentUint16 = new Uint16Array(newDataSegment);
+
+    if (comsumedByteLength > 0) {
+      // copy old data
+      var oldDataSegment = new Uint8Array(this._dataSegment, 0, this._dataSegmentByteIndex);
+      newDataSegmentUint8.set(oldDataSegment);
+    }
+
+    this._dataSegment = newDataSegment;
+    this._dataSegmentUint8 = newDataSegmentUint8;
+    this._dataSegmentUint16 = newDataSegmentUint16;
+  };
+  /**
+   * 将数据放入 CommandBuffer，返回 Buffer 在数据段
+   * @param ab {ArrayBuffer|ArrayBufferView}
+   * return buffer id, start with 1
+   */
+
+
+  CommandBuffer.prototype.PushDataSegment = function (ab) {
+    // input handle
+    if (!ab) {
+      return;
+    }
+
+    if (ab.byteLength > _UINT32_MAX_LENGTH) {
+      throw new Error("ArrayBuffer too large! [" + ab.byteLength + "]");
+    }
+
+    if (this._dataSegmentByteIndex % 2 !== 0) {
+      // debug
+      throw new Error("CommandBuffer internal error. _dataSegmentByteIndex % 2 !== 0 [" + this._dataSegmentByteIndex + "]");
+    }
+
+    var id = ++this._dataSegmentId;
+
+    if (id > _UINT16_MAX_LENGTH) {
+      throw new Error("CommandBuffer internal error. _dataSegmentId too large. [" + id + "]");
+    } // prepare
+
+
+    var neededByteLength = (ab.byteLength % 2 === 0 ? ab.byteLength : ab.byteLength + 1) + _DATA_SEGMENT_HEADER_BYTE_LENGTH;
+
+    if (this._logger) {
+      this._logger.log(neededByteLength);
+    }
+
+    this._ExpandDataSegmentIfNeeded(neededByteLength); // write header
+
+
+    var uint16StartIndex = this._dataSegmentByteIndex / 2;
+    this._dataSegmentUint16[uint16StartIndex] = id; // header id
+
+    this._dataSegmentUint16[uint16StartIndex + 1] = ab.byteLength >> 16; // header length; 高 16 位
+
+    this._dataSegmentUint16[uint16StartIndex + 2] = ab.byteLength & 0xFFFF; // header length; 低 16 位
+    // write data
+
+    var abv;
+
+    if (ArrayBuffer.isView(ab)) {
+      abv = new Uint8Array(ab.buffer, ab.byteOffset, ab.byteLength);
+    } else {
+      abv = new Uint8Array(ab);
+    }
+
+    this._dataSegmentUint8.set(abv, this._dataSegmentByteIndex + _DATA_SEGMENT_HEADER_BYTE_LENGTH);
+
+    this._dataSegmentByteIndex += neededByteLength;
+    return id;
+  }; // 将数据段序列化为 string
+
+
+  CommandBuffer.prototype._EncodeDataSegment = function () {
+    //一个总长度，每个ab一个id，一个长度，所以乘以2
+    this._dataSegmentUint16[0] = this._dataSegmentId;
+    return _unicodeEncoder.decode(new Uint8Array(this._dataSegment, 0, this._dataSegmentByteIndex));
+  };
+
+  CommandBuffer.prototype.PushCodeSegment = function (command) {
+    this._codeSegment += command;
+  };
+
+  CommandBuffer.prototype.PushInvokeSegment = function (event, id, param) {
+    var len = util_1.getUtf8Length(param);
+    this._codeSegment += "`888`" + event + "`" + id + "`" + len + "`" + param;
+  };
+
+  CommandBuffer.prototype.ToString = function () {
+    var data = this._EncodeDataSegment();
+
+    return data + this._codeSegment;
+  };
+
+  CommandBuffer.prototype.ToStringWithTag = function (tag, time) {
+    var data = this._EncodeDataSegment();
+
+    return data + tag + '`' + time + this._codeSegment;
+  }; // 将 Command 推送到逻辑端
+
+
+  CommandBuffer.prototype.Flush = function () {
+    if (util_1.global.getProfileTag) {
+      var tag = util_1.global.getProfileTag();
+      var post_begin = new Date().getTime();
+      var str = this.ToStringWithTag(tag, post_begin);
+      ipc_1.default.async(str);
+      var end = new Date().getTime();
+      this._count++;
+
+      if (this._begin && this._count === 10) {
+        if (!this._time_dom) {
+          this._time_dom = document.getElementById("time");
+        }
+
+        this._time_dom.innerHTML = "js frame:" + (end - this._begin) + "ms,post:" + (end - post_begin) + "ms";
+        this._count = 0;
+      }
+
+      this._begin = end;
+    } else {
+      var str = this.ToString();
+      ipc_1.default.async(str);
+    }
+
+    this.Clear();
+  };
+
+  CommandBuffer.prototype.FlushSync = function () {
+    var str = null;
+
+    if (util_1.global.getProfileTag) {
+      var tag = util_1.global.getProfileTag();
+      var post_begin = new Date().getTime();
+      str = this.ToStringWithTag(tag, post_begin);
+    } else {
+      str = this.ToString();
+    }
+
+    var ret = ipc_1.default.sync("DRAW", str);
+    this.Clear();
+    return ret;
+  };
+
+  CommandBuffer.prototype.Clear = function () {
+    this._codeSegment = "";
+    this._dataSegmentByteIndex = 2;
+    this._dataSegmentId = 0;
+  };
+
+  return CommandBuffer;
+}();
+
+exports.default = new CommandBuffer();
+},{"./ipc":"GEXs","./util":"BHXf"}],"MYih":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NativeGlobal = void 0;
+
+var util_1 = require("./util");
+
+var profile_1 = require("./profile");
+
+var h5canvas_1 = require("./h5canvas");
+
+var h5image_1 = require("./h5image");
+
+var command_1 = __importDefault(require("./command"));
+
+var _performance = window.performance;
+var _console = {
+  log: window.console.log,
+  info: window.console.info,
+  error: window.console.error
+};
+var count = 0;
+
+function performanceNow() {
+  return _performance.now() * 1000;
+}
+
+function readArrayBuffer({
+  filePath,
+  responseType
+}) {
+  var xhr = new originXMLHttpRequest();
+  return xhr.open("GET", filePath, false), xhr.responseType = responseType, xhr.send(null), "arraybuffer" === responseType ? xhr.response : xhr.responseText;
+}
+
+function parseFontFamily() {
+    var t = {
+        parse: function (e) {
+           var r = t._bin,
+              n = new Uint8Array(e);
+           if ("ttcf" == r.readASCII(n, 0, 4)) {
+              var i = 8,
+                 a = r.readUint(n, i);
+              i += 4;
+              for (var o = [], s = 0; s < a; s++) {
+                 var u = r.readUint(n, i);
+                 i += 4, o.push(t._readFont(n, u))
+              }
+              return o
+           }
+           return [t._readFont(n, 0)]
+        },
+        _readFont: function (e, r) {
+           var n = t._bin;
+           r += 4;
+           var i = n.readUshort(e, r);
+           r += 8;
+           for (var a = 0; a < i; a++) {
+              var o = n.readASCII(e, r, 4);
+              r += 8;
+              var s = n.readUint(e, r);
+              if (r += 8, "name" === o) return t.name.parse(e, s)
+           }
+           throw new Error("Failed to parse file")
+        }
+    };
+    t._bin = {
+        readUshort: (t, e) => t[e] << 8 | t[e + 1],
+        readUint(e, r) {
+           var n = t._bin.t.uint8;
+           return n[3] = e[r], n[2] = e[r + 1], n[1] = e[r + 2], n[0] = e[r + 3], t._bin.t.uint32[0]
+        },
+        readUint64: (e, r) => 4294967296 * t._bin.readUint(e, r) + t._bin.readUint(e, r + 4),
+        readASCII(t, e, r) {
+           for (var n = "", i = 0; i < r; i++) n += String.fromCharCode(t[e + i]);
+           return n
+        },
+        readUnicode(t, e, r) {
+           for (var n = "", i = 0; i < r; i++) {
+              var a = t[e++] << 8 | t[e++];
+              n += String.fromCharCode(a)
+           }
+           return n
+        }
+     }, t._bin.t = {
+        buff: new ArrayBuffer(8)
+     }, t._bin.t.int8 = new Int8Array(t._bin.t.buff), t._bin.t.uint8 = new Uint8Array(t._bin.t.buff), t._bin.t.int16 = new Int16Array(t._bin.t.buff), t._bin.t.uint16 = new Uint16Array(t._bin.t.buff), t._bin.t.int32 = new Int32Array(t._bin.t.buff), t._bin.t.uint32 = new Uint32Array(t._bin.t.buff), t.name = {}, t.name.parse = function (e, r) {
+        var n = t._bin,
+           i = {};
+        r += 2;
+        var a = n.readUshort(e, r);
+        r += 2;
+        for (var o, s = ["copyright", "fontFamily", "fontSubfamily", "ID", "fullName", "version", "postScriptName", "trademark", "manufacturer", "designer", "description", "urlVendor", "urlDesigner", "licence", "licenceURL", "---", "typoFamilyName", "typoSubfamilyName", "compatibleFull", "sampleText", "postScriptCID", "wwsFamilyName", "wwsSubfamilyName", "lightPalette", "darkPalette"], u = r += 2, h = 0; h < a; h++) {
+           var c = n.readUshort(e, r);
+           r += 2;
+           var f = n.readUshort(e, r);
+           r += 2;
+           var E = n.readUshort(e, r);
+           r += 2;
+           var d = n.readUshort(e, r);
+           r += 2;
+           var l = n.readUshort(e, r);
+           r += 2;
+           var p = n.readUshort(e, r);
+           r += 2;
+           var _, A = s[d],
+              v = u + 12 * a + p;
+           if (0 == c) _ = n.readUnicode(e, v, l / 2);
+           else if (3 == c && 0 == f) _ = n.readUnicode(e, v, l / 2);
+           else if (0 == f) _ = n.readASCII(e, v, l);
+           else if (1 == f) _ = n.readUnicode(e, v, l / 2);
+           else if (3 == f) _ = n.readUnicode(e, v, l / 2);
+           else {
+              if (1 != c) throw new Error("unknown encoding " + f + ", platformID: " + c);
+              _ = n.readASCII(e, v, l), console.log("reading unknown MAC encoding " + f + " as ASCII")
+           }
+           var T = "p" + c + "," + E.toString(16);
+           null == i[T] && (i[T] = {}), i[T][A] = _, i[T]._lang = E
+        }
+        for (var R in i)
+           if (null != i[R].postScriptName) return i[R];
+        for (var R in i) {
+           o = R;
+           break
+        }
+        return console.log("returning name table with languageID " + i[o]._lang), i[o]
+     }
+
+    return t;
+}
+
+
+exports.NativeGlobal = {
+  __wxConfig: {
+    devicePixelRatio: util_1.global.devicePixelRatio,
+    screenWidth: util_1.global.innerWidth,
+    screenHeight: util_1.global.innerHeight
+  },
+  jitMode: true,
+  decodeArrayBuffer: function decodeArrayBuffer(buffer, encoding) {
+    var decoder = new TextDecoder(encoding);
+    var ret = decoder.decode(buffer);
+    return ret;
+  },
+  setPreferredFramesPerSecond: function setPreferredFramesPerSecond(fps) {},
+  loadFont: function (t) {
+      var e, r, n, i = util_1.BASE_URL + "/wxfs/" + btoa(t);
+      try {
+         n = readArrayBuffer({
+            filePath: i,
+            responseType: "arraybuffer"
+         })
+      } catch (e) {
+         return _console.log(`${t} loadFont error: ${e}`), null
+      }
+      if (!n || !n.byteLength) return _console.log(`${t} loadFont empty`), null;
+      try {
+         r = parseFontFamily().parse(n)[0].fontFamily;
+      } catch (e) {
+          _console.log(`${t} FontName parse error: ${e}`), r = "CustomFont" + ++count;
+      }
+      try {
+         new FontFace(r, n).load().then((t => {
+            document.fonts.add(t)
+         }))
+      } catch (e) {
+         return _console.log(`${t} FontFace load error: ${e}`), null
+      }
+      return r
+   },
+  requestAnimationFrame: util_1.global.requestAnimationFrame.bind(util_1.global),
+  cancelAnimationFrame: util_1.global.cancelAnimationFrame.bind(util_1.global),
+  setTimeout: util_1.global.setTimeout.bind(util_1.global),
+  clearTimeout: util_1.global.clearTimeout.bind(util_1.global),
+  setInterval: util_1.global.setInterval.bind(util_1.global),
+  clearInterval: util_1.global.clearInterval.bind(util_1.global),
+  performanceNow: performanceNow,
+  EventHandler: {},
+  webkit: util_1.global["webkit"],
+  Canvas: undefined,
+  Image: undefined,
+  OnFrameBegin: profile_1.OnFrameBegin,
+  showFpsPannel: profile_1.showFpsPannel,
+  hideFpsPannel: profile_1.hideFpsPannel,
+  log: function log() {
+    _console.log.apply(_console, arguments);
+  },
+  loadFileSync: function(t) {
+      var filePath = util_1.BASE_URL + "/wxfs/" + btoa(t);
+      var result;
+      try {
+          result = readArrayBuffer({
+              filePath,
+              responseType: "arraybuffer"
+          });
+      } catch(e) {
+          _console.log(`${t} readFileXhrSync error: ${e}`);
+          return null;
+      }
+      
+      if(!result || !result.byteLength) {
+          _console.log(`${t} readFileXhrSync empty`);
+          return null;
+      }
+      
+      return result;
+  }
+};
+window.wxConfig = exports.NativeGlobal.__wxConfig;
+exports.NativeGlobal.Canvas = h5canvas_1.H5Canvas;
+// FIXME
+exports.NativeGlobal.AutoScreenCanvas = h5canvas_1.H5Canvas;
+exports.NativeGlobal.getSystemInfo = function () {
+    return exports.NativeGlobal.__wxConfig;
+}
+exports.NativeGlobal.EventHandler.addEventListener = function(eventName, callback) {
+    exports.NativeGlobal.EventHandler['on'+eventName] = callback;
+}
+exports.NativeGlobal.EventHandler.removeEventListener = function(eventName, callback) {
+    exports.NativeGlobal.EventHandler['on'+eventName] = null;
+}
+
+exports.NativeGlobal.Image = h5image_1.H5Image;
+var _raf = window.requestAnimationFrame;
+
+var Flush = function Flush() {
+  command_1.default.Flush();
+
+  _raf(Flush);
+};
+
+_raf(Flush);
+},{"./util":"BHXf","./profile":"E9Lc","./h5canvas":"gWvZ","./h5image":"W5si","./command":"jGoF"}],"rUt6":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var native_1 = require("./native");
+
+function _null() {}
+
+var _Touch =
+/** @class */
+function () {
+  function _Touch(touch) {
+    this.identifier = this.id = touch.identifier;
+    this.screenX = this.pageX = this.clientX = this.x = touch.clientX;
+    this.screenY = this.pageY = this.clientY = this.y = touch.clientY;
+  }
+
+  return _Touch;
+}();
+
+var _TouchEvent =
+/** @class */
+function () {
+  function _TouchEvent(event) {
+    this.isTrusted = true;
+    this.bubbles = false;
+    this.cancelable = false;
+    this.composed = false;
+    this.cancelBubble = _null;
+    this.preventDefault = _null;
+    this.stopPropagation = _null;
+    this.touches = Array.from(event.touches).map(function (t) {
+      return new _Touch(t);
+    });
+    this.changedTouches = Array.from(event.changedTouches).map(function (t) {
+      return new _Touch(t);
+    });
+    this.timeStamp = event.timeStamp;
+    this.currentTarget = this.target = event.currentTarget;
+    this.type = event.type;
+  }
+
+  return _TouchEvent;
+}();
+
+['touchstart', 'touchmove', 'touchcancel', 'touchend'].forEach(function (event) {
+  var key = "on" + event;
+  document.addEventListener(event, function (e) {
+    var listener = native_1.NativeGlobal.EventHandler[key];
+
+    if (typeof listener === 'function') {
+      listener.call(native_1.NativeGlobal.EventHandler, new _TouchEvent(e));
+    }
+  });
+});
+},{"./native":"MYih"}],"ZIkX":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NativeBuffer = exports.NativeBufferHandler = void 0;
+
+var command_1 = __importDefault(require("./command"));
+
+exports.NativeBufferHandler = {
+  FakeId: 0,
+  DestroyObject: function DestroyObject(id) {
+    command_1.default.PushCodeSegment("`23`" + id);
+  }
+};
+
+var NativeBuffer =
+/** @class */
+function () {
+  // buffer 如果是 int，则代表 byteLength
+  // buffer 如果是 ArrayBuffer 或 ArrayBufferView，
+  //   如果 borrow = false，后面创建一个 NativeBuffer，并将 ArrayBuffer 复制到 buffer 中
+  //   如果 borrow = true，直接使用数据段中的数据，生命周期只持续到本次 CommandBuffer 结束
+  // buffer 如果是 undefined，则创建一个空壳，走其他 init 方法
+  function NativeBuffer(buffer, borrow) {
+    if (borrow === void 0) {
+      borrow = false;
+    }
+
+    if (Number.isInteger(buffer)) {
+      this.initWithLength(buffer);
+    } else if (buffer instanceof ArrayBuffer || ArrayBuffer.isView(buffer)) {
+      if (!borrow) {
+        this.initWithLength(buffer.byteLength);
+        this.set(buffer);
+      } else {
+        // 只是为了统一格式，将 DataSegment 包装成一个 NativeBuffer
+        // 只是临时用一下
+        this.initWithBufferBorrow(buffer);
+      }
+    } else {// 创建一个空壳
+    }
+  }
+
+  NativeBuffer.InitWithId = function (bufferId) {
+    var ret = new NativeBuffer();
+    ret._id = bufferId;
+    ret._byteLength = 0;
+    ret._is_borrow = false;
+    ret._is_freeze = true;
+    return ret;
+  };
+
+  NativeBuffer.prototype.initWithLength = function (byteLength) {
+    var id = ++exports.NativeBufferHandler.FakeId;
+    this._id = id;
+    this._byteLength = byteLength;
+    this._is_borrow = false;
+    command_1.default.PushCodeSegment('`26`1`' + id + '`' + byteLength);
+  };
+
+  NativeBuffer.prototype.initWithBufferBorrow = function (buffer) {
+    var id = ++exports.NativeBufferHandler.FakeId;
+    this._id = id;
+    this._byteLength = buffer.byteLength;
+    this._is_borrow = true;
+    var sourceId = command_1.default.PushDataSegment(buffer);
+    command_1.default.PushCodeSegment('`26`2`' + id + '`' + sourceId); // welog.log('CommandBuffer: ' + CommandBuffer._codeSegment);
+  };
+
+  Object.defineProperty(NativeBuffer.prototype, "byteLength", {
+    get: function get() {
+      return this._byteLength;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(NativeBuffer.prototype, "length", {
+    get: function get() {
+      return this.byteLength;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(NativeBuffer.prototype, "id", {
+    get: function get() {
+      return this._id;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(NativeBuffer.prototype, "isBorrow", {
+    // 指向一块不安全的内存 (DataSegment)，用完需要赶紧删掉
+    get: function get() {
+      return this._is_borrow;
+    },
+    enumerable: false,
+    configurable: true
+  }); // dest_offset 是将 value 复制到 dest 的哪个位置
+
+  NativeBuffer.prototype.set = function (value
+  /*ArrayBuffer or ArrayBufferView*/
+  , dest_offset) {
+    if (dest_offset === void 0) {
+      dest_offset = 0;
+    }
+
+    if (this._byteLength <= 0) {
+      throw new Error("NativeBuffer: Params error. current byteLength <= 0 " + this._byteLength);
+    }
+
+    if (dest_offset + value.byteLength > this._byteLength) {
+      throw new Error("NativeBuffer: Params error. offset + byteLength > this._byteLength " + (dest_offset + " " + value.byteLength + " " + this._byteLength));
+    }
+
+    var sourceId = command_1.default.PushDataSegment(value);
+    command_1.default.PushCodeSegment('`27`' + this._id + '`' + sourceId + '`' + dest_offset);
+  };
+
+  NativeBuffer.prototype.get = function () {
+    if (this._byteLength <= 0) {
+      return undefined;
+    }
+
+    command_1.default.PushCodeSegment('`28`' + this._id);
+    var str = command_1.default.FlushSync();
+    var uint16 = new Uint16Array(str.length);
+
+    for (var i = 0, length = str.length; i < length; i++) {
+      uint16[i] = str.charCodeAt(i);
+    }
+
+    return uint16.buffer;
+  };
+
+  NativeBuffer.prototype.destroy = function () {
+    exports.NativeBufferHandler.DestroyObject(this._id);
+  };
+
+  NativeBuffer.ConvertSupported = function (input) {
+    if (!input) {
+      return false;
+    }
+
+    return input instanceof ArrayBuffer || ArrayBuffer.isView(input) || input instanceof NativeBuffer;
+  }; // 如果是 ArrayBuffer，就将其适配为 NativeBuffer
+  // NonNull
+
+
+  NativeBuffer.ConvertIfNeededNonNull = function (input) {
+    var buffer;
+    var shouldDestroy = false;
+
+    if (ArrayBuffer.isView(input) || input instanceof ArrayBuffer) {
+      // adapte to nativebuffer
+      buffer = new NativeBuffer(input, true);
+      shouldDestroy = true;
+    } else if (input instanceof NativeBuffer) {
+      buffer = input;
+    } else {
+      throw new Error("params type not accepted.");
+    }
+
+    return {
+      id: buffer.id,
+      buffer: buffer,
+      shouldDestroy: shouldDestroy
+    };
+  };
+
+  NativeBuffer.ConvertIfNeededNullable = function (input) {
+    if (this.ConvertSupported(input)) {
+      return null;
+    }
+
+    return this.ConvertIfNeededNonNull(input);
+  };
+
+  NativeBuffer.PurgeConvertResultIfNeeded = function (
+  /*Nullable*/
+  result) {
+    if (result && result.shouldDestroy) {
+      result.buffer.destroy();
+    }
+  };
+
+  return NativeBuffer;
+}();
+
+exports.NativeBuffer = NativeBuffer;
+},{"./command":"jGoF"}],"yZGK":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.WeixinJSContext = void 0;
+
+var util_1 = require("./util");
+
+var contextId = 0;
+var contexts = new Map();
+var loaded = new Map();
+exports.WeixinJSContext = {
+  alloc: function alloc() {
+    var WeixinJSContextId = ++contextId;
+    var iframe = document.createElement('iframe');
+    iframe.src = util_1.BASE_URL + "/wxcommlib/WAGameSubContextFrame.html";
+    iframe.style.display = 'none';
+    var promise = new Promise(function (r) {
+      return iframe.onload = r;
+    }).then(function () {
+      Object.assign(iframe.contentWindow, {
+        WeixinJSContext: exports.WeixinJSContext,
+        WeixinJSContextId: WeixinJSContextId
+      });
+      iframe.contentWindow.postMessage({
+        cmd: 'init',
+        src: util_1.BASE_URL + "/wxcommlib/WAGameSubContext.js"
+      }, '*');
+    });
+    contexts.set(WeixinJSContextId, iframe);
+    loaded.set(WeixinJSContextId, promise);
+    document.body.appendChild(iframe);
+    return WeixinJSContextId;
+  },
+  evaluateScriptFile: function evaluateScriptFile(id, src) {
+    var iframe = contexts.get(id);
+    loaded.get(id).then(function () {
+      iframe.contentWindow.postMessage({
+        cmd: 'evaluateScriptFile',
+        src: util_1.BASE_URL + "/wxfs/" + btoa(src) // 因为可能以 ./ 开头，这个时候会导致 WK 不识别这个 scheme
+
+      }, '*');
+    });
+    return 1;
+  },
+  destroy: function destroy(id) {
+    document.body.removeChild(contexts.get(id));
+    contexts.delete(id);
+  }
+};
+window._WeixinJSContext = {
+  contexts: contexts,
+  loaded: loaded,
+  alloc: exports.WeixinJSContext.alloc,
+  evaluateScriptFile: exports.WeixinJSContext.evaluateScriptFile,
+  destroy: exports.WeixinJSContext.destroy
+};
+},{"./util":"BHXf"}],"UiG3":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.xhrApis = exports.asyncApis = void 0;
+exports.asyncApis = ['testApi','wxApi'];
+exports.xhrApis = ['readFile','wxApiSync'];
+},{}],"qTHz":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var util_1 = require("./util");
+var XHR =
+/** @class */
+function () {
+  function XHR() {}
+
+  XHR.prototype.pack = function (params) {
+    var nativeBuffers = [];
+    var realBuffers = [];
+    var totalLength = 0;
+    var idx = 0;
+
+    for (var key in params) {
+      var value = params[key];
+
+      if (typeof value !== 'undefined' && util_1.getDataType(value) === 'ArrayBuffer' && typeof value.byteLength !== 'undefined') {
+        var buffer = {
+          key: key,
+          id: idx
+        };
+        idx++;
+        totalLength += value.byteLength;
+        nativeBuffers.push(buffer);
+        realBuffers.push(value);
+      }
+    }
+
+    if (nativeBuffers.length > 0) {
+      for (var i = 0; i < nativeBuffers.length; i++) {
+        var nativeBuffer = nativeBuffers[i];
+        delete params[nativeBuffer.key];
+      }
+
+      params.__nativeBuffers__ = nativeBuffers;
+
+      if (nativeBuffers.length === 1) {
+        return realBuffers[0];
+      } else {
+        var combinedBuffer = new ArrayBuffer(2 + totalLength + 4 * nativeBuffers.length);
+        var cachedBufferUint16 = new Uint16Array(combinedBuffer);
+        var cachedBufferUint8 = new Uint8Array(combinedBuffer);
+        cachedBufferUint16[0] = nativeBuffers.length;
+        var uint16StartIndex = 1;
+
+        for (var i = 0; i < realBuffers.length; i++) {
+          var realBuffer = realBuffers[i];
+          cachedBufferUint16[uint16StartIndex] = realBuffer.byteLength >> 16; // header length; 高 16 位
+
+          cachedBufferUint16[uint16StartIndex + 1] = realBuffer.byteLength & 0xFFFF; // header length; 低 16 位
+
+          uint16StartIndex += 2;
+          cachedBufferUint8.set(realBuffer, uint16StartIndex * 2);
+          var currentLen = realBuffer.byteLength;
+
+          if (currentLen % 2 != 0) {
+            currentLen++;
+          }
+
+          uint16StartIndex += currentLen / 2;
+        }
+
+        return combinedBuffer;
+      }
+    }
+
+    return null;
+  };
+
+  XHR.prototype.sync = function (event, param) {
+    var data = this.pack(param);
+    var xhr = new originXMLHttpRequest();
+    var api_fmt = {
+      event: event,
+      param: param
+    };
+    xhr.open('POST', util_1.BASE_URL + "/API/" + btoa(encodeURIComponent(JSON.stringify(api_fmt))), false);
+    xhr.setRequestHeader('content-type', 'application/arraybuffer');
+    xhr.responseType = 'arraybuffer';
+    xhr.send(data);
+    var retString = xhr.responseURL;
+    var base_url = util_1.BASE_URL + "/API/";
+    var paramString = retString.slice(base_url.length);
+    var ret = JSON.parse(atob(paramString));
+    var buffers = ret.__nativeBuffers__;
+    var resData = xhr.response;
+
+    if (buffers) {
+      if (buffers.length === 1) {
+        var buf = buffers[0];
+        ret[buf.key] = new Uint8Array(resData);
+      } else if (buffers.length > 0) {
+        var uint16Array = new Uint16Array(resData);
+        var buffer_num = uint16Array[0];
+        var offset16 = 1;
+        var arrBuffers = new Array();
+
+        for (var i = 0; i < buffer_num; i++) {
+          var lenHigh = uint16Array[offset16];
+          var lenLow = uint16Array[offset16 + 1];
+          var len = lenHigh << 16 || lenLow;
+          offset16 += 2;
+          var ab = new Uint8Array(resData, offset16 * 2, len);
+          arrBuffers.push(ab);
+
+          if (len % 2 === 1) {
+            offset16 += (len + 1) / 2;
+          } else {
+            offset16 += len / 2;
+          }
+        }
+
+        if (buffers && arrBuffers) {
+          for (var i = 0; i < buffers.length; i++) {
+            var buf = buffers[i];
+            ret[buf.key] = arrBuffers[buf.id];
+          }
+        }
+      }
+    }
+
+    delete ret["__nativeBuffers__"];
+    return ret;
+  };
+
+  return XHR;
+}();
+
+exports.default = new XHR();
+},{"./util":"BHXf"}],"dDqi":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.WeixinJSBridge = void 0;
+
+var ipc_1 = __importDefault(require("./ipc"));
+
+var apis_1 = require("./apis");
+
+var util_1 = require("./util");
+
+var buffer_1 = require("./buffer");
+
+var command_1 = __importDefault(require("./command"));
+
+var xhr_1 = __importDefault(require("./xhr"));
+
+var arrayBufferToEncodedBuffer = function arrayBufferToEncodedBuffer(buffer) {
+  // var bytes = new Uint8Array(buffer)
+  // var encodedBuffer = new TextDecoder('unicode').decode(bytes)
+  // return encodedBuffer
+  // 暂时回退
+  return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+}; // #jsapi handle utils start
+
+
+var decodedStringToArrayBuffer = function decodedStringToArrayBuffer(decodedString) {
+  // TODO How to transmit to unicode????
+  // var ab = new TextEncoder().encode(decodedString)
+  // return ab.buffer;
+  // TextEncoder not support non-utf-8 format yet, so still need to encode with Base64
+  var binary_string = window.atob(decodedString);
+  var len = binary_string.length;
+  var bytes = new Uint8Array(len);
+
+  for (var i = 0; i < len; i++) {
+    bytes[i] = binary_string.charCodeAt(i);
+  }
+
+  return bytes.buffer;
+};
+
+var _new_base64 = function _new_base64(buffer) {
+  var ret = {
+    encodedBufferString: arrayBufferToEncodedBuffer(buffer)
+  };
+  return ret;
+};
+
+var _new_native = function _new_native(buffer) {
+  var native_buf = buffer_1.NativeBuffer.ConvertIfNeededNonNull(new Uint8Array(buffer));
+  var ret = {
+    id: native_buf.id
+  };
+  return ret;
+};
+
+var pack = function pack(params, base64) {
+  if (params == null) {
+    return params;
+  }
+
+  var nativeBuffers = [];
+
+  for (var key in params) {
+    var value = params[key];
+
+    if (typeof value !== 'undefined' && util_1.getDataType(value) === 'ArrayBuffer' && typeof value.byteLength !== 'undefined') {
+      var buffer = base64 ? _new_base64(value) : _new_native(value);
+      buffer.key = key;
+      nativeBuffers.push(buffer);
+    }
+  }
+
+  if (nativeBuffers.length > 0) {
+    for (var i = 0; i < nativeBuffers.length; i++) {
+      var buffer = nativeBuffers[i];
+      delete params[buffer.key];
+    }
+
+    params.__nativeBuffers__ = nativeBuffers;
+  }
+
+  return params;
+};
+
+var _get = function _get(bufferObj) {
+  // return decodedStringToArrayBuffer(bufferObj.decodedString)
+  return decodedStringToArrayBuffer(bufferObj.base64);
+};
+
+var unpack = function unpack(params) {
+  if (params == null || params.__nativeBuffers__ == null) {
+    return params;
+  }
+
+  var nativeBuffers = params.__nativeBuffers__;
+  delete params.__nativeBuffers__;
+
+  for (var i = 0; i < nativeBuffers.length; i++) {
+    var buffer = nativeBuffers[i];
+    if (buffer == null) continue;
+
+    var arrayBuffer = _get(buffer);
+
+    if (typeof arrayBuffer !== 'undefined' && util_1.getDataType(arrayBuffer) === 'ArrayBuffer') {
+      params[buffer.key] = arrayBuffer;
+    }
+  }
+
+  return params;
+};
+
+exports.WeixinJSBridge = {
+  mapCallbacks: new Map(),
+  mapOnEventCallbacks: new Map(),
+  callbackId: 0,
+  // 公共库调用客户端，触发 JsApi
+  invoke: function invoke(event, param, callback) {
+    this.mapCallbacks.set(++this.callbackId, callback);
+    var id = this.callbackId;
+
+    if (apis_1.asyncApis.includes(event)) {
+      // webkit.messageHandlers.WeixinWeAppInvoke.postMessage(JSON.stringify(api_fmt))
+      command_1.default.PushInvokeSegment(event, id, JSON.stringify(pack(param, false)));
+      return;
+    } //try xhr
+
+
+    if (apis_1.xhrApis.includes(event)) {
+      var result = xhr_1.default.sync(event, param);
+
+      if (result) {
+        return result;
+      }
+    } //prompt call
+
+
+    var api_fmt = {
+      id: id,
+      event: event,
+      param: JSON.stringify(pack(param, true))
+    };
+    var ret = ipc_1.default.sync("API", JSON.stringify(api_fmt));
+
+    if (ret) {
+      var obj = JSON.parse(ret);
+      return unpack(obj);
+    }
+  },
+  log: function log(s) {
+    prompt("WELOG", s);
+  },
+  // 客户端回调该接口，触发 JsApi 的异步 callback
+  invokeCallbackHandler2: function invokeCallbackHandler(id, obj) {
+    var callback = this.mapCallbacks.get(id);
+
+    if (callback) {
+      callback(unpack(obj));
+    }
+
+    this.mapCallbacks.delete(id);
+  },
+  on: function on(eventName, callback) {
+    if (!callback && this.mapOnEventCallbacks.has(eventName)) {
+      this.mapOnEventCallbacks.delete(eventName);
+    } else {
+      this.mapOnEventCallbacks.set(eventName, callback);
+    }
+  },
+  // 客户端回调接口，触发 onEvent 事件
+  subscribeHandler2: function subscribeHandler(eventName, params) {
+    var callback = this.mapOnEventCallbacks.get(eventName);
+
+    if (callback) {
+      callback(unpack(params));
+    }
+  }
+};
+},{"./ipc":"GEXs","./apis":"UiG3","./util":"BHXf","./buffer":"ZIkX","./command":"jGoF","./xhr":"qTHz"}],"QCba":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+require("./event");
+
+var util_1 = require("./util");
+
+var native_1 = require("./native");
+
+var buffer_1 = require("./buffer");
+
+var context_1 = require("./context");
+
+var core_1 = require("./core");
+
+util_1.global['NativeBuffer'] = buffer_1.NativeBuffer;
+util_1.global['NativeGlobal'] = native_1.NativeGlobal;
+util_1.global['showFpsPannel'] = native_1.NativeGlobal.showFpsPannel;
+util_1.global['hideFpsPannel'] = native_1.NativeGlobal.hideFpsPannel;
+util_1.global['WeixinJSBridge'] = core_1.WeixinJSBridge;
+util_1.global['WeixinJSContext'] = context_1.WeixinJSContext;
+},{"./event":"rUt6","./util":"BHXf","./native":"MYih","./buffer":"ZIkX","./context":"yZGK","./core":"dDqi"}]},{},["QCba"], null)</script>
+</body>
+
+</html>
+
