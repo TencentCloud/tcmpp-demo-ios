@@ -1,0 +1,6 @@
+framework module TCMPPExtContact {
+  umbrella header "TCMPPExtContact.h"
+  export *
+
+  module * { export * }
+}

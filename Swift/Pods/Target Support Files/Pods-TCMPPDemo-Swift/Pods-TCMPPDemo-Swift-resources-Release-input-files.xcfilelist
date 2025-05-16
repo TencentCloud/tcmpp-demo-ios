@@ -1,0 +1,8 @@
+${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources.sh
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/TCMPPExtMiniGame/TCMPPExtMiniGame.framework/magicbrushres.bundle
+${PODS_ROOT}/TCMPPExtScanCode/TCMPPExtScanCode.xcframework/ios-arm64/TCMPPExtScanCode.framework/TCMPPExtScanCode.bundle
+${PODS_ROOT}/TCMPPExtScanCode/TCMPPExtScanCode.xcframework/ios-arm64_x86_64-simulator/TCMPPExtScanCode.framework/TCMPPExtScanCode.bundle
+${PODS_ROOT}/TCMPPSDK/TCMPPSDK.xcframework/ios-arm64/TCMPPSDK.framework/TMFMiniAppSDK.bundle
+${PODS_ROOT}/TCMPPSDK/TCMPPSDK.xcframework/ios-arm64_x86_64-simulator/TCMPPSDK.framework/TMFMiniAppSDK.bundle
+${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle

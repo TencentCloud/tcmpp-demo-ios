@@ -2,50 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>ITSAppUsesNonExemptEncryption</key>
-    <false/>
-    <key>CFBundleDisplayName</key>
-    <string>TCMPP Assistant</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.5.0</string>
-    <key>CFBundleVersion</key>
-    <string>22</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
-    <key>NSAppleMusicUsageDescription</key>
-    <string>TCMPP needs your permission to access multimedia</string>
-    <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>TCMPP needs your permission to allow Bluetooth to communicate with device</string>
-    <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>TCMPP needs your permission to allow Bluetooth to communicate with devic</string>
-    <key>NSCalendarsUsageDescription</key>
-    <string>TCMPP needs your permission to access calendar</string>
-    <key>NSCameraUsageDescription</key>
-    <string>TCMPP needs your permission to use camera function</string>
-    <key>NSContactsUsageDescription</key>
-    <string>TCMPP needs your permission to access your address book</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>TCMPP needs your consent to enable location function all the time</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>TCMPP needs your consent to enable location function all the time</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>TCMPP needs your consent to enable location function all the time</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>TCMPP requires your consent to record</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>TCMPP needs your permission to save photos to album</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>TCMPP needs your permission to access the album</string>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>TCMPP needs your consent to use speech recognition</string>
-    <key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
-    <true/>
-    <key>NSFaceIDUsageDescription</key>
-    <string>TCMPP Authentication with TouchId or FaceID</string>
-    <key>UIUserInterfaceStyle</key>
-    <string>Light</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+	<true/>
 </dict>
 </plist>

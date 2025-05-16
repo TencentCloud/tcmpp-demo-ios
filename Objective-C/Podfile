@@ -1,5 +1,4 @@
 source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
-
 target 'TCMPPDemo' do
   platform :ios, "11.0"
 
@@ -16,4 +15,5 @@ target 'TCMPPDemo' do
   pod 'TCMPPExtAuthentication'
   pod 'TCMPPExtNetwork'
   pod 'TCMPPExtMDNS'
+  pod "TCMPPExtMiniGame"
 end

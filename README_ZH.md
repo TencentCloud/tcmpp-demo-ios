@@ -44,7 +44,7 @@ Objective-C | [Swift](./Swift/README.md)
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	// 需要添加至App中的代码--start
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcmpp-ios-configurations" ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcsas-ios-configurations" ofType:@"json"];
     if(filePath) {
        TMAServerConfig *config  = [[TMAServerConfig alloc] initWithFile:filePath];
        [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];

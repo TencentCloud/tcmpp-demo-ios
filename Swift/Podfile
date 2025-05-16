@@ -15,5 +15,6 @@ target 'TCMPPDemo-Swift' do
   pod 'TCMPPExtAuthentication'
   pod 'TCMPPExtMDNS'
   pod 'TCMPPExtNetwork'
-  
+  pod "TCMPPExtMiniGame"
+
 end

@@ -20,6 +20,7 @@
 		685F28D22AA1ED22009BC524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D42AA1ED22009BC524 /* InfoPlist.strings */; };
 		685F28D62AA1ED4F009BC524 /* tcsas-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D52AA1ED4F009BC524 /* tcsas-ios-configurations.json */; };
 		68891EE62B18C67D005A9A95 /* api-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 68891EE52B18C67D005A9A95 /* api-custom-config.json */; };
+		AEF0DDF32DD71B2000971AFC /* AuthorizeAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DDF22DD71B2000971AFC /* AuthorizeAlertView.swift */; };
 		F0B291602C6AF77600047AC6 /* TCMPPCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */; };
 		F0B291622C6AF87E00047AC6 /* TCMPPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */; };
 		F0B291642C6AFC2100047AC6 /* DemoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291632C6AFC2100047AC6 /* DemoUtils.swift */; };
@@ -57,6 +58,7 @@
 		685F28D52AA1ED4F009BC524 /* tcsas-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcsas-ios-configurations.json"; sourceTree = "<group>"; };
 		68891EE52B18C67D005A9A95 /* api-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-custom-config.json"; sourceTree = "<group>"; };
 		ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCMPPDemo-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF0DDF22DD71B2000971AFC /* AuthorizeAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeAlertView.swift; sourceTree = "<group>"; };
 		D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo-Swift.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPCommonTools.swift; sourceTree = "<group>"; };
 		F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPExtension.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				F0B2915E2C6AF76300047AC6 /* Utils */,
 				685F28A02A9F15B4009BC524 /* DemoUserInfo.swift */,
 				685F289E2A9EFC56009BC524 /* MIniAppDemoSDKDelegateImpl.swift */,
+				AEF0DDF22DD71B2000971AFC /* AuthorizeAlertView.swift */,
 				685F28AF2AA03C37009BC524 /* TCMPPPayView.swift */,
 				F0B2918C2C6F28EE00047AC6 /* TMFAppletConfigManager.swift */,
 				68122B9D2AA5D85F00513013 /* PayRequestJSApi.swift */,
@@ -335,6 +338,7 @@
 				685F28A12A9F15B4009BC524 /* DemoUserInfo.swift in Sources */,
 				F0B291762C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift in Sources */,
 				F0B291622C6AF87E00047AC6 /* TCMPPExtension.swift in Sources */,
+				AEF0DDF32DD71B2000971AFC /* AuthorizeAlertView.swift in Sources */,
 				F0B291602C6AF77600047AC6 /* TCMPPCommonTools.swift in Sources */,
 				F0B2916C2C6AFF4300047AC6 /* TCMPPDemoLoginManager.swift in Sources */,
 				F0B291782C6C95F100047AC6 /* PaymentManager.swift in Sources */,
@@ -521,9 +525,10 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AKQ6BZ4775;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TCMPPDemo-Swift/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
@@ -543,15 +548,16 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tcsas.open.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tcmpp_demo;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = open_demo;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -571,9 +577,10 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VU8Y4N38VF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AKQ6BZ4775;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TCMPPDemo-Swift/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TCMPP needs your permission to access multimedia";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with device";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "TCMPP needs your permission to allow Bluetooth to communicate with devic";
@@ -593,15 +600,16 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tcmpp.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tcsas.open.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tcmpp_demo;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = open_demo;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

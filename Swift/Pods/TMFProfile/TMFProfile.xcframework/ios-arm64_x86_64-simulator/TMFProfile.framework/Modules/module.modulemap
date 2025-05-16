@@ -1,0 +1,6 @@
+framework module TMFProfile {
+  umbrella header "TMFProfile.h"
+  export *
+
+  module * { export * }
+}

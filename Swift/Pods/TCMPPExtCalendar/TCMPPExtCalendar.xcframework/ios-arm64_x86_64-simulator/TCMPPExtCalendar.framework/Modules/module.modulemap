@@ -1,0 +1,6 @@
+framework module TCMPPExtCalendar {
+  umbrella header "TCMPPExtCalendar.h"
+  export *
+
+  module * { export * }
+}

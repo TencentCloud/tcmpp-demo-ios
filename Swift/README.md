@@ -40,7 +40,7 @@ Reference Code:
 ```swift
  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let configItem = TMFAppletConfigManager.shared.getCurrentConfigItem();
-        let filePath = Bundle.main.path(forResource: "tcmpp-ios-configurations", ofType: "json");
+        let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json");
         if ((filePath) != nil){
             let config = TMAServerConfig(file: filePath!);
             TMFMiniAppSDKManager.sharedInstance().setConfiguration(config);
