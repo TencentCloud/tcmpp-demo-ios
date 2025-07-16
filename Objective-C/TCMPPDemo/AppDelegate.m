@@ -7,14 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import <TCMPPSDK/TCMPPSDK.h>
-#import "DemoUserInfo.h"
-#import "TMFAppletConfigManager.h"
-#import "MiniAppDemoSDKDelegateImpl.h"
 #import "TCMPPLoginVC.h"
 #import "TCMPPMainVC.h"
+#import "UIView+TCMPP.h"
+#import "UIColor+TCMPP.h"
+#import "UIView+TZLayout.h"
 #import "TCMPPDemoLoginManager.h"
 #import "ToastView.h"
+#import <TCMPPSDK/TCMPPSDK.h>
+#import "MiniAppDemoSDKDelegateImpl.h"
+#import "TMFAppletConfigManager.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +27,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     [self prepareApplet];
     
     [self autoLogin];
@@ -34,8 +35,10 @@
 }
 
 - (void)autoLogin {
-    NSString *currentUser = [DemoUserInfo sharedInstance].nickName;
-    if (currentUser.length > 0) {
+    NSString *token = [TCMPPUserInfo sharedInstance].token;
+    NSString *currentUser = [TCMPPUserInfo sharedInstance].nickName;
+    
+    if (token && token.length > 0 && currentUser && currentUser.length > 0) {
         TCMPPMainVC *rootViewController = [[TCMPPMainVC alloc] init];
         UINavigationController * navGationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
         self.window.rootViewController = navGationController;
@@ -50,7 +53,9 @@
             navGationController.navigationBar.barTintColor = UIColor.whiteColor;
             [navGationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor blackColor]}];
         }
-        [[TCMPPDemoLoginManager sharedInstance] loginUser:currentUser completeion:^(NSError * _Nullable err, NSString * _Nullable value) {
+        
+        // 验证token是否有效
+        [[TCMPPDemoLoginManager sharedInstance] loginWithAccout:currentUser completionHandler:^(NSError * _Nullable err, NSString * _Nullable token, NSDictionary * _Nullable datas) {
             if (!err) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIImage *icon = [UIImage imageNamed:@"success"];
@@ -59,7 +64,6 @@
                 });
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"currentUser"];
                     TCMPPLoginVC *loginVC = [[TCMPPLoginVC alloc] init];
                     self.window.rootViewController = loginVC;
                 });
@@ -80,7 +84,6 @@
         TMAServerConfig *config  = [[TMAServerConfig alloc] initWithSting:item.content];
         [[TMFMiniAppSDKManager sharedInstance] setConfiguration:config];
     } else {
-        //配置使用环境
         //Configure usage environment
        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tcsas-ios-configurations" ofType:@"json"];
        if(filePath) {

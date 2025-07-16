@@ -1,6 +1,0 @@
-framework module MQQComponents {
-  umbrella header "MQQComponents.h"
-  export *
-
-  module * { export * }
-}

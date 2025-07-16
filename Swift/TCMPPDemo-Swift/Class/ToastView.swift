@@ -52,26 +52,23 @@ class ToastView: UIView {
     }
 
     func show(withDuration duration: CGFloat) {
-        show()
+        if let window = UIApplication.shared.keyWindow {
+            window.addSubview(self)
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 0.5,
+                           options: .curveEaseInOut,
+                           animations: {
+                self.frame = CGRect(x: 15, y: 20 + (UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0), width: UIScreen.main.bounds.width - 30, height: 64)
+            }, completion: nil)
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(duration)) {
             self.dismiss()
         }
     }
 
-    private func show() {
-        UIApplication.shared.keyWindow?.rootViewController?.view.addSubview(self)
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0.5,
-                       options: .curveEaseInOut,
-                       animations: {
-            self.frame = CGRect(x: 15, y: 20 + TCMPPCommonTools.safeAreaInsets.top, width: UIScreen.main.bounds.width - 30, height: 64)
-                       }, completion: nil)
-    }
-
-    private func dismiss() {
+    func dismiss() {
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        usingSpringWithDamping: 0.7,
@@ -80,8 +77,7 @@ class ToastView: UIView {
                        animations: {
                         self.frame = CGRect(x: 15, y: -64, width: UIScreen.main.bounds.width - 30, height: 64)
                        }, completion: { finished in
-                        self.toastWindow?.isHidden = true
-                        self.toastWindow = nil
+                        self.removeFromSuperview()
                        })
     }
 }

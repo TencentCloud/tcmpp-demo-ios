@@ -1,6 +1,0 @@
-framework module TCMPPExtMDNS {
-  umbrella header "TCMPPExtMDNS.h"
-  export *
-
-  module * { export * }
-}

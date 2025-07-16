@@ -1,6 +1,0 @@
-framework module TCMPPExtMiniGame {
-  umbrella header "TCMPPExtMiniGame.h"
-  export *
-
-  module * { export * }
-}

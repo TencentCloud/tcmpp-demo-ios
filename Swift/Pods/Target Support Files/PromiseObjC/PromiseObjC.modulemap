@@ -1,6 +1,0 @@
-module TFBLPromises {
-  umbrella header "PromiseObjC-umbrella.h"
-
-  export *
-  module * { export * }
-}

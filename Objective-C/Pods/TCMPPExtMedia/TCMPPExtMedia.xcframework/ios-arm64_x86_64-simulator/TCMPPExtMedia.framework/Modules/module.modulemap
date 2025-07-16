@@ -1,6 +1,0 @@
-framework module TCMPPExtMedia {
-  umbrella header "TCMPPExtMedia.h"
-  export *
-
-  module * { export * }
-}

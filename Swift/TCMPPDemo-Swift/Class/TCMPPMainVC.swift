@@ -208,18 +208,33 @@ class TCMPPMainVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
+            let settings = TCMPPMenuItem()
+            if #available(iOS 13.0, *) {
+                settings.icon = UIImage(systemName: "gearshape")
+            } else {
+                settings.icon = UIImage(named: "more") // Fallback
+            }
+            settings.title = NSLocalizedString("Settings", comment: "")
+            settings.block = {
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                self.navigationItem.backBarButtonItem = backItem
+                let vc = TCMPPSettingsVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
             let logout = TCMPPMenuItem()
             logout.icon = UIImage(named: "logout")
             logout.title = NSLocalizedString("Log out", comment: "")
             logout.block = {
                 TMFMiniAppSDKManager.sharedInstance().terminateAllApplications()
-                DemoUserInfo.shared.nickName = "unknown"
+                TCMPPUserInfo.shared.clearUserInfo()
                 let vc = TCMPPLoginVC()
                 UIApplication.shared.keyWindow?.rootViewController = vc
                 UIApplication.shared.keyWindow?.makeKeyAndVisible()
             }
             
-            let items = [scan, language, logout]
+            let items = [scan, language, settings, logout]
             let menuView = TCMPPMenuView(menuItems: items)
             menuView.frame = CGRect(x: Int(self.view.frame.width) - 10 - 130, y: 10, width: 130, height: items.count * 50)
             menuView.roundingCorners(.allCorners, cornerRadius: 8.0)

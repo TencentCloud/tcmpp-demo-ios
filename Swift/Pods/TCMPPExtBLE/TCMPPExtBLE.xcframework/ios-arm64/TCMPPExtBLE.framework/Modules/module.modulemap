@@ -1,6 +1,0 @@
-framework module TCMPPExtBLE {
-  umbrella header "TCMPPExtBLE.h"
-  export *
-
-  module * { export * }
-}

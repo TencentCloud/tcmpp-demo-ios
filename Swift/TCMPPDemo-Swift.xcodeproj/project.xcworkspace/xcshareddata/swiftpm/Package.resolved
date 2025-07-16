@@ -1,0 +1,87 @@
+{
+  "originHash" : "a9225193f26a548d12c31c5d9a24f48ec33c356fcad5747aa4c300e06bdf9a14",
+  "pins" : [
+    {
+      "identity" : "brotli",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/Brotli.git",
+      "state" : {
+        "revision" : "63d97af69fdc0b505c908a9137c5b0210facf9eb",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "mjrefresh",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CoderMJLee/MJRefresh.git",
+      "state" : {
+        "revision" : "535d39c86e592d73f8b8e75f9bf1eda62ca4a4ce",
+        "version" : "3.7.9"
+      }
+    },
+    {
+      "identity" : "promiseobjc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/PromiseObjC.git",
+      "state" : {
+        "revision" : "1b2f0c6554eedc2625d747cb6f96c9375642e50a",
+        "version" : "0.7.1"
+      }
+    },
+    {
+      "identity" : "socketrocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/SocketRocket.git",
+      "state" : {
+        "revision" : "233d821d567ebc2815692e849a3665697106ad80",
+        "version" : "0.5.1"
+      }
+    },
+    {
+      "identity" : "tars",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/Tars.git",
+      "state" : {
+        "revision" : "e5a9ff848bff768602ecd97c052ff501c3710c87",
+        "version" : "1.6.0"
+      }
+    },
+    {
+      "identity" : "tcmppextminigame",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/TCMPPExtMiniGame.git",
+      "state" : {
+        "revision" : "ff1913661797e983e881a133ff90a836bdf7087f",
+        "version" : "2.2.2"
+      }
+    },
+    {
+      "identity" : "tcmppextscancode",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/TCMPPExtScanCode.git",
+      "state" : {
+        "revision" : "f49937f2a900f57929469b31b9add69fa19a82a1",
+        "version" : "2.0.5"
+      }
+    },
+    {
+      "identity" : "tcmppsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TCMPP-Team/TCMPPSDK.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3d703f3a1109d2ce5ab8a85c4a09f129483f2bbc"
+      }
+    },
+    {
+      "identity" : "ziparchive",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZipArchive/ZipArchive.git",
+      "state" : {
+        "revision" : "38e0ce0598e06b034271f296a8e15b149c91aa19",
+        "version" : "2.4.3"
+      }
+    }
+  ],
+  "version" : 3
+}

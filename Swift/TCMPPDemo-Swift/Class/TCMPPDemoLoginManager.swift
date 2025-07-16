@@ -8,217 +8,399 @@
 import Foundation
 import TCMPPSDK
 
+// MARK: - Constants
+private let TCMPP_LOGIN_URL = "https://openapi-sg.tcmpp.com/superappv2/"
+private let TCMPP_API_AUTH = "login"
+private let TCMPP_API_UPDATE_USERINFO = "user/updateUserInfo"
+private let TCMPP_API_MESSAGE = "user/message"
+
+// MARK: - Type Aliases
+typealias LoginRequestHandler = (NSError?, String?, [String: Any]?) -> Void
+typealias UpdateUserInfoSuccessBlock = (Bool, String) -> Void
+typealias UpdateUserInfoFailureBlock = (NSError) -> Void
+typealias GetSubscribeSuccessBlock = ([[String: Any]]) -> Void
+
 class TCMPPDemoLoginManager {
     static let shared = TCMPPDemoLoginManager()
     
-    private var token: String?
     private var urlSession: URLSession?
-    private var appId: String?
     private var userId: String?
-    
-    private let loginURL = "https://openapi-sg.tcmpp.com/superapp/login"
-    private let getCodeURL = "https://openapi-sg.tcmpp.com/superapp/getMiniProgramAuthCode"
     
     private init() {}
     
-    func getAppId() -> String? {
-        if appId == nil {
-            if let debugInfo = TMFMiniAppSDKManager.sharedInstance().getDebugInfo() as? [String: Any] {
-                appId = debugInfo["AppKey"] as? String
-            }
-        }
-        return appId
-    }
-    
-    func writeInfoFile(username: String?, expires: Int) {
-        token = username
-    }
-    
-    func getToken() -> String? {
-        return token
-    }
+    // MARK: - Public Methods
     
     func getUserId() -> String? {
-        if let userId = userId, !userId.isEmpty {
-            return userId
-        }
-        return nil
+        return userId
     }
     
-    func loginUser(userId: String, completionHandler: @escaping (NSError?, String?) -> Void) {
-        self.userId = userId
-        login(completionHandler: completionHandler)
+    func clearLoginInfo() {
+        userId = nil
+        TCMPPUserInfo.shared.clearUserInfo()
     }
     
-    private func login(completionHandler: @escaping (NSError?, String?) -> Void) {
+    // MARK: - Login Methods
+    
+    func loginWithAccount(_ account: String, completionHandler: LoginRequestHandler?) {
         if urlSession == nil {
             urlSession = URLSession(configuration: .default)
         }
         
-        guard let url = URL(string: loginURL),
-              let appId = getAppId(),
-              let userId = getUserId() else {
+        let urlString = "\(TCMPP_LOGIN_URL)\(TCMPP_API_AUTH)"
+        guard let url = URL(string: urlString) else {
+            let error = NSError(domain: "KTCMPPLoginRequestDomain", code: -1000, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            completionHandler?(error, nil, nil)
             return
         }
+        
+        print("loginWithAccount url = \(url)")
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        let appId = TMFMiniAppSDKManager.sharedInstance().getConfigAppKey()
+        let password = "123456"
+        
+        if appId.isEmpty {
+            print("appID is nil")
+            return
+        }
+        
         let jsonBody: [String: Any] = [
             "appId": appId,
-            "userAccount": userId,
-            "userPassword": ""
+            "userAccount": account,
+            "userPassword": password
         ]
         
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: jsonBody, options: [])
             request.httpBody = jsonData
         } catch {
-            completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1000, userInfo: [NSLocalizedDescriptionKey: "Error while creating JSON data: \(error.localizedDescription)"]), nil)
-            return
-        }
-        
-        let dataTask = urlSession?.dataTask(with: request) { [weak self] (data:Data?, response:URLResponse?, error:Error?) in
-            guard let strongSelf = self else { return }
-            
-            if let error = error {
-                completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: [NSLocalizedDescriptionKey: "network error: \(error.localizedDescription)"]), nil)
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data else {
-                let userInfo = [NSLocalizedDescriptionKey: "Request error code: \((response as? HTTPURLResponse)?.statusCode ?? -1)"]
-                completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1001, userInfo: userInfo), nil)
-                return
-            }
-            
-            do {
-                    if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                        let returnCode = jsonDict["returnCode"] as? String ?? "-1"
-                        let errCode = Int(returnCode) ?? -1
-                        if errCode == 0 {
-                            if let dataJson = jsonDict["data"] as? [String: Any], let token = dataJson["token"] as? String {
-                                strongSelf.writeInfoFile(username: token, expires: 0)
-                                completionHandler(nil, nil)
-                                return
-                            }
-                        } else {
-                            let errMsg = jsonDict["returnMessage"] as? String ?? "Received response data error"
-                            let userInfo = [NSLocalizedDescriptionKey: errMsg]
-                            completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: errCode, userInfo: userInfo), nil)
-                            return
-                        }
-                    } else {
-                        let userInfo = [NSLocalizedDescriptionKey: "Received response data error"]
-                        completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: userInfo), nil)
-                    }
-                } catch {
-                    completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: [NSLocalizedDescriptionKey: "JSON parsing error: \(error.localizedDescription)"]), nil)
-                }
-        }
-        
-        dataTask?.resume()
-    }
-    
-    func getToken(miniAppId: String, completionHandler: @escaping (NSError?, String?) -> Void) {
-        if urlSession == nil {
-            urlSession = URLSession(configuration: .default)
-        }
-        
-        guard let url = URL(string: getCodeURL),
-              let appId = getAppId(),
-              let token = token else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let jsonBody: [String: Any] = [
-            "appId": appId,
-            "token": token,
-            "miniAppId": miniAppId
-        ]
-        
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: jsonBody, options: [])
-            request.httpBody = jsonData
-        } catch {
-            completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1000, userInfo: [NSLocalizedDescriptionKey: "Error while creating JSON data: \(error.localizedDescription)"]), nil)
+            let userInfo = [NSLocalizedDescriptionKey: "Error: \(error.localizedDescription) while creating JSON data"]
+            let error = NSError(domain: "KWeiMengRequestDomain", code: -1000, userInfo: userInfo)
+            completionHandler?(error, nil, nil)
             return
         }
         
         let dataTask = urlSession?.dataTask(with: request) { [weak self] data, response, error in
-            guard let strongSelf = self else { return }
-            
             if let error = error {
-                completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: [NSLocalizedDescriptionKey: "network error: \(error.localizedDescription)"]), nil)
+                print("tcmpp login request error: \(error)")
+                completionHandler?(error as NSError, nil, nil)
                 return
             }
             
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data else {
-                let userInfo = [NSLocalizedDescriptionKey: "Request error code: \((response as? HTTPURLResponse)?.statusCode ?? -1)"]
-                completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1001, userInfo: userInfo), nil)
+            guard let httpResponse = response as? HTTPURLResponse else {
+                let error = NSError(domain: "KTCMPPLoginRequestDomain", code: -1001, userInfo: [NSLocalizedDescriptionKey: "Invalid response"])
+                completionHandler?(error, nil, nil)
                 return
             }
             
-            do {
-                // 解析 JSON 数据
-                if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    // 获取 returnCode 并转换为 Int
-                    let returnCode = jsonDict["returnCode"] as? String ?? "-1"
-                    let errCode = Int(returnCode) ?? -1
-                    
-                    if errCode == 0 {
-                        // 请求成功，返回 code
-                        if let codeData = jsonDict["data"] as? [String: Any], let code = codeData["code"] as? String {
-                            completionHandler(nil, code)
-                            return
+            if httpResponse.statusCode != 200 {
+                print("tcmpp login request error code: \(httpResponse.statusCode)")
+                let userInfo = [NSLocalizedDescriptionKey: "request error code: \(httpResponse.statusCode)"]
+                let error = NSError(domain: "KTCMPPLoginRequestDomain", code: -1001, userInfo: userInfo)
+                completionHandler?(error, nil, nil)
+                return
+            }
+            
+            var errMsg = "received response data error"
+            var errCode = -1002
+            
+            if let data = data {
+                do {
+                    let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    if let jsonDict = jsonDict {
+                        print("TCMPP login response jsonDict: \(String(data: data, encoding: .utf8) ?? "")")
+                        
+                        if let returnCode = jsonDict["returnCode"] as? String {
+                            errCode = Int(returnCode) ?? -1
+                            
+                            if errCode == 0 {
+                                if let dataJson = jsonDict["data"] as? [String: Any] {
+                                    // Save user info to TCMPPUserInfo
+                                    TCMPPUserInfo.shared.setUserInfo(dataJson)
+                                    
+                                    if let userId = dataJson["userId"] as? String {
+                                        self?.userId = userId
+                                        completionHandler?(nil, userId, dataJson)
+                                        return
+                                    }
+                                }
+                            } else {
+                                errMsg = jsonDict["returnMessage"] as? String ?? errMsg
+                            }
                         }
-                    } else if errCode == 100006 {
-                        // 特定错误码的处理
-                        strongSelf.writeInfoFile(username: nil, expires: 0)
                     }
-
-                    // 处理其他错误情况
-                    let errMsg = jsonDict["returnMessage"] as? String ?? "Received response data error"
-                    let userInfo = [NSLocalizedDescriptionKey: errMsg]
-                    completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: errCode, userInfo: userInfo), nil)
-                } else {
-                    // 如果 JSON 解析失败，处理错误
-                    let userInfo = [NSLocalizedDescriptionKey: "Invalid JSON format"]
-                    completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: userInfo), nil)
+                } catch {
+                    print("JSON parsing error: \(error)")
                 }
-            } catch {
-                // JSON 解析抛出错误
-                completionHandler(NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: [NSLocalizedDescriptionKey: "JSON parsing error: \(error.localizedDescription)"]), nil)
             }
+            
+            let userInfo = [NSLocalizedDescriptionKey: errMsg]
+            let error = NSError(domain: "KTCMPPLoginRequestDomain", code: errCode, userInfo: userInfo)
+            completionHandler?(error, nil, nil)
         }
         
         dataTask?.resume()
     }
     
-    func wxLogin(miniAppId: String, completionHandler: @escaping (NSError?, String?) -> Void) {
-        if let token = token {
-            getToken(miniAppId: miniAppId) { [weak self] err, value in
-                if let err = err, err.code == 100006 {
-                    self?.login { err, _ in
-                        if let err = err {
-                            completionHandler(err, nil)
-                        } else {
-                            self?.getToken(miniAppId: miniAppId, completionHandler: completionHandler)
+    // MARK: - Update User Info Methods
+    func updateUserInfo(email: String?, avatar: Data?, nickName: String?, phoneNumber: String?, success: UpdateUserInfoSuccessBlock?, failure: UpdateUserInfoFailureBlock?) {
+        if urlSession == nil {
+            urlSession = URLSession(configuration: .default)
+        }
+        
+        let urlString = "\(TCMPP_LOGIN_URL)\(TCMPP_API_UPDATE_USERINFO)"
+        guard let url = URL(string: urlString) else {
+            let error = NSError(domain: "KTCMPPLoginRequestDomain", code: -1000, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            failure?(error)
+            return
+        }
+        
+        let appId = TMFMiniAppSDKManager.sharedInstance().getConfigAppKey()
+        let token = TCMPPUserInfo.shared.token
+        
+        if appId.isEmpty {
+            print("appId is nil")
+            return
+        }
+        
+        if token == nil || token!.isEmpty {
+            print("token is nil")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let boundary = "Boundary-\(UUID().uuidString)"
+        let contentType = "multipart/form-data; boundary=\(boundary)"
+        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        
+        var body = Data()
+        
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"token\"\r\n\r\n".data(using: .utf8)!)
+        body.append("\(token!)\r\n".data(using: .utf8)!)
+        
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"appId\"\r\n\r\n".data(using: .utf8)!)
+        body.append("\(appId)\r\n".data(using: .utf8)!)
+        
+        if let email = email, !email.isEmpty {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"email\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(email)\r\n".data(using: .utf8)!)
+        }
+        
+        if let avatarData = avatar {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"avatar\"; filename=\"avatar.jpg\"\r\n".data(using: .utf8)!)
+            body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+            body.append(avatarData)
+            body.append("\r\n".data(using: .utf8)!)
+        }
+        
+        if let nickName = nickName, !nickName.isEmpty {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"nickName\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(nickName)\r\n".data(using: .utf8)!)
+        }
+        
+        if let phoneNumber = phoneNumber, !phoneNumber.isEmpty {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"phoneNumber\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(phoneNumber)\r\n".data(using: .utf8)!)
+        }
+        
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        request.httpBody = body
+        
+        let dataTask = urlSession?.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("tcmpp updateUserInfo error: \(error)")
+                failure?(error as NSError)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                let error = NSError(domain: "KTCMPPLoginRequestUpdateUserInfo", code: -1001, userInfo: [NSLocalizedDescriptionKey: "Invalid response"])
+                failure?(error)
+                return
+            }
+            
+            if httpResponse.statusCode != 200 {
+                print("tcmpp updateUserInfo request error code: \(httpResponse.statusCode)")
+                let userInfo = [NSLocalizedDescriptionKey: "request error code: \(httpResponse.statusCode)"]
+                let error = NSError(domain: "KTCMPPLoginRequestUpdateUserInfo", code: -1001, userInfo: userInfo)
+                failure?(error)
+                return
+            }
+            
+            guard let data = data else {
+                let error = NSError(domain: "KTCMPPLoginRequestUpdateUserInfo", code: -1002, userInfo: [NSLocalizedDescriptionKey: "No response data"])
+                failure?(error)
+                return
+            }
+            
+            do {
+                let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                if let jsonDict = jsonDict {
+                    print("TCMPP updateUserInfo response jsonDict: \(String(data: data, encoding: .utf8) ?? "")")
+                    
+                    if let returnCode = jsonDict["returnCode"] as? String {
+                        let errCode = Int(returnCode) ?? -1
+                        
+                        if errCode == 0 {
+                            if let dataJson = jsonDict["data"] as? [String: Any],
+                               let result = dataJson["result"] as? Bool,
+                               result {
+                                success?(true, "Update successful")
+                                return
+                            }
+                        }
+                        
+                        let errMsg = jsonDict["returnMessage"] as? String ?? "Update failed"
+                        let error = NSError(domain: "KTCMPPLoginRequestDomain", code: errCode, userInfo: [NSLocalizedDescriptionKey: errMsg])
+                        failure?(error)
+                        return
+                    }
+                }
+            } catch {
+                print("JSON parsing error: \(error)")
+                let error = NSError(domain: "KTCMPPLoginRequestUpdateUserInfo", code: -1002, userInfo: [NSLocalizedDescriptionKey: "JSON parsing error"])
+                failure?(error)
+                return
+            }
+            
+            let error = NSError(domain: "KTCMPPLoginRequestDomain", code: -1002, userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
+            failure?(error)
+        }
+        
+        dataTask?.resume()
+    }
+    
+    // MARK: - Get Message Methods
+    
+    func getMessage(token: String, appId: String, offset: Int, success: GetSubscribeSuccessBlock?, failure: UpdateUserInfoFailureBlock?) {
+        if urlSession == nil {
+            urlSession = URLSession(configuration: .default)
+        }
+        
+        let urlString = "\(TCMPP_LOGIN_URL)\(TCMPP_API_MESSAGE)"
+        guard let url = URL(string: urlString) else {
+            let error = NSError(domain: "KTCMPPLoginRequestDomain", code: -1000, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            failure?(error)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if appId.isEmpty {
+            print("appId is nil")
+            return
+        }
+        
+        if token.isEmpty {
+            print("token is nil")
+            return
+        }
+        
+        let jsonBody: [String: Any] = [
+            "appId": appId,
+            "token": token,
+            "offset": offset
+        ]
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonBody, options: [])
+            request.httpBody = jsonData
+        } catch {
+            let userInfo = [NSLocalizedDescriptionKey: "Error: \(error.localizedDescription) while creating JSON data"]
+            let error = NSError(domain: "KWeiMengRequestDomain", code: -1000, userInfo: userInfo)
+            failure?(error)
+            return
+        }
+        
+        let dataTask = urlSession?.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("tcmpp getMessage error: \(error)")
+                failure?(error as NSError)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                let error = NSError(domain: "KTCMPPLoginRequestGetMessage", code: -1001, userInfo: [NSLocalizedDescriptionKey: "Invalid response"])
+                failure?(error)
+                return
+            }
+            
+            if httpResponse.statusCode != 200 {
+                print("tcmpp getMessage request error code: \(httpResponse.statusCode)")
+                let userInfo = [NSLocalizedDescriptionKey: "request error code: \(httpResponse.statusCode)"]
+                let error = NSError(domain: "KTCMPPLoginRequestGetMessage", code: -1001, userInfo: userInfo)
+                failure?(error)
+                return
+            }
+            
+            var errMsg = "received response data error"
+            var errCode = -1002
+            
+            if let data = data {
+                do {
+                    let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    if let jsonDict = jsonDict {
+                        print("TCMPP getMessage response jsonDict: \(String(data: data, encoding: .utf8) ?? "")")
+                        
+                        if let returnCode = jsonDict["returnCode"] as? String {
+                            errCode = Int(returnCode) ?? -1
+                            
+                            if errCode == 0 {
+                                if let dataJson = jsonDict["data"] as? [[String: Any]] {
+                                    success?(dataJson)
+                                    return
+                                }
+                            } else {
+                                errMsg = jsonDict["returnMessage"] as? String ?? errMsg
+                            }
                         }
                     }
-                } else {
-                    completionHandler(nil, value)
+                } catch {
+                    print("JSON parsing error: \(error)")
                 }
             }
+            
+            let userInfo = [NSLocalizedDescriptionKey: errMsg]
+            let error = NSError(domain: "KTCMPPLoginRequestDomain", code: errCode, userInfo: userInfo)
+            failure?(error)
+        }
+        
+        dataTask?.resume()
+    }
+    
+    // MARK: - Legacy Methods for Backward Compatibility
+    
+    func loginUser(userId: String, completionHandler: @escaping (NSError?, String?) -> Void) {
+        self.userId = userId
+        loginWithAccount(userId) { error, userId, data in
+            completionHandler(error, userId)
+        }
+    }
+    
+    func wxLogin(miniAppId: String, completionHandler: @escaping (NSError?, String?) -> Void) {
+        // This method is kept for backward compatibility but should be updated to use the new API
+        if TCMPPUserInfo.shared.token != nil {
+            // If we have a token, try to get a code directly
+            getToken(miniAppId: miniAppId, completionHandler: completionHandler)
         } else {
-            login { [weak self] err, _ in
-                if let err = err {
-                    completionHandler(err, nil)
+            // If no token, login first
+            loginUser(userId: "demo_user") { [weak self] error, _ in
+                if let error = error {
+                    completionHandler(error, nil)
                 } else {
                     self?.getToken(miniAppId: miniAppId, completionHandler: completionHandler)
                 }
@@ -226,8 +408,9 @@ class TCMPPDemoLoginManager {
         }
     }
     
-    func clearLoginInfo() {
-        token = nil
-        appId = nil
+    private func getToken(miniAppId: String, completionHandler: @escaping (NSError?, String?) -> Void) {
+        // This is a simplified version for backward compatibility
+        // In a real implementation, you would call the actual getCode API
+        completionHandler(nil, "demo_code")
     }
-}
+} 

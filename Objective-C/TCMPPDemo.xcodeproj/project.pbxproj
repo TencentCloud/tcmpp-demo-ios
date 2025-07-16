@@ -15,7 +15,6 @@
 		0702051C29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702051B29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m */; };
 		0702052F29F12A6C00917E77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702052D29F12A6C00917E77 /* InfoPlist.strings */; };
 		0702053229F12B3400917E77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702053429F12B3400917E77 /* Localizable.strings */; };
-		0711239A2A05230200ED2244 /* DemoUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 071123992A05230200ED2244 /* DemoUserInfo.m */; };
 		0711239C2A052B5F00ED2244 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0711239B2A052B5F00ED2244 /* avatar.png */; };
 		0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61629F6554D00444C1E /* TCMPPPayView.m */; };
 		0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61929F665E200444C1E /* PayRequestJsApi.m */; };
@@ -24,6 +23,9 @@
 		076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC52B202C1600470C46 /* TestStateJsApi.m */; };
 		076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DC82B202C6B00470C46 /* StateEventTest.m */; };
 		07857FE02A164A5D00EA62DB /* tcsas-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 07857FDF2A164A5D00EA62DB /* tcsas-ios-configurations.json */; };
+		AE2922662E210F0100C01B2D /* TCMPPSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2922632E210F0100C01B2D /* TCMPPSettingsVC.m */; };
+		AE2922672E210F0100C01B2D /* TCMPPUserInfoEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2922652E210F0100C01B2D /* TCMPPUserInfoEditVC.m */; };
+		AE29226D2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29226C2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m */; };
 		EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */; };
 		F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12B2C61F923000F46B6 /* CustomBundle.m */; };
 		F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12D2C61F923000F46B6 /* TCMPPCommonTools.m */; };
@@ -60,8 +62,6 @@
 		0702053329F12B3400917E77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0702053529F12B3800917E77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0702053629F12D8300917E77 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		071123982A05230200ED2244 /* DemoUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUserInfo.h; sourceTree = "<group>"; };
-		071123992A05230200ED2244 /* DemoUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUserInfo.m; sourceTree = "<group>"; };
 		0711239B2A052B5F00ED2244 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		0720E61529F6554D00444C1E /* TCMPPPayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPayView.h; sourceTree = "<group>"; };
 		0720E61629F6554D00444C1E /* TCMPPPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayView.m; sourceTree = "<group>"; };
@@ -78,6 +78,12 @@
 		076F0DC82B202C6B00470C46 /* StateEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateEventTest.m; sourceTree = "<group>"; };
 		07857FDF2A164A5D00EA62DB /* tcsas-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcsas-ios-configurations.json"; sourceTree = "<group>"; };
 		6C3CA76782E256FEB782D932 /* Pods-TCMPPDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AE2922622E210F0100C01B2D /* TCMPPSettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPSettingsVC.h; sourceTree = "<group>"; };
+		AE2922632E210F0100C01B2D /* TCMPPSettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPSettingsVC.m; sourceTree = "<group>"; };
+		AE2922642E210F0100C01B2D /* TCMPPUserInfoEditVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPUserInfoEditVC.h; sourceTree = "<group>"; };
+		AE2922652E210F0100C01B2D /* TCMPPUserInfoEditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPUserInfoEditVC.m; sourceTree = "<group>"; };
+		AE29226B2E274DC100C01B2D /* TCMPPSubscribeInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPSubscribeInfoVC.h; sourceTree = "<group>"; };
+		AE29226C2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPSubscribeInfoVC.m; sourceTree = "<group>"; };
 		E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F02FF12A2C61F923000F46B6 /* CustomBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBundle.h; sourceTree = "<group>"; };
 		F02FF12B2C61F923000F46B6 /* CustomBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBundle.m; sourceTree = "<group>"; };
@@ -179,6 +185,12 @@
 				F02FF1422C61F98B000F46B6 /* TCMPPLoginVC.m */,
 				F02FF1412C61F98B000F46B6 /* TCMPPMainVC.h */,
 				F02FF1442C61F98C000F46B6 /* TCMPPMainVC.m */,
+				AE2922622E210F0100C01B2D /* TCMPPSettingsVC.h */,
+				AE2922632E210F0100C01B2D /* TCMPPSettingsVC.m */,
+				AE2922642E210F0100C01B2D /* TCMPPUserInfoEditVC.h */,
+				AE2922652E210F0100C01B2D /* TCMPPUserInfoEditVC.m */,
+				AE29226B2E274DC100C01B2D /* TCMPPSubscribeInfoVC.h */,
+				AE29226C2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m */,
 				F02FF13D2C61F98B000F46B6 /* TCMPPMenuView.h */,
 				F02FF1372C61F98A000F46B6 /* TCMPPMenuView.m */,
 				F02FF13A2C61F98B000F46B6 /* ToastView.h */,
@@ -190,8 +202,6 @@
 				0702051129EFC93200917E77 /* main.m */,
 				0702053429F12B3400917E77 /* Localizable.strings */,
 				0702053629F12D8300917E77 /* PrefixHeader.pch */,
-				071123982A05230200ED2244 /* DemoUserInfo.h */,
-				071123992A05230200ED2244 /* DemoUserInfo.m */,
 				F02FF14F2C6200B3000F46B6 /* PaymentManager.h */,
 				F02FF1502C6200B3000F46B6 /* PaymentManager.m */,
 			);
@@ -387,6 +397,8 @@
 				F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */,
 				F02FF1352C61F923000F46B6 /* UIColor+TCMPP.m in Sources */,
 				F02FF1472C61F98C000F46B6 /* ToastView.m in Sources */,
+				AE2922662E210F0100C01B2D /* TCMPPSettingsVC.m in Sources */,
+				AE2922672E210F0100C01B2D /* TCMPPUserInfoEditVC.m in Sources */,
 				F02FF1492C61F98C000F46B6 /* TCMPPDemoLoginManager.m in Sources */,
 				0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */,
 				F02FF14E2C61FA6D000F46B6 /* LanguageManager.m in Sources */,
@@ -406,8 +418,8 @@
 				0702051229EFC93200917E77 /* main.m in Sources */,
 				F0B291382C69AACF00047AC6 /* DemoUtils.m in Sources */,
 				F0B291352C69AA6A00047AC6 /* TMFAppletConfigManager.m in Sources */,
+				AE29226D2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m in Sources */,
 				F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */,
-				0711239A2A05230200ED2244 /* DemoUserInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
