@@ -1,6 +1,0 @@
-framework module TMFUploader {
-  umbrella header "TMFUploader.h"
-  export *
-
-  module * { export * }
-}

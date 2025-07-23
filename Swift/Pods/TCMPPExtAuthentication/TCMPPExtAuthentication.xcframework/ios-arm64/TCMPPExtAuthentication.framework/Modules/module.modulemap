@@ -1,6 +1,0 @@
-framework module TCMPPExtAuthentication {
-  umbrella header "TCMPPExtAuthentication.h"
-  export *
-
-  module * { export * }
-}

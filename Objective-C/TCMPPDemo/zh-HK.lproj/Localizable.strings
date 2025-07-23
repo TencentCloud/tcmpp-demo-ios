@@ -44,3 +44,36 @@
 "Scan" = "扫一扫";
 "Language" = "语言";
 "Log out" = "退出登录";
+"Done" = "完成";
+"Pay Successfully" = "支付成功";
+
+"Settings" = "設定";
+"User Information" = "用戶資訊";
+"Edit profile, avatar, nickname and phone number" = "編輯頭像、暱稱、郵箱和手機號";
+"Edit User Information" = "編輯用戶資訊";
+"Avatar" = "頭像";
+"Nickname" = "暱稱";
+"Email" = "郵箱";
+"Phone Number" = "手機號";
+"Enter nickname" = "請輸入暱稱";
+"Enter email" = "請輸入郵箱";
+"Enter phone number" = "請輸入手機號";
+"Select Avatar" = "選擇頭像";
+"Camera" = "相機";
+"Photo Library" = "相冊";
+"Camera Permission" = "相機權限";
+"Please enable camera access in Settings" = "請在設定中啟用相機訪問權限";
+"OK" = "確定";
+"Please enter nickname" = "請輸入暱稱";
+"Please enter email" = "請輸入郵箱";
+"Please enter a valid email address" = "請輸入有效的郵箱地址";
+"Saving..." = "保存中...";
+"User information updated successfully" = "用戶資訊更新成功";
+"Update failed" = "更新失敗";
+
+"Service Notice" = "服務通知";
+"View service messages and notifications" = "查看服務訊息和通知";
+"Check the details" = "查看詳情";
+"No messages" = "暫無訊息";
+"Failed to load messages" = "載入訊息失敗";
+"Please login first" = "請先登入";

@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-- (BOOL)noServer;
-
 @end
 
 NS_ASSUME_NONNULL_END

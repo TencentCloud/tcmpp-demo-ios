@@ -46,3 +46,36 @@
 "Log out" = "退出登录";
 "Done" = "完成";
 "Pay Successfully" = "支付成功";
+
+/* Settings */
+"Settings" = "设置";
+"User Information" = "用户信息";
+"Edit profile, avatar, nickname and phone number" = "编辑头像、昵称、邮箱和手机号";
+"Edit User Information" = "编辑用户信息";
+"Avatar" = "头像";
+"Nickname" = "昵称";
+"Email" = "邮箱";
+"Phone Number" = "手机号";
+"Enter nickname" = "请输入昵称";
+"Enter email" = "请输入邮箱";
+"Enter phone number" = "请输入手机号";
+"Select Avatar" = "选择头像";
+"Camera" = "相机";
+"Photo Library" = "相册";
+"Camera Permission" = "相机权限";
+"Please enable camera access in Settings" = "请在设置中启用相机访问权限";
+"OK" = "确定";
+"Please enter nickname" = "请输入昵称";
+"Please enter email" = "请输入邮箱";
+"Please enter a valid email address" = "请输入有效的邮箱地址";
+"Saving..." = "保存中...";
+"User information updated successfully" = "用户信息更新成功";
+"Update failed" = "更新失败";
+
+/* Service Notice */
+"Service Notice" = "服务通知";
+"View service messages and notifications" = "查看服务消息和通知";
+"Check the details" = "查看详情";
+"No messages" = "暂无消息";
+"Failed to load messages" = "加载消息失败";
+"Please login first" = "请先登录";

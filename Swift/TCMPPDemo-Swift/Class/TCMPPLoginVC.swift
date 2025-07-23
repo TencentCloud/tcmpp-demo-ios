@@ -125,7 +125,12 @@ class TCMPPLoginVC: UIViewController {
         TCMPPDemoLoginManager.shared.loginUser(userId: text) { err, value in
             if err == nil {
                 DispatchQueue.main.async {
-                    DemoUserInfo.shared.nickName = self.usernameTextField.text
+                    // Save user info for auto-login
+                    TCMPPUserInfo.shared.nickName = self.usernameTextField.text
+                    if let token = value {
+                        TCMPPUserInfo.shared.token = token
+                    }
+                    
                     let rootViewController = TCMPPMainVC()
                     let navGationController = UINavigationController(rootViewController: rootViewController)
                     UIApplication.shared.keyWindow?.rootViewController = navGationController

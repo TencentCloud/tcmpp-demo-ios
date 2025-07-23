@@ -13,10 +13,11 @@
 #import "UIView+TZLayout.h"
 #import "TCMPPLoginVC.h"
 #import "TCMPPLanguageSettingVC.h"
+#import "TCMPPSettingsVC.h"
 #import "ToastView.h"
 #import <TCMPPSDK/TCMPPSDK.h>
 #import "PaymentManager.h"
-#import "DemoUserInfo.h"
+#import "TCMPPDemoLoginManager.h"
 #import "MiniAppDemoSDKDelegateImpl.h"
 #import <TCMPPExtScanCode/TCMPPScanCodeController.h>
 #import <TCMPPExtScanCode/TCMPPScanCodeResult.h>
@@ -93,7 +94,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
                         if (result) {
                             if(result.count>0) {
                                 TCMPPScanCodeResult* r = result[0];
-                                [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithQrData:r.stringValue firstPage:nil paramsStr:[NSString stringWithFormat:@"noServer=%@",[MiniAppDemoSDKDelegateImpl sharedInstance].noServer ? @"1":@"0"] parentVC:self completion:^(NSError * _Nullable error) {
+                                [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithQrData:r.stringValue firstPage:nil paramsStr:nil parentVC:self completion:^(NSError * _Nullable error) {
                                     [self showErrorInfo:error];
                                 }];
                             }
@@ -106,6 +107,21 @@ static NSString *cellIdentifier = @"cellIdentifier";
             };
             scanVC.modalPresentationStyle = UIModalPresentationFullScreen;
             [self presentViewController:scanVC animated:YES completion:nil];
+        };
+        
+        TCMPPMenuItem *settings = [[TCMPPMenuItem alloc] init];
+        if (@available(iOS 13.0, *)) {
+            settings.icon = [UIImage systemImageNamed:@"gearshape"];
+        } else {
+            settings.icon = [UIImage imageNamed:@"more"];
+        }
+        settings.title = NSLocalizedString(@"Settings",nil);
+        settings.block = ^{
+            UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+            backItem.title = @"";
+            self.navigationItem.backBarButtonItem = backItem;
+            TCMPPSettingsVC *vc = [[TCMPPSettingsVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         };
         
         TCMPPMenuItem *language = [[TCMPPMenuItem alloc] init];
@@ -124,13 +140,13 @@ static NSString *cellIdentifier = @"cellIdentifier";
         logout.title = NSLocalizedString(@"Log out",nil);
         logout.block = ^{
             [[TMFMiniAppSDKManager sharedInstance] terminateAllApplications];
-            [DemoUserInfo sharedInstance].nickName = @"unknown";
+            [[TCMPPDemoLoginManager sharedInstance] clearLoginInfo];
             TCMPPLoginVC *vc = [[TCMPPLoginVC alloc] init];
             [UIApplication sharedApplication].keyWindow.rootViewController = vc;
             [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
         };
         
-        NSArray<TCMPPMenuItem *> *items = @[scan,language,logout];
+        NSArray<TCMPPMenuItem *> *items = @[scan,settings,language,logout];
         TCMPPMenuView *menu = [[TCMPPMenuView alloc] initWithMenuItems:items];
         menu.frame = CGRectMake(self.view.tz_width - 10 - 130, 10, 130, items.count * 50);
         [menu roundingCorners:UIRectCornerAllCorners cornerRadius:8.f];
@@ -383,14 +399,13 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *noServerStr = [MiniAppDemoSDKDelegateImpl sharedInstance].noServer ? @"1":@"0";
     if (self.selectIndex == 0) {
         TMFAppletSearchInfo *info = self.dataSource[indexPath.row];
         [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithAppID:info.appId 
                                                                verType:3
                                                                  scene:TMAEntrySceneAIOEntry
                                                              firstPage:nil
-                                                             paramsStr:[NSString stringWithFormat:@"noServer=%@",noServerStr]
+                                                             paramsStr:nil
                                                               parentVC:self
                                                             completion:^(NSError * _Nullable error) {
             [self showErrorInfo:error];
@@ -400,7 +415,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
         [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithAppID:info.appId verType:info.verType
                                                                  scene:TMAEntrySceneAIOEntry
                                                              firstPage:nil
-                                                             paramsStr:[NSString stringWithFormat:@"noServer=%@",noServerStr]
+                                                             paramsStr:nil
                                                               parentVC:self completion:^(NSError *_Nullable error) {
             [self showErrorInfo:error];
         }];

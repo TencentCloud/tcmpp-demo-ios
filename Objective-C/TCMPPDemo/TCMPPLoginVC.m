@@ -6,12 +6,15 @@
 //
 
 #import "TCMPPLoginVC.h"
-#import "UIView+TZLayout.h"
+#import "UIView+TCMPP.h"
 #import "UIColor+TCMPP.h"
+#import "UIView+TZLayout.h"
+#import "TCMPPMainVC.h"
 #import "TCMPPDemoLoginManager.h"
 #import "ToastView.h"
-#import "TCMPPMainVC.h"
-#import "DemoUserInfo.h"
+#import <TCMPPSDK/TCMPPSDK.h>
+#import "MiniAppDemoSDKDelegateImpl.h"
+#import "PaymentManager.h"
 
 @interface TCMPPLoginVC ()
 
@@ -78,10 +81,14 @@
         return;
     }
     // App calls the login interface, saves the token after the call is successful, and then jumps to the home page.
-    [[TCMPPDemoLoginManager sharedInstance] loginUser:_tf.text completeion:^(NSError * _Nullable err, NSString * _Nullable value) {
+    [[TCMPPDemoLoginManager sharedInstance] loginWithAccout:_tf.text completionHandler:^(NSError * _Nullable err, NSString * _Nullable token, NSDictionary * _Nullable datas) {
         if (!err) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [DemoUserInfo sharedInstance].nickName = self.tf.text;
+                TCMPPUserInfo *userInfo = [TCMPPUserInfo sharedInstance];
+                userInfo.nickName = self.tf.text;
+                
+                [userInfo saveUserInfoToUserDefaults];
+                
                 TCMPPMainVC *rootViewController = [[TCMPPMainVC alloc] init];
                 UINavigationController * navGationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
                 UIApplication.sharedApplication.keyWindow.rootViewController = navGationController;

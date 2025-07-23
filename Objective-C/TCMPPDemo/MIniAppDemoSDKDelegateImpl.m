@@ -6,17 +6,15 @@
 //  Copyright (c) 2023 Tencent. All rights reserved.
 //
 
-#import "MiniAppDemoSDKDelegateImpl.h"
-#import <TCMPPSDK/TCMPPSDK.h>
-#import "TCMPPPayView.h"
-#import "DemoUserInfo.h"
-#import "PaymentManager.h"
+#import "MIniAppDemoSDKDelegateImpl.h"
 #import "TCMPPDemoLoginManager.h"
+#import "ToastView.h"
+#import <TCMPPSDK/TCMPPSDK.h>
+#import "PaymentManager.h"
 #import "LanguageManager.h"
 #import "TCMPPPaySucessVC.h"
 #import <objc/runtime.h>
-
-static BOOL noServer = YES;
+#import "TCMPPPayView.h"
 
 @implementation MiniAppDemoSDKDelegateImpl
 
@@ -27,10 +25,6 @@ static BOOL noServer = YES;
         _imp = [MiniAppDemoSDKDelegateImpl new];
     });
     return _imp;
-}
-
-- (BOOL)noServer{
-    return noServer;
 }
 
 - (void)log:(MALogLevel)level msg:(NSString *)msg {
@@ -56,7 +50,7 @@ static BOOL noServer = YES;
 }
 
 - (NSString *)getAppUID {
-    return [DemoUserInfo sharedInstance].nickName;
+    return [[TCMPPDemoLoginManager sharedInstance] getUserId];
 }
 
 - (void)handleStartUpSuccessWithApp:(TMFMiniAppInfo *)app {
@@ -84,7 +78,7 @@ static BOOL noServer = YES;
         UIImageView *avatarView = [[UIImageView alloc] initWithImage:defaultAvatar];
         TMAAppUserInfo *userInfo = [TMAAppUserInfo new];
         userInfo.avatarView = avatarView;
-        userInfo.nickName = [DemoUserInfo sharedInstance].nickName;
+        userInfo.nickName = [TCMPPUserInfo sharedInstance].nickName;
         block(userInfo);
     }
 }
@@ -93,12 +87,12 @@ static BOOL noServer = YES;
     //example code
     if (completionHandler) {
         completionHandler(@{
-            @"nickName": [DemoUserInfo sharedInstance].nickName,
-            @"avatarUrl": [DemoUserInfo sharedInstance].avatarUrl,
-            @"gender": [NSNumber numberWithUnsignedInt:[DemoUserInfo sharedInstance].gender],
-            @"country": [DemoUserInfo sharedInstance].country,
-            @"province": [DemoUserInfo sharedInstance].province,
-            @"city": [DemoUserInfo sharedInstance].city,
+            @"nickName": [TCMPPUserInfo sharedInstance].nickName,
+            @"avatarUrl": [TCMPPUserInfo sharedInstance].avatarUrl,
+            @"gender": [NSNumber numberWithUnsignedInt:[TCMPPUserInfo sharedInstance].gender],
+            @"country": [TCMPPUserInfo sharedInstance].country,
+            @"province": [TCMPPUserInfo sharedInstance].province,
+            @"city": [TCMPPUserInfo sharedInstance].city,
             @"language": @"zh_CN"
         },
             nil);
@@ -109,82 +103,22 @@ static BOOL noServer = YES;
     //example code
     if (completionHandler) {
         completionHandler(@{
-            @"nickName": [DemoUserInfo sharedInstance].nickName,
-            @"avatarUrl": [DemoUserInfo sharedInstance].avatarUrl,
-            @"gender": [NSNumber numberWithUnsignedInt:[DemoUserInfo sharedInstance].gender],
-            @"country": [DemoUserInfo sharedInstance].country,
-            @"province": [DemoUserInfo sharedInstance].province,
-            @"city": [DemoUserInfo sharedInstance].city,
+            @"nickName": [TCMPPUserInfo sharedInstance].nickName,
+            @"avatarUrl": [TCMPPUserInfo sharedInstance].avatarUrl,
+            @"gender": [NSNumber numberWithUnsignedInt:[TCMPPUserInfo sharedInstance].gender],
+            @"country": [TCMPPUserInfo sharedInstance].country,
+            @"province": [TCMPPUserInfo sharedInstance].province,
+            @"city": [TCMPPUserInfo sharedInstance].city,
             @"language": @"zh_CN"
         },
             nil);
     }
 }
 
-// After the App receives the login request from the mini program, it first determines whether the App is logged in based on whether the token exists.
-// If it is not logged in, log in first; if it is logged in, it calls the getToken interface to obtain the code and sends it back to the mini program.
-- (void)login:(TMFMiniAppInfo *)app params:(NSDictionary *)params completionHandler:(MACommonCallback)completionHandler {
-    if (noServer) {
-        if(completionHandler) {
-            completionHandler(@{@"code":@"KQGGAY"},nil);
-        }
-        return;
-    }
-    
-    
-    [[TCMPPDemoLoginManager sharedInstance] wxLogin:app.appId completionHandler:^(NSError * _Nullable err, NSString * _Nullable value) {
-        if(completionHandler) {
-            if(err) {
-                completionHandler(nil,err);
-            } else {
-                completionHandler(@{@"code":value},nil);
-            }
-        }
-    }];
-}
-
 // After receiving the payment request from the mini program, the App uses the prepayId parameter in params to first call the order query interface to obtain detailed order information.
 // Then a pop-up window will pop up requesting the user to enter the payment password.
 // After the user successfully enters the password, the payment interface will be called. After success, the corresponding result will be returned to the mini program.
 - (void)requestPayment:(TMFMiniAppInfo *)app params:(NSDictionary *)params completionHandler:(MACommonCallback)completionHandler {
-    if (noServer) {
-        TCMPPPayView *payAlert = [[TCMPPPayView alloc] init];
-        payAlert.title = NSLocalizedString(@"Please enter the payment password", nil);
-        payAlert.detail = NSLocalizedString(@"Payment", nil);
-        payAlert.money = 1274.88;
-        payAlert.defaultPass = NSLocalizedString(@"Default password:666666", nil);
-        [payAlert show];
-        payAlert.completeHandle = ^(NSString *inputPassword) {
-            if (inputPassword) {
-                if ([inputPassword isEqualToString:@"666666"]) {
-                    TCMPPPaySucessVC *vc = [[TCMPPPaySucessVC alloc] init];
-                    vc.iconURL = app.appIcon;
-                    vc.name = app.appTitle;
-                    vc.price = 1274.88;
-                    vc.dismissBlock = ^{
-                        completionHandler(@{@"pay_time":@([[NSDate date] timeIntervalSince1970]),@"order_no":@"10086"},nil);
-                    };
-                    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-                    UIViewController *current = UIApplication.sharedApplication.keyWindow.rootViewController;
-                    if ([current.presentedViewController isKindOfClass:UINavigationController.class]) {
-                        UINavigationController *nav = (UINavigationController *)current.presentedViewController;
-                        [nav.topViewController presentViewController:vc animated:YES completion:nil];
-                    }
-                    return;
-                } else {
-                    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"wrong password" forKey:@"errMsg"];
-                    NSError *error = [NSError errorWithDomain:@"KPayRequestDomain" code:-1003 userInfo:userInfo];
-                    completionHandler(@{@"retmsg":error.localizedDescription},error);
-                }
-            }
-        };
-        payAlert.cancelHandle = ^(void) {
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"pay cancel" forKey:@"errMsg"];
-            NSError *error = [NSError errorWithDomain:@"KPayRequestDomain" code:-1003 userInfo:userInfo];
-            completionHandler(@{@"retmsg":error.localizedDescription},error);
-        };
-        return;
-    }
     
     NSString *prePayId = params[@"prepayId"];
     [PaymentManager checkPreOrder:prePayId completion:^(NSError * _Nullable err, NSDictionary * _Nullable result) {

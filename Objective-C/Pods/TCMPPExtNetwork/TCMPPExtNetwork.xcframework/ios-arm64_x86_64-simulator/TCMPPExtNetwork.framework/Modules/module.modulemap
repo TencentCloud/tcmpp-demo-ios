@@ -1,6 +1,0 @@
-framework module TCMPPExtNetwork {
-  umbrella header "TCMPPExtNetwork.h"
-  export *
-
-  module * { export * }
-}

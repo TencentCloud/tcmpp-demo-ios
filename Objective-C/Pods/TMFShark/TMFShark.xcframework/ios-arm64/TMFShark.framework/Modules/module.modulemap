@@ -1,6 +1,0 @@
-framework module TMFShark {
-  umbrella header "TMFShark.h"
-  export *
-
-  module * { export * }
-}

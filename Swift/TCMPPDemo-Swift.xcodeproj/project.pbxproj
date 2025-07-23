@@ -20,6 +20,9 @@
 		685F28D22AA1ED22009BC524 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D42AA1ED22009BC524 /* InfoPlist.strings */; };
 		685F28D62AA1ED4F009BC524 /* tcsas-ios-configurations.json in Resources */ = {isa = PBXBuildFile; fileRef = 685F28D52AA1ED4F009BC524 /* tcsas-ios-configurations.json */; };
 		68891EE62B18C67D005A9A95 /* api-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 68891EE52B18C67D005A9A95 /* api-custom-config.json */; };
+		AE2922582E1E770F00C01B2D /* TCMPPSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AE2922572E1E770F00C01B2D /* TCMPPSDK */; };
+		AECCFC9D2E278CE700B3FF12 /* TCMPPExtScanCode in Frameworks */ = {isa = PBXBuildFile; productRef = AECCFC9C2E278CE700B3FF12 /* TCMPPExtScanCode */; };
+		AECCFCA12E278D5800B3FF12 /* TCMPPExtMiniGame in Frameworks */ = {isa = PBXBuildFile; productRef = AECCFCA02E278D5800B3FF12 /* TCMPPExtMiniGame */; };
 		AEF0DDF32DD71B2000971AFC /* AuthorizeAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DDF22DD71B2000971AFC /* AuthorizeAlertView.swift */; };
 		F0B291602C6AF77600047AC6 /* TCMPPCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */; };
 		F0B291622C6AF87E00047AC6 /* TCMPPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */; };
@@ -36,11 +39,12 @@
 		F0B291782C6C95F100047AC6 /* PaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291772C6C95F100047AC6 /* PaymentManager.swift */; };
 		F0B2917A2C6C9B7800047AC6 /* TCMPPPaySucessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291792C6C9B7800047AC6 /* TCMPPPaySucessVC.swift */; };
 		F0B2918D2C6F28EE00047AC6 /* TMFAppletConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2918C2C6F28EE00047AC6 /* TMFAppletConfigManager.swift */; };
-		F3A1F00F59FBBD5C394D1F72 /* libPods-TCMPPDemo-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */; };
+		F0B2918E2E1E770F00C01B2D /* TCMPPSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2918F2E1E770F00C01B2D /* TCMPPSettingsVC.swift */; };
+		F0B291902E1E770F00C01B2D /* TCMPPUserInfoEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291912E1E770F00C01B2D /* TCMPPUserInfoEditVC.swift */; };
+		F0B291922E1E770F00C01B2D /* TCMPPSubscribeInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B291932E1E770F00C01B2D /* TCMPPSubscribeInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		55D5096CEFBAA8474E182D33 /* Pods-TCMPPDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo-Swift.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		68122B9D2AA5D85F00513013 /* PayRequestJSApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRequestJSApi.swift; sourceTree = "<group>"; };
 		685F28672A9EDCE6009BC524 /* TCMPPDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCMPPDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		685F286A2A9EDCE6009BC524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +61,7 @@
 		685F28D32AA1ED22009BC524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		685F28D52AA1ED4F009BC524 /* tcsas-ios-configurations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tcsas-ios-configurations.json"; sourceTree = "<group>"; };
 		68891EE52B18C67D005A9A95 /* api-custom-config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-custom-config.json"; sourceTree = "<group>"; };
-		ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCMPPDemo-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF0DDF22DD71B2000971AFC /* AuthorizeAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeAlertView.swift; sourceTree = "<group>"; };
-		D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo-Swift.debug.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		F0B2915F2C6AF77600047AC6 /* TCMPPCommonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPCommonTools.swift; sourceTree = "<group>"; };
 		F0B291612C6AF87E00047AC6 /* TCMPPExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPExtension.swift; sourceTree = "<group>"; };
 		F0B291632C6AFC2100047AC6 /* DemoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUtils.swift; sourceTree = "<group>"; };
@@ -84,6 +86,9 @@
 		F0B2918A2C6DDA4C00047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0B2918B2C6DDA4C00047AC6 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0B2918C2C6F28EE00047AC6 /* TMFAppletConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMFAppletConfigManager.swift; sourceTree = "<group>"; };
+		F0B2918F2E1E770F00C01B2D /* TCMPPSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPSettingsVC.swift; sourceTree = "<group>"; };
+		F0B291912E1E770F00C01B2D /* TCMPPUserInfoEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPUserInfoEditVC.swift; sourceTree = "<group>"; };
+		F0B291932E1E770F00C01B2D /* TCMPPSubscribeInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCMPPSubscribeInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3A1F00F59FBBD5C394D1F72 /* libPods-TCMPPDemo-Swift.a in Frameworks */,
+				AECCFCA12E278D5800B3FF12 /* TCMPPExtMiniGame in Frameworks */,
+				AE2922582E1E770F00C01B2D /* TCMPPSDK in Frameworks */,
+				AECCFC9D2E278CE700B3FF12 /* TCMPPExtScanCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +110,6 @@
 			children = (
 				685F28692A9EDCE6009BC524 /* TCMPPDemo-Swift */,
 				685F28682A9EDCE6009BC524 /* Products */,
-				7EFD5AAC412573067A0D3F34 /* Pods */,
 				AB82080513266B3B85BDFC58 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -146,6 +152,9 @@
 				F0B291752C6C88C000047AC6 /* TCMPPLanguageSettingVC.swift */,
 				F0B291772C6C95F100047AC6 /* PaymentManager.swift */,
 				F0B291792C6C9B7800047AC6 /* TCMPPPaySucessVC.swift */,
+				F0B2918F2E1E770F00C01B2D /* TCMPPSettingsVC.swift */,
+				F0B291912E1E770F00C01B2D /* TCMPPUserInfoEditVC.swift */,
+				F0B291932E1E770F00C01B2D /* TCMPPSubscribeInfoVC.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -174,19 +183,9 @@
 			name = Supports;
 			sourceTree = "<group>";
 		};
-		7EFD5AAC412573067A0D3F34 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */,
-				55D5096CEFBAA8474E182D33 /* Pods-TCMPPDemo-Swift.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		AB82080513266B3B85BDFC58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACC67F49C62B2F33AEC8FEF0 /* libPods-TCMPPDemo-Swift.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,11 +208,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 685F28912A9EDCE7009BC524 /* Build configuration list for PBXNativeTarget "TCMPPDemo-Swift" */;
 			buildPhases = (
-				9F5CF1696544DAB1BF7D7C9A /* [CP] Check Pods Manifest.lock */,
 				685F28632A9EDCE6009BC524 /* Sources */,
 				685F28642A9EDCE6009BC524 /* Frameworks */,
 				685F28652A9EDCE6009BC524 /* Resources */,
-				BAA5717F2C6717A5C2D7D7A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +249,11 @@
 				id,
 			);
 			mainGroup = 685F285E2A9EDCE6009BC524;
+			packageReferences = (
+				AE81A0892E2782CC002D851B /* XCRemoteSwiftPackageReference "TCMPPSDK" */,
+				AECCFC9B2E278CE700B3FF12 /* XCRemoteSwiftPackageReference "TCMPPExtScanCode" */,
+				AECCFC9F2E278D5800B3FF12 /* XCRemoteSwiftPackageReference "TCMPPExtMiniGame" */,
+			);
 			productRefGroup = 685F28682A9EDCE6009BC524 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -279,48 +281,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		9F5CF1696544DAB1BF7D7C9A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TCMPPDemo-Swift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BAA5717F2C6717A5C2D7D7A7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TCMPPDemo-Swift/Pods-TCMPPDemo-Swift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		685F28632A9EDCE6009BC524 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -347,6 +307,9 @@
 				685F28B02AA03C37009BC524 /* TCMPPPayView.swift in Sources */,
 				68122B9E2AA5D85F00513013 /* PayRequestJSApi.swift in Sources */,
 				F0B291682C6AFD0700047AC6 /* LanguageManager.swift in Sources */,
+				F0B2918E2E1E770F00C01B2D /* TCMPPSettingsVC.swift in Sources */,
+				F0B291902E1E770F00C01B2D /* TCMPPUserInfoEditVC.swift in Sources */,
+				F0B291922E1E770F00C01B2D /* TCMPPSubscribeInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +364,7 @@
 		685F288F2A9EDCE7009BC524 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_UNSAFE_BUILD_FLAGS = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -462,6 +426,7 @@
 		685F28902A9EDCE7009BC524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_UNSAFE_BUILD_FLAGS = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -516,8 +481,8 @@
 		};
 		685F28922A9EDCE7009BC524 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D73D5099DA58663730FBD991 /* Pods-TCMPPDemo-Swift.debug.xcconfig */;
 			buildSettings = {
+				ALLOW_UNSAFE_BUILD_FLAGS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -554,6 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tcsas.open.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -568,8 +534,8 @@
 		};
 		685F28932A9EDCE7009BC524 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55D5096CEFBAA8474E182D33 /* Pods-TCMPPDemo-Swift.release.xcconfig */;
 			buildSettings = {
+				ALLOW_UNSAFE_BUILD_FLAGS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -606,6 +572,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tcsas.open.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -639,6 +606,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE81A0892E2782CC002D851B /* XCRemoteSwiftPackageReference "TCMPPSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TCMPP-Team/TCMPPSDK.git";
+			requirement = {
+				kind = revision;
+				revision = main;
+			};
+		};
+		AECCFC9B2E278CE700B3FF12 /* XCRemoteSwiftPackageReference "TCMPPExtScanCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TCMPP-Team/TCMPPExtScanCode.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+		AECCFC9F2E278D5800B3FF12 /* XCRemoteSwiftPackageReference "TCMPPExtMiniGame" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TCMPP-Team/TCMPPExtMiniGame.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE2922572E1E770F00C01B2D /* TCMPPSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE81A0892E2782CC002D851B /* XCRemoteSwiftPackageReference "TCMPPSDK" */;
+			productName = TCMPPSDK;
+		};
+		AECCFC9C2E278CE700B3FF12 /* TCMPPExtScanCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AECCFC9B2E278CE700B3FF12 /* XCRemoteSwiftPackageReference "TCMPPExtScanCode" */;
+			productName = TCMPPExtScanCode;
+		};
+		AECCFCA02E278D5800B3FF12 /* TCMPPExtMiniGame */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AECCFC9F2E278D5800B3FF12 /* XCRemoteSwiftPackageReference "TCMPPExtMiniGame" */;
+			productName = TCMPPExtMiniGame;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 685F285F2A9EDCE6009BC524 /* Project object */;
 }

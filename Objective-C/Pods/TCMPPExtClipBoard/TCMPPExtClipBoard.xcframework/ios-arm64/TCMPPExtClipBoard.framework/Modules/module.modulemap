@@ -1,6 +1,0 @@
-framework module TCMPPExtClipBoard {
-  umbrella header "TCMPPExtClipBoard.h"
-  export *
-
-  module * { export * }
-}

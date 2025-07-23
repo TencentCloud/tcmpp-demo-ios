@@ -29,8 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func autoLogin() {
-        let currentUser = DemoUserInfo.shared.nickName
-        if currentUser?.count ?? 0 > 0 {
+        let currentUser = TCMPPUserInfo.shared.nickName
+        let token = TCMPPUserInfo.shared.token
+        
+        if let currentUser = currentUser, !currentUser.isEmpty, currentUser != "unknown",
+           let token = token, !token.isEmpty {
             let rootViewController = TCMPPMainVC()
             let navigationController = UINavigationController(rootViewController: rootViewController)
             self.window?.rootViewController = navigationController
@@ -45,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 navigationController.navigationBar.barTintColor = .white
                 navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
             }
-            TCMPPDemoLoginManager.shared.loginUser(userId: currentUser!) { (err, value) in
+            TCMPPDemoLoginManager.shared.loginUser(userId: currentUser) { (err, value) in
                 if err == nil {
                     DispatchQueue.main.async {
                         let icon = UIImage(named: "success")
@@ -54,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        UserDefaults.standard.removeObject(forKey: "currentUser")
+                        TCMPPUserInfo.shared.clearUserInfo()
                         let loginVC = TCMPPLoginVC()
                         self.window?.rootViewController = loginVC
                     }
@@ -68,10 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func prepareApplet(){
-        let configItem = TMFAppletConfigManager.shared.getCurrentConfigItem();
-     
         
-        // 配置使用环境
         let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json");
         if ((filePath) != nil){
             let config = TMAServerConfig(file: filePath!);

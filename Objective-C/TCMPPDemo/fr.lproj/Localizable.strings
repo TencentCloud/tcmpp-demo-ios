@@ -3,7 +3,7 @@
 "Payment" = "Paiement";
 
 "Cancel" = "Annuler";
-
+"Save" = "Enregistrer";
 
 "Please enter the username" = "Veuillez saisir le nom d'utilisateur";
 "Log in" = "Connexion";
@@ -20,3 +20,34 @@
 "Log out" = "Déconnexion";
 "Done" = "Terminé";
 "Pay Successfully" = "Paiement réussi";
+
+"Settings" = "Paramètres";
+"User Information" = "Informations utilisateur";
+"Edit profile, avatar, nickname and phone number" = "Modifier le profil, l'avatar, le surnom et le numéro de téléphone";
+"Edit User Information" = "Modifier les informations utilisateur";
+"Avatar" = "Avatar";
+"Nickname" = "Surnom";
+"Email" = "E-mail";
+"Phone Number" = "Numéro de téléphone";
+"Enter nickname" = "Entrez le surnom";
+"Enter email" = "Entrez l'e-mail";
+"Enter phone number" = "Entrez le numéro de téléphone";
+"Select Avatar" = "Sélectionner l'avatar";
+"Camera" = "Caméra";
+"Photo Library" = "Bibliothèque photos";
+"Camera Permission" = "Permission caméra";
+"Please enable camera access in Settings" = "Veuillez activer l'accès à la caméra dans les paramètres";
+"OK" = "OK";
+"Please enter nickname" = "Veuillez entrer le surnom";
+"Please enter email" = "Veuillez entrer l'e-mail";
+"Please enter a valid email address" = "Veuillez entrer une adresse e-mail valide";
+"Saving..." = "Enregistrement...";
+"User information updated successfully" = "Informations utilisateur mises à jour avec succès";
+"Update failed" = "Échec de la mise à jour";
+
+"Service Notice" = "Avis de service";
+"View service messages and notifications" = "Voir les messages et notifications de service";
+"Check the details" = "Voir les détails";
+"No messages" = "Aucun message";
+"Failed to load messages" = "Échec du chargement des messages";
+"Please login first" = "Veuillez d'abord vous connecter";

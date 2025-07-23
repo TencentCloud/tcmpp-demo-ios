@@ -46,3 +46,36 @@
 "Log out" = "Log out";
 "Done" = "Done";
 "Pay Successfully" = "Payment successful";
+
+/* Settings */
+"Settings" = "Settings";
+"User Information" = "User Information";
+"Edit profile, avatar, nickname and phone number" = "Edit profile, avatar, nickname and phone number";
+"Edit User Information" = "Edit User Information";
+"Avatar" = "Avatar";
+"Nickname" = "Nickname";
+"Email" = "Email";
+"Phone Number" = "Phone Number";
+"Enter nickname" = "Enter nickname";
+"Enter email" = "Enter email";
+"Enter phone number" = "Enter phone number";
+"Select Avatar" = "Select Avatar";
+"Camera" = "Camera";
+"Photo Library" = "Photo Library";
+"Camera Permission" = "Camera Permission";
+"Please enable camera access in Settings" = "Please enable camera access in Settings";
+"OK" = "OK";
+"Please enter nickname" = "Please enter nickname";
+"Please enter email" = "Please enter email";
+"Please enter a valid email address" = "Please enter a valid email address";
+"Saving..." = "Saving...";
+"User information updated successfully" = "User information updated successfully";
+"Update failed" = "Update failed";
+
+/* Service Notice */
+"Service Notice" = "Service Notice";
+"View service messages and notifications" = "View service messages and notifications";
+"Check the details" = "Check the details";
+"No messages" = "No messages";
+"Failed to load messages" = "Failed to load messages";
+"Please login first" = "Please login first";

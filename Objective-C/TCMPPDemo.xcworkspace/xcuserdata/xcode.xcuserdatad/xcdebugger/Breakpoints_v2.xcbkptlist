@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B9999527-2B35-4CB0-9239-FC854D9EA4EA"
-            shouldBeEnabled = "No"
+            uuid = "06BF884A-68CF-4055-869A-23CB0A102B74"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TCMPPDemo/TCMPPMainVC.m"
+            filePath = "TCMPPDemo/TCMPPUserInfoEditVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-loadUserInfo"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

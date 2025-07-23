@@ -11,7 +11,7 @@
 "Payment" = "Pembayaran";
 
 "Cancel" = "Batal";
-
+"Save" = "Simpan";
 
 "Please enter the username" = "Harap masukkan nama pengguna";
 "Log in" = "Masuk";
@@ -28,3 +28,34 @@
 "Log out" = "Keluar";
 "Done" = "Selesai";
 "Pay Successfully" = "Pembayaran berhasil";
+
+"Settings" = "Pengaturan";
+"User Information" = "Informasi Pengguna";
+"Edit profile, avatar, nickname and phone number" = "Edit profil, avatar, nama panggilan dan nomor telepon";
+"Edit User Information" = "Edit Informasi Pengguna";
+"Avatar" = "Avatar";
+"Nickname" = "Nama Panggilan";
+"Email" = "Email";
+"Phone Number" = "Nomor Telepon";
+"Enter nickname" = "Masukkan nama panggilan";
+"Enter email" = "Masukkan email";
+"Enter phone number" = "Masukkan nomor telepon";
+"Select Avatar" = "Pilih Avatar";
+"Camera" = "Kamera";
+"Photo Library" = "Perpustakaan Foto";
+"Camera Permission" = "Izin Kamera";
+"Please enable camera access in Settings" = "Harap aktifkan akses kamera di Pengaturan";
+"OK" = "OK";
+"Please enter nickname" = "Harap masukkan nama panggilan";
+"Please enter email" = "Harap masukkan email";
+"Please enter a valid email address" = "Harap masukkan alamat email yang valid";
+"Saving..." = "Menyimpan...";
+"User information updated successfully" = "Informasi pengguna berhasil diperbarui";
+"Update failed" = "Pembaruan gagal";
+
+"Service Notice" = "Pemberitahuan Layanan";
+"View service messages and notifications" = "Lihat pesan dan notifikasi layanan";
+"Check the details" = "Lihat detail";
+"No messages" = "Tidak ada pesan";
+"Failed to load messages" = "Gagal memuat pesan";
+"Please login first" = "Harap login terlebih dahulu";
