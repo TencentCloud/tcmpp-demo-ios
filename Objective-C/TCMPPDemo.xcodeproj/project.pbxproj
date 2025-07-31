@@ -16,7 +16,6 @@
 		0702052F29F12A6C00917E77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702052D29F12A6C00917E77 /* InfoPlist.strings */; };
 		0702053229F12B3400917E77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702053429F12B3400917E77 /* Localizable.strings */; };
 		0711239C2A052B5F00ED2244 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0711239B2A052B5F00ED2244 /* avatar.png */; };
-		0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61629F6554D00444C1E /* TCMPPPayView.m */; };
 		0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720E61929F665E200444C1E /* PayRequestJsApi.m */; };
 		074210AC2B0363AB008AE672 /* api-custom-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 074210AB2B0363AA008AE672 /* api-custom-config.json */; };
 		076F0DC02B20247400470C46 /* TMATestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076F0DBF2B20247400470C46 /* TMATestView.m */; };
@@ -26,6 +25,13 @@
 		AE2922662E210F0100C01B2D /* TCMPPSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2922632E210F0100C01B2D /* TCMPPSettingsVC.m */; };
 		AE2922672E210F0100C01B2D /* TCMPPUserInfoEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2922652E210F0100C01B2D /* TCMPPUserInfoEditVC.m */; };
 		AE29226D2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE29226C2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m */; };
+		AECCFCBD2E3B122000B3FF12 /* TCMPPDemoPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCBC2E3B122000B3FF12 /* TCMPPDemoPayManager.m */; };
+		AECCFCC42E3B123100B3FF12 /* TCMPPPaymentMethodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCC32E3B123100B3FF12 /* TCMPPPaymentMethodsController.m */; };
+		AECCFCC52E3B123100B3FF12 /* TCMPPPaySucessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCBF2E3B123100B3FF12 /* TCMPPPaySucessVC.m */; };
+		AECCFCC62E3B123100B3FF12 /* TCMPPPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCC12E3B123100B3FF12 /* TCMPPPayView.m */; };
+		AECCFCC92E3B12F200B3FF12 /* DebugInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCC82E3B12F200B3FF12 /* DebugInfo.m */; };
+		AECCFCCC2E3B12FE00B3FF12 /* TCMPPPayMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCCB2E3B12FE00B3FF12 /* TCMPPPayMethodCell.m */; };
+		AECCFCCF2E3B130900B3FF12 /* TCMPPAddCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCFCCE2E3B130900B3FF12 /* TCMPPAddCardController.m */; };
 		EE4FE3F9BB79C5190DDE6481 /* libPods-TCMPPDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD883C80A9D425CC47C78BB1 /* libPods-TCMPPDemo.a */; };
 		F02FF1332C61F923000F46B6 /* CustomBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12B2C61F923000F46B6 /* CustomBundle.m */; };
 		F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF12D2C61F923000F46B6 /* TCMPPCommonTools.m */; };
@@ -42,7 +48,6 @@
 		F02FF1512C6200B3000F46B6 /* PaymentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FF1502C6200B3000F46B6 /* PaymentManager.m */; };
 		F0B291352C69AA6A00047AC6 /* TMFAppletConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B291332C69AA6A00047AC6 /* TMFAppletConfigManager.m */; };
 		F0B291382C69AACF00047AC6 /* DemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B291372C69AACF00047AC6 /* DemoUtils.m */; };
-		F0B2913B2C69E6E000047AC6 /* TCMPPPaySucessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B2913A2C69E6E000047AC6 /* TCMPPPaySucessVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +68,6 @@
 		0702053529F12B3800917E77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0702053629F12D8300917E77 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0711239B2A052B5F00ED2244 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
-		0720E61529F6554D00444C1E /* TCMPPPayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPayView.h; sourceTree = "<group>"; };
-		0720E61629F6554D00444C1E /* TCMPPPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayView.m; sourceTree = "<group>"; };
 		0720E61829F665E200444C1E /* PayRequestJsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayRequestJsApi.h; sourceTree = "<group>"; };
 		0720E61929F665E200444C1E /* PayRequestJsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayRequestJsApi.m; sourceTree = "<group>"; };
 		072159042B849DFC002BBA97 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -84,6 +87,20 @@
 		AE2922652E210F0100C01B2D /* TCMPPUserInfoEditVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPUserInfoEditVC.m; sourceTree = "<group>"; };
 		AE29226B2E274DC100C01B2D /* TCMPPSubscribeInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPSubscribeInfoVC.h; sourceTree = "<group>"; };
 		AE29226C2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPSubscribeInfoVC.m; sourceTree = "<group>"; };
+		AECCFCBB2E3B122000B3FF12 /* TCMPPDemoPayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPDemoPayManager.h; sourceTree = "<group>"; };
+		AECCFCBC2E3B122000B3FF12 /* TCMPPDemoPayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPDemoPayManager.m; sourceTree = "<group>"; };
+		AECCFCBE2E3B123100B3FF12 /* TCMPPPaySucessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPaySucessVC.h; sourceTree = "<group>"; };
+		AECCFCBF2E3B123100B3FF12 /* TCMPPPaySucessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPaySucessVC.m; sourceTree = "<group>"; };
+		AECCFCC02E3B123100B3FF12 /* TCMPPPayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPayView.h; sourceTree = "<group>"; };
+		AECCFCC12E3B123100B3FF12 /* TCMPPPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayView.m; sourceTree = "<group>"; };
+		AECCFCC22E3B123100B3FF12 /* TCMPPPaymentMethodsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPaymentMethodsController.h; sourceTree = "<group>"; };
+		AECCFCC32E3B123100B3FF12 /* TCMPPPaymentMethodsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPaymentMethodsController.m; sourceTree = "<group>"; };
+		AECCFCC72E3B12F200B3FF12 /* DebugInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugInfo.h; sourceTree = "<group>"; };
+		AECCFCC82E3B12F200B3FF12 /* DebugInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugInfo.m; sourceTree = "<group>"; };
+		AECCFCCA2E3B12FE00B3FF12 /* TCMPPPayMethodCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPayMethodCell.h; sourceTree = "<group>"; };
+		AECCFCCB2E3B12FE00B3FF12 /* TCMPPPayMethodCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPayMethodCell.m; sourceTree = "<group>"; };
+		AECCFCCD2E3B130900B3FF12 /* TCMPPAddCardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPAddCardController.h; sourceTree = "<group>"; };
+		AECCFCCE2E3B130900B3FF12 /* TCMPPAddCardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPAddCardController.m; sourceTree = "<group>"; };
 		E02666F0E819B70234D4FA44 /* Pods-TCMPPDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMPPDemo.release.xcconfig"; path = "Target Support Files/Pods-TCMPPDemo/Pods-TCMPPDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F02FF12A2C61F923000F46B6 /* CustomBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBundle.h; sourceTree = "<group>"; };
 		F02FF12B2C61F923000F46B6 /* CustomBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBundle.m; sourceTree = "<group>"; };
@@ -116,8 +133,6 @@
 		F0B291342C69AA6A00047AC6 /* TMFAppletConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFAppletConfigManager.h; sourceTree = "<group>"; };
 		F0B291362C69AACF00047AC6 /* DemoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoUtils.h; sourceTree = "<group>"; };
 		F0B291372C69AACF00047AC6 /* DemoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoUtils.m; sourceTree = "<group>"; };
-		F0B291392C69E6E000047AC6 /* TCMPPPaySucessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMPPPaySucessVC.h; sourceTree = "<group>"; };
-		F0B2913A2C69E6E000047AC6 /* TCMPPPaySucessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMPPPaySucessVC.m; sourceTree = "<group>"; };
 		F0B2917B2C6DA07C00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		F0B2917C2C6DA07C00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F0B2917D2C6DA07D00047AC6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -162,6 +177,7 @@
 		070204FE29EFC93000917E77 /* TCMPPDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AECCFCBA2E3B121D00B3FF12 /* Pay */,
 				F02FF1322C61F923000F46B6 /* Utils */,
 				07857FDF2A164A5D00EA62DB /* tcsas-ios-configurations.json */,
 				076F0DCC2B202EB400470C46 /* CustomApi */,
@@ -223,17 +239,32 @@
 				076F0DC82B202C6B00470C46 /* StateEventTest.m */,
 				076F0DBE2B20247400470C46 /* TMATestView.h */,
 				076F0DBF2B20247400470C46 /* TMATestView.m */,
-				0720E61529F6554D00444C1E /* TCMPPPayView.h */,
-				0720E61629F6554D00444C1E /* TCMPPPayView.m */,
 				0720E61829F665E200444C1E /* PayRequestJsApi.h */,
 				074210AB2B0363AA008AE672 /* api-custom-config.json */,
 				0720E61929F665E200444C1E /* PayRequestJsApi.m */,
 				076F0DC42B202C1600470C46 /* TestStateJsApi.h */,
 				076F0DC52B202C1600470C46 /* TestStateJsApi.m */,
-				F0B291392C69E6E000047AC6 /* TCMPPPaySucessVC.h */,
-				F0B2913A2C69E6E000047AC6 /* TCMPPPaySucessVC.m */,
 			);
 			path = CustomApi;
+			sourceTree = "<group>";
+		};
+		AECCFCBA2E3B121D00B3FF12 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				AECCFCBB2E3B122000B3FF12 /* TCMPPDemoPayManager.h */,
+				AECCFCBC2E3B122000B3FF12 /* TCMPPDemoPayManager.m */,
+				AECCFCBE2E3B123100B3FF12 /* TCMPPPaySucessVC.h */,
+				AECCFCBF2E3B123100B3FF12 /* TCMPPPaySucessVC.m */,
+				AECCFCC02E3B123100B3FF12 /* TCMPPPayView.h */,
+				AECCFCC12E3B123100B3FF12 /* TCMPPPayView.m */,
+				AECCFCC22E3B123100B3FF12 /* TCMPPPaymentMethodsController.h */,
+				AECCFCC32E3B123100B3FF12 /* TCMPPPaymentMethodsController.m */,
+				AECCFCCA2E3B12FE00B3FF12 /* TCMPPPayMethodCell.h */,
+				AECCFCCB2E3B12FE00B3FF12 /* TCMPPPayMethodCell.m */,
+				AECCFCCD2E3B130900B3FF12 /* TCMPPAddCardController.h */,
+				AECCFCCE2E3B130900B3FF12 /* TCMPPAddCardController.m */,
+			);
+			path = Pay;
 			sourceTree = "<group>";
 		};
 		C7FB980E53686773FC157288 /* Frameworks */ = {
@@ -256,6 +287,8 @@
 		F02FF1322C61F923000F46B6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AECCFCC72E3B12F200B3FF12 /* DebugInfo.h */,
+				AECCFCC82E3B12F200B3FF12 /* DebugInfo.m */,
 				F02FF12A2C61F923000F46B6 /* CustomBundle.h */,
 				F02FF12B2C61F923000F46B6 /* CustomBundle.m */,
 				F0B291362C69AACF00047AC6 /* DemoUtils.h */,
@@ -400,25 +433,30 @@
 				AE2922662E210F0100C01B2D /* TCMPPSettingsVC.m in Sources */,
 				AE2922672E210F0100C01B2D /* TCMPPUserInfoEditVC.m in Sources */,
 				F02FF1492C61F98C000F46B6 /* TCMPPDemoLoginManager.m in Sources */,
-				0720E61729F6554D00444C1E /* TCMPPPayView.m in Sources */,
 				F02FF14E2C61FA6D000F46B6 /* LanguageManager.m in Sources */,
 				F02FF14B2C61F98C000F46B6 /* TCMPPMainVC.m in Sources */,
+				AECCFCBD2E3B122000B3FF12 /* TCMPPDemoPayManager.m in Sources */,
 				0720E61A29F665E200444C1E /* PayRequestJsApi.m in Sources */,
 				F02FF1462C61F98C000F46B6 /* TCMPPAppCell.m in Sources */,
 				076F0DC62B202C1600470C46 /* TestStateJsApi.m in Sources */,
+				AECCFCC92E3B12F200B3FF12 /* DebugInfo.m in Sources */,
 				0702051C29EFD6CE00917E77 /* MiniAppDemoSDKDelegateImpl.m in Sources */,
 				0702050129EFC93000917E77 /* AppDelegate.m in Sources */,
 				076F0DC02B20247400470C46 /* TMATestView.m in Sources */,
+				AECCFCCC2E3B12FE00B3FF12 /* TCMPPPayMethodCell.m in Sources */,
 				F02FF1512C6200B3000F46B6 /* PaymentManager.m in Sources */,
 				F02FF1452C61F98C000F46B6 /* TCMPPMenuView.m in Sources */,
 				076F0DC92B202C6B00470C46 /* StateEventTest.m in Sources */,
 				F02FF14A2C61F98C000F46B6 /* TCMPPLoginVC.m in Sources */,
-				F0B2913B2C69E6E000047AC6 /* TCMPPPaySucessVC.m in Sources */,
+				AECCFCC42E3B123100B3FF12 /* TCMPPPaymentMethodsController.m in Sources */,
+				AECCFCC52E3B123100B3FF12 /* TCMPPPaySucessVC.m in Sources */,
+				AECCFCC62E3B123100B3FF12 /* TCMPPPayView.m in Sources */,
 				F02FF1482C61F98C000F46B6 /* TCMPPLanguageSettingVC.m in Sources */,
 				0702051229EFC93200917E77 /* main.m in Sources */,
 				F0B291382C69AACF00047AC6 /* DemoUtils.m in Sources */,
 				F0B291352C69AA6A00047AC6 /* TMFAppletConfigManager.m in Sources */,
 				AE29226D2E274DC100C01B2D /* TCMPPSubscribeInfoVC.m in Sources */,
+				AECCFCCF2E3B130900B3FF12 /* TCMPPAddCardController.m in Sources */,
 				F02FF1342C61F923000F46B6 /* TCMPPCommonTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

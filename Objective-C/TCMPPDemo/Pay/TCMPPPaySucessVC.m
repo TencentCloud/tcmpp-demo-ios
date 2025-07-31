@@ -52,7 +52,7 @@
     price.textAlignment = NSTextAlignmentCenter;
     price.tz_centerX = self.view.tz_centerX;
     price.font = [UIFont systemFontOfSize:38];
-    price.text = [NSString stringWithFormat:@"$ %.2f", self.price/100.f];
+    price.text = [NSString stringWithFormat:@"$ %.2f", self.price/10000.f];
     [self.view addSubview:price];
     
     UIButton *doneBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.tz_bottom - 200, 200, 50)];
@@ -69,7 +69,7 @@
 
 - (void)doneClick {
     __weak typeof(self) weakSelf = self;
-    [self dismissViewControllerAnimated:YES completion:^{
+    [self dismissViewControllerAnimated:NO completion:^{
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf.dismissBlock) {
             strongSelf.dismissBlock();

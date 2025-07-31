@@ -55,7 +55,7 @@
         _paymentAlert.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
         [self addSubview:_paymentAlert];
 
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, PAYMENT_WIDTH, TITLE_HEIGHT)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_HEIGHT, 0, PAYMENT_WIDTH - 2 * TITLE_HEIGHT, TITLE_HEIGHT)];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.font = [UIFont systemFontOfSize:17];
@@ -238,7 +238,7 @@
 - (void)setMoney:(CGFloat)money {
     if (_money != money) {
         _money = money;
-        _moneyLabel.text = [NSString stringWithFormat:@"$%.2f", money/100];
+        _moneyLabel.text = [NSString stringWithFormat:@"$%.2f", money/10000];
     }
 }
 
