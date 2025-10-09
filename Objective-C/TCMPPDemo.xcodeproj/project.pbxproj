@@ -636,7 +636,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AKQ6BZ4775;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RH84D55B44;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TCMPPDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
@@ -667,10 +667,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tcsas.open.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superapp.open.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = open_demo;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TCSAS-GitHub-Demo-Provision-Profile-0805";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -687,7 +687,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AKQ6BZ4775;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RH84D55B44;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TCMPPDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "TCMPP Assistant";
@@ -718,10 +718,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tcsas.open.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superapp.open.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = open_demo;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TCSAS-GitHub-Demo-Provision-Profile-0805";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
