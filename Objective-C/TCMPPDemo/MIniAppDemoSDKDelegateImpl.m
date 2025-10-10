@@ -15,6 +15,9 @@
 #import "TCMPPPaySucessVC.h"
 #import <objc/runtime.h>
 #import "TCMPPPayView.h"
+#import "TCMPPDemoPayManager.h"
+#import "TCMPPPaymentMethodsController.h"
+
 
 @implementation MiniAppDemoSDKDelegateImpl
 
@@ -120,71 +123,74 @@
 // After the user successfully enters the password, the payment interface will be called. After success, the corresponding result will be returned to the mini program.
 - (void)requestPayment:(TMFMiniAppInfo *)app params:(NSDictionary *)params completionHandler:(MACommonCallback)completionHandler {
     
-    NSString *prePayId = params[@"prepayId"];
-    [PaymentManager checkPreOrder:prePayId completion:^(NSError * _Nullable err, NSDictionary * _Nullable result) {
+    [[TCMPPDemoPayManager sharedInstance] checkPreOrder:params completionHandler:^(NSError * _Nullable err, PayResponseData * _Nullable result) {
         if (!err) {
-            NSString *tradeNo = result[@"out_trade_no"];
-            NSString *prePayId = result[@"prepay_id"];
-            NSInteger totalFee = [result[@"total_fee"] integerValue];
-            
             dispatch_async(dispatch_get_main_queue(), ^{
-                // Note: This is just a simple demo, so there is a default password
-                TCMPPPayView *payAlert = [[TCMPPPayView alloc] init];
-                payAlert.title = NSLocalizedString(@"Please enter the payment password", nil);
-                payAlert.detail = NSLocalizedString(@"Payment", nil);
-                payAlert.money = totalFee;
-                payAlert.defaultPass = NSLocalizedString(@"Default password:666666", nil);
-                [payAlert show];
-                payAlert.completeHandle = ^(NSString *inputPassword) {
-                    if (inputPassword) {
-                        if ([inputPassword isEqualToString:@"666666"]) {
-                            // Note: The payment interface is only a simple example. Both the client's signature and the server's signature verification are omitted.
-                            // For the signature algorithm, please refer to WeChat Pay’s signature algorithm:
-                            // https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=4_3
-                            [PaymentManager payOrder:tradeNo prePayId:prePayId totalFee:totalFee completion:^(NSError * _Nullable err, NSDictionary * _Nullable result) {
-                                if (!err) {
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                        TCMPPPaySucessVC *vc = [[TCMPPPaySucessVC alloc] init];
-                                        vc.iconURL = app.appIcon;
-                                        vc.name = app.appTitle;
-                                        vc.price = totalFee;
-                                        vc.dismissBlock = ^{
-                                            completionHandler(@{@"pay_time":@([[NSDate date] timeIntervalSince1970]),@"order_no":tradeNo},nil);
-                                        };
-                                        vc.modalPresentationStyle = UIModalPresentationFullScreen;
-                                        UIViewController *current = UIApplication.sharedApplication.keyWindow.rootViewController;
-                                        if ([current.presentedViewController isKindOfClass:UINavigationController.class]) {
-                                            UINavigationController *nav = (UINavigationController *)current.presentedViewController;
-                                            [nav.topViewController presentViewController:vc animated:YES completion:nil];
-                                        }
-                                    });
-                                    return;
-                                } else {
-                                    completionHandler(@{@"retmsg":err.localizedDescription},err);
-                                }
-                            }];
-                        } else {
-                            NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"wrong password" forKey:@"errMsg"];
-                            NSError *error = [NSError errorWithDomain:@"KPayRequestDomain" code:-1003 userInfo:userInfo];
-                            completionHandler(@{@"retmsg":error.localizedDescription},error);
-                        }
-                    }
+                TCMPPPaymentMethodsController *payMethodVC = [[TCMPPPaymentMethodsController alloc]init];
+                payMethodVC.payResponseData = result;
+                payMethodVC.app = app;
+                id currentMANav = GetCurrentMANavigationController();
+                if (currentMANav) {
+                    [(UINavigationController *)currentMANav pushViewController:payMethodVC animated:NO];
+                }
+                payMethodVC.completeHandle = ^(NSDictionary * _Nullable result, NSError * _Nullable error) {
+                    completionHandler(result,error);
                 };
-                payAlert.cancelHandle = ^(void) {
-                    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"pay cancel" forKey:@"errMsg"];
-                    NSError *error = [NSError errorWithDomain:@"KPayRequestDomain" code:-1003 userInfo:userInfo];
-                    completionHandler(@{@"retmsg":error.localizedDescription},error);
-                };
-                
             });
         } else {
-            completionHandler(@{@"retmsg":err.localizedDescription},err);
+            NSDictionary *retDic = @{@"retmsg":err.localizedDescription};
+            if (result.returnCode && result.returnMessage) {
+                retDic = @{@"returnCode":result.returnCode,@"returnMessage":result.returnMessage};
+            }
+            completionHandler(retDic,err);
         }
     }];
 }
-- (BOOL)whetherToUseCustomOpenApi:(TMFMiniAppInfo *)app{
-    return YES;
+
+Class MANavigationControllerClass(void) {
+    return NSClassFromString(@"MANavigationController");
 }
+
+void FindMANavigationControllers(UIViewController *vc, NSMutableArray *result) {
+    Class manavClass = MANavigationControllerClass();
+    if (manavClass && [vc isKindOfClass:manavClass]) {
+        [result addObject:vc];
+    }
+    if (vc.presentedViewController) {
+        FindMANavigationControllers(vc.presentedViewController, result);
+    }
+    for (UIViewController *child in vc.childViewControllers) {
+        FindMANavigationControllers(child, result);
+    }
+}
+
+NSArray *GetAllMANavigationControllers(void) {
+    NSMutableArray *result = [NSMutableArray array];
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIViewController *rootVC = keyWindow.rootViewController;
+    if (rootVC) {
+        FindMANavigationControllers(rootVC, result);
+    }
+    return result;
+}
+
+id GetCurrentMANavigationController(void) {
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UIViewController *vc = keyWindow.rootViewController;
+    while (vc.presentedViewController) {
+        vc = vc.presentedViewController;
+    }
+    Class manavClass = MANavigationControllerClass();
+    if (manavClass && [vc isKindOfClass:manavClass]) {
+        return vc;
+    }
+    return nil;
+}
+
+- (BOOL)whetherToUseCustomOpenApi:(TMFMiniAppInfo *)app{
+    return NO;
+}
+
 - (UIView *)createAuthorizeAlertViewWithFrame:(CGRect)frame scope:(NSString *)scope title:(NSString *)title desc:(NSString *)desc privacyApi:(NSString *)privacyApi appInfo:(TMFMiniAppInfo *)appInfo allowBlock:(void (^)(void))allowBlock denyBlock:(void (^)(void))denyBlock {
     // Create the main view
     UIView *view = [[UIView alloc] initWithFrame:frame];

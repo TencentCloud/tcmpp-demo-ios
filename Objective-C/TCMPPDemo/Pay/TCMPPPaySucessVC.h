@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy,nonatomic) NSString *iconURL;
 @property (copy,nonatomic) NSString *name;
-@property (assign,nonatomic) NSInteger price;
+@property (assign,nonatomic) CGFloat price;
 @property (copy,nonatomic,nullable) void(^dismissBlock)(void);
 
 @end
