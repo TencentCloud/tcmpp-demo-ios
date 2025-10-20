@@ -85,28 +85,9 @@ static NSString *cellIdentifier = @"cellIdentifier";
         scan.icon = [UIImage imageNamed:@"scanner"];
         scan.title = NSLocalizedString(@"Scan",nil);
         scan.block = ^{
-            __block TCMPPScanCodeController *scanVC = [[TCMPPScanCodeController alloc]init];
-            __weak typeof(scanVC) weakVC = scanVC;
-            scanVC.scanResultHandler = ^(NSArray *_Nullable result){
-                [weakVC dismissViewControllerAnimated:NO completion:nil];
-                if(scanVC) {
-                    [self dismissViewControllerAnimated:NO completion:^{
-                        if (result) {
-                            if(result.count>0) {
-                                TCMPPScanCodeResult* r = result[0];
-                                [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithQrData:r.stringValue firstPage:nil paramsStr:nil parentVC:self completion:^(NSError * _Nullable error) {
-                                    [self showErrorInfo:error];
-                                }];
-                            }
-                        } else {
-                            NSLog(@"scan api return success but result is nil");
-                        }
-                    }];
-                    scanVC = nil;
-                }
-            };
-            scanVC.modalPresentationStyle = UIModalPresentationFullScreen;
-            [self presentViewController:scanVC animated:YES completion:nil];
+            [[TMFMiniAppSDKManager sharedInstance] startUpMiniAppWithQRCodeWithParentVC:self completion:^(NSError * _Nullable error) {
+                [self showErrorInfo:error];
+            }];
         };
         
         TCMPPMenuItem *settings = [[TCMPPMenuItem alloc] init];
