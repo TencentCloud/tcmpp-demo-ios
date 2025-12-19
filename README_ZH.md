@@ -7,7 +7,7 @@ Objective-C | [Swift](./Swift/README.md)
 #### 1 在您项目中的 `Podfile` 文件里添加源及小程序依赖模块：
 
 - ```objective-c
-  source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
+  source 'https://github.com/TCMPP-Team/tcmpp-repo.git'
   
   target 'YourTarget' do
        pod 'TCMPPSDK'
@@ -23,7 +23,7 @@ Objective-C | [Swift](./Swift/README.md)
 
   ```shell
   $ pod install
-  #注意：如果报 `Couldn't determine repo type for URL: 'https: //e.coding.net/tmf-work/tmf/tmf-repo.git':`错误，则需要在执行`pod install`前执行 `pod repo add specs https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git`
+  #注意：如果报 `Couldn't determine repo type for URL: 'https://github.com/TCMPP-Team/tcmpp-repo.git':`错误，则需要在执行`pod install`前执行 `pod repo add specs https://github.com/TCMPP-Team/tcmpp-repo.git`
   
   
   ```
