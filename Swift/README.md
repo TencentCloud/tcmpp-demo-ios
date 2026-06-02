@@ -2,28 +2,23 @@ English | [简体中文](./README_ZH.md)
 
 ### Steps
 
-#### 1 Add source and mini program dependency modules to the `Podfile` file in your project:
+#### 1 Add SDK dependency using Swift Package Manager (SPM):
 
-- ```objective-c
-  source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
-  
-  target 'YourTarget' do
-       pod 'TCMPPSDK'
-      
-  end
+- In Xcode, select `File` > `Add Packages`.
+
+- In the search window, enter the following URL:
+
+  ```
+  https://github.com/TCMPP-Team/TCMPPSDK.git
   ```
 
-  In：
+- Select the version rule (recommended: `Up to Next Major Version`), then click the `Add Package` button.
 
-  - `YourTarget` is the name of the target that needs to introduce `TCMPPSDK` into your project.
+- After adding the SDK, you need to configure the following project settings in Xcode:
 
-- Terminal `cd` to the directory where the Podfile file is located, and execute `pod install` to install the component.
+  - Select `Build Settings` > `Linking` > `Other Linker Flags`, then add `-ObjC`.
 
-  ```shell
-  $ pod install
-  #Note: If an error of `Couldn't determine repo type for URL: 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git':` is reported, you need to execute `pod install` Before executing `pod repo add specs https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git`
-  
-  ```
+  - Add other extension libraries as needed. For details, please refer to the [SDK Quick Integration](https://www.tencentcloud.com/zh/document/product/1219/61438) documentation.
 
 #### 2 SDK initialization
 
@@ -31,23 +26,29 @@ English | [简体中文](./README_ZH.md)
 
 The developer obtains the configuration file of the corresponding App from the management platform. The configuration file is a json file that contains all the information about the app's use of the mini program platform. The configuration file is introduced into the project and is set as a resource in the packaged content.
 
+- Get the `tcsas-ios-configurations.json` configuration file from the mini program console.
+
+- Add this file to the project, ensuring that the iOS project's `bundleId` matches the `bundleId` configured in the console.
+
 ##### 2.2 Configuration information settings
 
-In the following method in the project's `AppDelegate`, initialize the TMFAppletConfig object according to the configuration file, and use TMFAppletConfig to initialize the TCMPP applet engine.
+In the project's `AppDelegate`, import the header file and initialize the SDK according to the configuration file.
 
 Reference Code:
 
 ```swift
- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let configItem = TMFAppletConfigManager.shared.getCurrentConfigItem();
-        let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json");
-        if ((filePath) != nil){
-            let config = TMAServerConfig(file: filePath!);
-            TMFMiniAppSDKManager.sharedInstance().setConfiguration(config);
-        }
-        return true;
-    }  
+import TCMPPSDK
 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Code that needs to be added to the App--start
+    if let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json") {
+        let config = TMAServerConfig(file: filePath)
+        TMFMiniAppSDKManager.sharedInstance().setConfiguration(config)
+    }
+    // Code that needs to be added to the App--end
+    
+    return true
+}
 ```
 
 
@@ -60,8 +61,11 @@ If there is a new version, download the new version of the mini program, and the
 
 ```swift
 let appId = "mini program id"
-TMFMiniAppSDKManager.sharedInstance().startUpMiniApp(withAppID: info.appId, parentVC: self) { (error) in
-	self.showErrorInfo(error)
+// open the mini program
+TMFMiniAppSDKManager.sharedInstance().startUpMiniApp(withAppID: appId, parentVC: self) { (error) in
+    if let error = error {
+        print("open applet error: \(error)")
+    }
 }
 ```
 

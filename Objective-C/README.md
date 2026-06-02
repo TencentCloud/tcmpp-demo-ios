@@ -5,7 +5,7 @@ English | [简体中文](./README_ZH.md)
 #### 1 Add source and mini program dependency modules to the `Podfile` file in your project:
 
 - ```objective-c
-  source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
+  source 'https://github.com/TCMPP-Team/tcmpp-repo.git'
   
   target 'YourTarget' do
        pod 'TCMPPSDK'
@@ -21,7 +21,7 @@ English | [简体中文](./README_ZH.md)
 
   ```shell
   $ pod install
-  #Note: If an error of `Couldn't determine repo type for URL: 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git':` is reported, you need to execute `pod install` Before executing `pod repo add specs https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git`
+  #Note: If an error of `Couldn't determine repo type for URL: 'https://github.com/TCMPP-Team/tcmpp-repo.git':` is reported, you need to execute `pod install` Before executing `pod repo add specs https://github.com/TCMPP-Team/tcmpp-repo.git`
   
   ```
 

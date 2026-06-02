@@ -2,29 +2,23 @@
 
 ### 操作步骤
 
-#### 1 在您项目中的 `Podfile` 文件里添加源及小程序依赖模块：
+#### 1 使用 Swift Package Manager (SPM) 添加 SDK 依赖：
 
-- ```objective-c
-  source 'https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git'
-  
-  target 'YourTarget' do
-       pod 'TCMPPSDK'
-      
-  end
+- 在 Xcode 中，选择 `File` > `Add Packages`。
+
+- 在搜索窗口中输入以下 URL：
+
+  ```
+  https://github.com/TCMPP-Team/TCMPPSDK.git
   ```
 
-  其中：
+- 选择版本规则（建议使用 `Up to Next Major Version`），然后点击 `Add Package` 按钮。
 
-  - `YourTarget` 为您的项目需要引入 `TCMPPSDK` 的 target 的名字。
+- 添加 SDK 后，需要在 Xcode 中进行以下项目设置：
 
-- Terminal `cd` 到 Podfile 文件所在目录，并执行 `pod install` 进行组件安装。
+  - 选择 `Build Settings` > `Linking` > `Other Linker Flags`，然后添加 `-ObjC`。
 
-  ```shell
-  $ pod install
-  #注意：如果报 `Couldn't determine repo type for URL: 'https: //e.coding.net/tmf-work/tmf/tmf-repo.git':`错误，则需要在执行`pod install`前执行 `pod repo add specs https://e.coding.net/tcmpp-work/tcmpp/tcmpp-repo.git`
-  
-  
-  ```
+  - 根据需要添加其他扩展库，具体请参考 [SDK 快速集成](https://www.tencentcloud.com/zh/document/product/1219/61438) 文档中的说明。
 
 #### 2 SDK初始化
 
@@ -32,23 +26,29 @@
 
 开发人员从管理平台获取对应App的配置文件，该配置文件是一个json文件，包含该App使用小程序平台的所有信息，将配置文件引入到项目中，并且做为资源设置在打包内容。
 
+- 从小程序控制台获取 `tcsas-ios-configurations.json` 配置文件。
+
+- 将该文件添加到项目中，确保 iOS 工程的 `bundleId` 与控制台中配置的 `bundleId` 保持一致。
+
 ##### 2.2 配置信息设置
 
-在工程的 `AppDelegate` 中的以下方法中，根据配置文件初始化一下TMFAppletConfig对象，并使用TMFAppletConfig初始化TCMPP小程序引擎。
+在工程的 `AppDelegate` 中引入头文件，并根据配置文件初始化 SDK。
 
 参考代码：
 
 ```swift
- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let configItem = TMFAppletConfigManager.shared.getCurrentConfigItem();
-        let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json");
-        if ((filePath) != nil){
-            let config = TMAServerConfig(file: filePath!);
-            TMFMiniAppSDKManager.sharedInstance().setConfiguration(config);
-        }
-        return true;
-    }  
+import TCMPPSDK
 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // 需要添加至App中的代码--start
+    if let filePath = Bundle.main.path(forResource: "tcsas-ios-configurations", ofType: "json") {
+        let config = TMAServerConfig(file: filePath)
+        TMFMiniAppSDKManager.sharedInstance().setConfiguration(config)
+    }
+    // 需要添加至App中的代码--end
+    
+    return true
+}
 ```
 
 
@@ -60,9 +60,12 @@
 如果有新版本，则下载新版小程序，下次打开时，就会使用新版小程序；如果没有新版本，则什么也不做。
 
 ```swift
-let appId = "mini program id"
-TMFMiniAppSDKManager.sharedInstance().startUpMiniApp(withAppID: info.appId, parentVC: self) { (error) in
-	self.showErrorInfo(error)
+let appId = "小程序id"
+// 打开小程序
+TMFMiniAppSDKManager.sharedInstance().startUpMiniApp(withAppID: appId, parentVC: self) { (error) in
+    if let error = error {
+        print("打开小程序出错：\(error)")
+    }
 }
 ```
 
